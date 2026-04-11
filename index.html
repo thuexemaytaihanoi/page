@@ -1,586 +1,626 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="light">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-   <!-- SEO & Meta Tags -->
-   <title>Cho thuê xe máy Tây Hồ, Hà Nội Vân Thu</title>
-   <meta name="description" content="Dịch vụ cho thuê xe máy Tây Hồ, Hà Nội Vân Thu uy tín, giá rẻ từ 100k/ngày. Xe mới, giao tận nơi nhanh chóng. Gọi ngay 0913 901 121 để đặt xe!">
-   <meta name="keywords" content="thuê xe máy Tây Hồ, thuê xe máy Hà Nội, thuê xe máy Vân Thu, thuê xe máy Long Biên, Mr Tú">
-   <meta name="author" content="Vân Thu & Mr Tú">
-   <link rel="canonical" href="https://thuexemaytaihanoi.github.io/page/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <!-- SEO & Meta Tags -->
+  <title>Cho thuê xe máy Tây Hồ, Hà Nội Vân Thu</title>
+  <meta name="description" content="Dịch vụ cho thuê xe máy Tây Hồ, Hà Nội Vân Thu uy tín, giá rẻ từ 100k/ngày. Xe mới, giao tận nơi nhanh chóng. Gọi ngay 0913 901 121 để đặt xe!">
+  <meta name="keywords" content="thuê xe máy Tây Hồ, thuê xe máy Hà Nội, thuê xe máy Vân Thu, thuê xe máy Long Biên, Mr Tú">
+  <meta name="author" content="Vân Thu & Mr Tú">
+  <link rel="canonical" href="https://thuexemaytaihanoi.github.io/page/">
 
-   <!-- Open Graph / Facebook -->
-   <meta property="og:type" content="website">
-   <meta property="og:url" content="https://thuexemaytaihanoi.github.io/page/">
-   <meta property="og:title" content="Cho thuê xe máy Tây Hồ, Hà Nội Vân Thu">
-   <meta property="og:description" content="Dịch vụ cho thuê xe máy Tây Hồ, Hà Nội Vân Thu uy tín. Giao xe tận nơi, thủ tục nhanh gọn. Hỗ trợ 24/7.">
-   
-   <!-- Libraries -->
-   <script src="https://cdn.tailwindcss.com"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-   <!-- JSON-LD Schema (LocalBusiness with raw number coordinates) -->
-   <script type="application/ld+json">
-   {
-     "@context": "https://schema.org",
-     "@type": "LocalBusiness",
-     "name": "Cho Thuê Xe Máy Vân Thu",
-     "image": "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=1200",
-     "@id": "https://thuexemaytaihanoi.github.io/page/",
-     "url": "https://thuexemaytaihanoi.github.io/page/",
-     "telephone": "0913901121",
-     "email": "vanthu20301@gmail.com",
-     "priceRange": "100.000đ - 300.000đ",
-     "address": {
-       "@type": "PostalAddress",
-       "streetAddress": "15 Ngõ 150, Yên Phụ",
-       "addressLocality": "Tây Hồ",
-       "addressRegion": "Hà Nội",
-       "postalCode": "100000",
-       "addressCountry": "VN"
-     },
-     "geo": {
-       "@type": "GeoCoordinates",
-       "latitude": 21.0509741,
-       "longitude": 105.8393823
-     },
-     "openingHoursSpecification": {
-       "@type": "OpeningHoursSpecification",
-       "dayOfWeek": [
-         "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
-       ],
-       "opens": "09:00",
-       "closes": "21:00"
-     },
-     "sameAs": [
-       "https://about.me/chothuexemayvanthu",
-       "https://thuexemaynguyentu.com",
-       "https://thuexemaytaihanoi.github.io/app"
-     ]
-   }
-   </script>
-
-   <style>
-       /* Smooth scrolling for anchor links */
-       html { scroll-behavior: smooth; }
-       /* Custom scrollbar */
-       ::-webkit-scrollbar { width: 8px; }
-       ::-webkit-scrollbar-track { background: #f1f1f1; }
-       ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 4px; }
-       ::-webkit-scrollbar-thumb:hover { background: #2563eb; }
-       
-       .hero-bg {
-           background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=1920');
-           background-size: cover;
-           background-position: center;
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thuexemaytaihanoi.github.io/page/">
+  <meta property="og:title" content="Cho thuê xe máy Tây Hồ, Hà Nội Vân Thu">
+  <meta property="og:description" content="Dịch vụ cho thuê xe máy Tây Hồ, Hà Nội Vân Thu uy tín. Giao xe tận nơi, thủ tục nhanh gọn. Hỗ trợ 24/7.">
+ 
+  <!-- Libraries -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+       tailwind.config = {
+           darkMode: 'class',
+           theme: {
+               extend: {
+                   colors: {
+                       darkBg: '#111827',
+                       darkCard: '#1f2937',
+                   }
+               }
+           }
        }
-   </style>
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- JSON-LD Schema (LocalBusiness with raw number coordinates) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Cho Thuê Xe Máy Vân Thu",
+    "image": "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=1200",
+    "@id": "https://thuexemaytaihanoi.github.io/page/",
+    "url": "https://thuexemaytaihanoi.github.io/page/",
+    "telephone": "0913901121",
+    "email": "vanthu20301@gmail.com",
+    "priceRange": "150.000đ - 200.000đ",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "15 Ngõ 150, Yên Phụ",
+      "addressLocality": "Tây Hồ",
+      "addressRegion": "Hà Nội",
+      "postalCode": "100000",
+      "addressCountry": "VN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 21.0509741,
+      "longitude": 105.8393823
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+      ],
+      "opens": "09:00",
+      "closes": "21:00"
+    },
+    "sameAs": [
+      "https://about.me/chothuexemayvanthu",
+      "https://thuexemaynguyentu.com",
+      "https://thuexemaytaihanoi.github.io/app"
+    ]
+  }
+  </script>
+
+  <style>
+      /* Smooth scrolling for anchor links */
+      html { scroll-behavior: smooth; }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #f1f1f1; }
+      html.dark ::-webkit-scrollbar-track { background: #1f2937; }
+      ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: #2563eb; }
+     
+      /* AI Animation */
+      .ai-pulse {
+          animation: pulse-shadow 1.5s infinite;
+      }
+      @keyframes pulse-shadow {
+          0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+          70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+          100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+      }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans antialiased overflow-x-hidden">
+<body class="bg-gray-50 dark:bg-darkBg text-gray-800 dark:text-gray-200 font-sans antialiased overflow-x-hidden transition-colors duration-300">
 
-   <!-- Header / Navigation -->
-   <header class="bg-white shadow-md fixed w-full top-0 z-40 transition-all duration-300">
-       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-           <div class="flex justify-between items-center h-20">
-               <!-- Logo: DIV instead of H1 for SEO compliance -->
-               <div class="flex-shrink-0 flex items-center">
-                   <div class="text-2xl font-extrabold text-blue-600 tracking-tight flex items-center gap-2">
-                       <i class="fa-solid fa-motorcycle"></i> Vân Thu
-                   </div>
-               </div>
-               
-               <!-- Desktop Nav -->
-               <nav class="hidden md:flex space-x-8">
-                   <a href="#dich-vu" class="text-gray-600 hover:text-blue-600 font-medium transition">Dịch vụ</a>
-                   <a href="#bang-gia" class="text-gray-600 hover:text-blue-600 font-medium transition">Bảng giá</a>
-                   <a href="#ung-dung" class="text-gray-600 hover:text-blue-600 font-medium transition">Mini App</a>
-                   <a href="#lien-he" class="text-gray-600 hover:text-blue-600 font-medium transition">Liên hệ</a>
-               </nav>
+  <!-- Header / Navigation -->
+  <header class="bg-white dark:bg-darkCard shadow-md fixed w-full top-0 z-40 transition-all duration-300">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center h-20">
+              <!-- Logo -->
+              <div class="flex-shrink-0 flex items-center">
+                  <div class="text-2xl font-extrabold text-blue-600 dark:text-blue-400 tracking-tight flex items-center gap-2">
+                      <i class="fa-solid fa-motorcycle"></i> Vân Thu
+                  </div>
+              </div>
+             
+              <!-- Desktop Nav (Updated Structure) -->
+              <nav class="hidden lg:flex space-x-6 items-center">
+                  <a href="https://thuexemaytaihanoi.github.io/page/" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition">Trang chủ</a>
+                  <a href="gioithieu.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition">Giới thiệu</a>
+                 
+                  <!-- Dropdown Dịch Vụ -->
+                  <div class="relative group">
+                      <button class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition flex items-center gap-1 py-4">
+                          Dịch Vụ <i class="fa-solid fa-chevron-down text-xs"></i>
+                      </button>
+                      <!-- Dropdown Menu -->
+                      <div class="absolute left-0 mt-0 hidden group-hover:block bg-white dark:bg-darkCard shadow-xl border border-gray-100 dark:border-gray-700 rounded-lg p-4 w-[600px] z-50 transition-all duration-300">
+                          <div class="grid grid-cols-3 gap-y-3 gap-x-4">
+                              <a href="thuengay.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded">Thuê xe theo ngày</a>
+                              <a href="thuetuan.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded">Thuê xe theo tuần</a>
+                              <a href="thuethang.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded">Thuê xe theo tháng</a>
+                              <a href="long bien.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded">Thuê xe Long Biên</a>
+                              <a href="hoankiem.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded">Thuê xe Hoàn Kiếm</a>
+                              <a href="tayho.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded">Thuê xe Tây Hồ</a>
+                              <a href="phoco.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded">Thuê xe Phố Cổ</a>
+                              <a href="badinh.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded">Thuê xe Ba Đình</a>
+                              <a href="dongda.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded">Thuê xe Đống Đa</a>
+                              <a href="haibatrung.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded">Thuê xe Hai Bà Trưng</a>
+                              <a href="gialam.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded">Thuê xe Gia Lâm</a>
+                              <a href="thutuc.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded">Thủ tục thuê xe</a>
+                              <a href="banggia.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded">Bảng giá</a>
+                              <a href="huongdan.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded">Hướng dẫn</a>
+                              <a href="loaixe.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded">Loại xe</a>
+                              <a href="kinhnghiem.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded">Kinh nghiệm</a>
+                              <a href="khuyenmai.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded">Khuyến mãi</a>
+                          </div>
+                      </div>
+                  </div>
 
-               <!-- CTA Button -->
-               <div class="hidden md:flex">
-                   <a href="tel:0913901121" class="bg-blue-600 text-white px-6 py-2 rounded-full font-bold hover:bg-blue-700 shadow-lg transition transform hover:-translate-y-0.5">
-                       <i class="fa-solid fa-phone mr-2"></i>0913.901.121
-                   </a>
-               </div>
+                  <a href="baomat.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition">Bảo Mật</a>
+                  <a href="dieukhoan.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition">Điều Khoản</a>
+                  <a href="Faq.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition">Câu hỏi</a>
+                  <a href="lienhe.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition">Liên hệ</a>
+              </nav>
 
-               <!-- Mobile menu button -->
-               <div class="md:hidden flex items-center">
-                   <button id="mobile-menu-btn" class="text-gray-600 hover:text-blue-600 focus:outline-none p-2" aria-expanded="false" aria-controls="sidebar">
-                       <i class="fa-solid fa-bars text-2xl"></i>
-                       <span class="sr-only">Mở menu</span>
-                   </button>
-               </div>
-           </div>
-       </div>
-   </header>
+              <div class="flex items-center gap-4">
+                  <!-- Dark/Light Mode Toggle -->
+                  <button id="theme-toggle" class="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-yellow-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                      <i class="fa-solid fa-moon dark:hidden"></i>
+                      <i class="fa-solid fa-sun hidden dark:block"></i>
+                  </button>
 
-   <!-- Mobile Sidebar (Focus Trap enabled for A11y) -->
-   <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity" aria-hidden="true"></div>
-   <aside id="sidebar" class="fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out" aria-hidden="true">
-       <div class="p-6">
-           <div class="flex justify-between items-center mb-8">
-               <div class="text-xl font-bold text-blue-600"><i class="fa-solid fa-motorcycle"></i> Menu</div>
-               <button id="close-sidebar-btn" class="text-gray-500 hover:text-red-500 focus:outline-none p-2">
-                   <i class="fa-solid fa-xmark text-2xl"></i>
-                   <span class="sr-only">Đóng menu</span>
-               </button>
-           </div>
-           <nav class="flex flex-col space-y-4">
-               <a href="#dich-vu" class="sidebar-link text-lg font-medium text-gray-700 hover:text-blue-600 border-b pb-2">Dịch vụ</a>
-               <a href="#bang-gia" class="sidebar-link text-lg font-medium text-gray-700 hover:text-blue-600 border-b pb-2">Bảng giá</a>
-               <a href="#ung-dung" class="sidebar-link text-lg font-medium text-gray-700 hover:text-blue-600 border-b pb-2">Mini App</a>
-               <a href="#lien-he" class="sidebar-link text-lg font-medium text-gray-700 hover:text-blue-600 border-b pb-2">Liên hệ</a>
-           </nav>
-           <div class="mt-8">
-               <a href="tel:0913901121" class="w-full block text-center bg-blue-600 text-white px-4 py-3 rounded-lg font-bold hover:bg-blue-700">
-                   Gọi Ngay
-               </a>
-           </div>
-       </div>
-   </aside>
+                  <!-- CTA Button -->
+                  <div class="hidden md:flex">
+                      <a href="tel:0913901121" class="bg-blue-600 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-700 shadow-lg transition transform hover:-translate-y-0.5">
+                          <i class="fa-solid fa-phone mr-2"></i>0913.901.121
+                      </a>
+                  </div>
 
-   <!-- Hero Section -->
-   <section class="hero-bg mt-20 relative h-[80vh] min-h-[600px] flex items-center">
-       <div class="container mx-auto px-4 relative z-10 text-center">
-           <!-- Duy nhất 1 thẻ H1 trên trang -->
-           <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
-               Cho Thuê Xe Máy Long Biên Hà Nội - Dịch Vụ Uy Tín Mr Tú
-           </h1>
-           <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto drop-shadow-md">
-               Được điều hành bởi hệ thống Vân Thu tại Tây Hồ. Chúng tôi cam kết cung cấp các dòng xe máy chất lượng, thủ tục không giữ cọc, giao xe tận nơi nội thành Hà Nội trong 15 phút.
-           </p>
-           <div class="flex flex-col sm:flex-row justify-center gap-4">
-               <a href="#dat-xe" class="bg-blue-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-700 transition shadow-lg">
-                   Đặt Xe Ngay
-               </a>
-               <a href="https://thuexemaytaihanoi.github.io/app" target="_blank" rel="noopener noreferrer" class="bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition shadow-lg">
-                   <i class="fa-solid fa-mobile-screen mr-2"></i> Trải nghiệm Web App
-               </a>
-           </div>
-       </div>
-   </section>
+                  <!-- Mobile menu button -->
+                  <div class="lg:hidden flex items-center">
+                      <button id="mobile-menu-btn" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 focus:outline-none p-2" aria-expanded="false" aria-controls="sidebar">
+                          <i class="fa-solid fa-bars text-2xl"></i>
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </header>
 
-   <!-- Main Content (SEO Article ~ 1000 words logic, proper H2, H3 hierarchy) -->
-   <section id="dich-vu" class="py-16 bg-white">
-       <div class="container mx-auto px-4 max-w-4xl">
-           
-           <div class="text-center mb-12">
-               <span class="text-blue-600 font-bold tracking-wider uppercase text-sm">Về Chúng Tôi</span>
-               <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Dịch Vụ Cho Thuê Xe Máy Tây Hồ, Hà Nội Vân Thu</h2>
-               <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded"></div>
-           </div>
+  <!-- Mobile Sidebar -->
+  <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity" aria-hidden="true"></div>
+  <aside id="sidebar" class="fixed top-0 right-0 h-full w-72 bg-white dark:bg-darkCard shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto" aria-hidden="true">
+      <div class="p-6">
+          <div class="flex justify-between items-center mb-8">
+              <div class="text-xl font-bold text-blue-600 dark:text-blue-400"><i class="fa-solid fa-motorcycle"></i> Menu</div>
+              <button id="close-sidebar-btn" class="text-gray-500 hover:text-red-500 p-2">
+                  <i class="fa-solid fa-xmark text-2xl"></i>
+              </button>
+          </div>
+          <nav class="flex flex-col space-y-2">
+              <a href="https://thuexemaytaihanoi.github.io/page/" class="sidebar-link block py-2 text-lg font-medium text-gray-700 dark:text-gray-200 border-b dark:border-gray-700">Trang chủ</a>
+              <a href="gioithieu.html" class="sidebar-link block py-2 text-lg font-medium text-gray-700 dark:text-gray-200 border-b dark:border-gray-700">Giới thiệu</a>
+             
+              <!-- Mobile Dropdown Accordion -->
+              <div class="border-b dark:border-gray-700 py-2">
+                  <button id="mobile-dichvu-btn" class="w-full flex justify-between items-center text-lg font-medium text-gray-700 dark:text-gray-200">
+                      Dịch Vụ <i class="fa-solid fa-chevron-down text-sm transition-transform" id="mobile-dichvu-icon"></i>
+                  </button>
+                  <div id="mobile-dichvu-menu" class="hidden flex-col pl-4 mt-2 space-y-2">
+                       <a href="thuengay.html" class="text-gray-600 dark:text-gray-400 py-1">Thuê xe ngày</a>
+                       <a href="thuetuan.html" class="text-gray-600 dark:text-gray-400 py-1">Thuê xe tuần</a>
+                       <a href="thuethang.html" class="text-gray-600 dark:text-gray-400 py-1">Thuê xe tháng</a>
+                       <a href="long bien.html" class="text-gray-600 dark:text-gray-400 py-1">Khu vực Long Biên</a>
+                       <a href="tayho.html" class="text-gray-600 dark:text-gray-400 py-1">Khu vực Tây Hồ</a>
+                       <a href="phoco.html" class="text-gray-600 dark:text-gray-400 py-1">Khu vực Phố Cổ</a>
+                       <a href="banggia.html" class="text-gray-600 dark:text-gray-400 py-1">Bảng giá</a>
+                       <a href="thutuc.html" class="text-gray-600 dark:text-gray-400 py-1">Thủ tục</a>
+                  </div>
+              </div>
 
-           <article class="prose prose-lg prose-blue max-w-none text-gray-600 leading-relaxed">
-               <p>
-                   Chào mừng bạn đến với hệ thống <strong>cho thuê xe máy Tây Hồ, Hà Nội Vân Thu</strong>. Trong nhiều năm qua, chúng tôi tự hào là đơn vị cung cấp phương tiện di chuyển tin cậy cho hàng ngàn du khách trong nước và quốc tế khi đến thăm thủ đô. Với mục tiêu mở rộng mạng lưới để phục vụ khách hàng tốt hơn, chúng tôi hân hạnh giới thiệu dịch vụ <strong>cho thuê xe máy Long Biên Hà Nội - dịch vụ uy tín Mr Tú</strong>, trực thuộc sự quản lý của cơ sở chính Vân Thu. Sự kết hợp này mang lại mạng lưới giao nhận xe phủ sóng rộng khắp, từ khu vực phố cổ, Hồ Tây thanh bình cho đến quận Long Biên sầm uất.
-               </p>
+              <a href="baomat.html" class="sidebar-link block py-2 text-lg font-medium text-gray-700 dark:text-gray-200 border-b dark:border-gray-700">Bảo Mật</a>
+              <a href="dieukhoan.html" class="sidebar-link block py-2 text-lg font-medium text-gray-700 dark:text-gray-200 border-b dark:border-gray-700">Điều Khoản</a>
+              <a href="Faq.html" class="sidebar-link block py-2 text-lg font-medium text-gray-700 dark:text-gray-200 border-b dark:border-gray-700">Câu hỏi</a>
+              <a href="lienhe.html" class="sidebar-link block py-2 text-lg font-medium text-gray-700 dark:text-gray-200 border-b dark:border-gray-700">Liên hệ</a>
+          </nav>
+          <div class="mt-8">
+              <a href="tel:0913901121" class="w-full block text-center bg-blue-600 text-white px-4 py-3 rounded-lg font-bold hover:bg-blue-700">
+                  Gọi Ngay: 0913.901.121
+              </a>
+          </div>
+      </div>
+  </aside>
 
-               <h3 class="text-2xl font-bold text-gray-800 mt-8 mb-4">1. Vị Trí Đắc Địa - Giao Xe Nhanh Chóng</h3>
-               <p>
-                   Trụ sở chính của chúng tôi tọa lạc tại địa chỉ <strong>15 Ngõ 150, Yên Phụ, Tây Hồ, Hà Nội</strong> (Tọa độ chính xác: 21.0509741, 105.8393823). Đây là vị trí "vàng", tiếp giáp với trục đường chính đi ra sân bay Nội Bài, khu vực phố Cổ và các quận trung tâm. Nếu bạn đang ở các khách sạn quanh khu vực Hồ Tây, Ba Đình hay Hoàn Kiếm, nhân viên của Vân Thu sẽ giao xe đến tận tay bạn chỉ trong vòng 10 - 15 phút.
-               </p>
-               <p>
-                   Bên cạnh đó, với sự phát triển của chi nhánh dưới sự quản lý của <strong>Mr Tú</strong>, khách hàng có nhu cầu <strong>thuê xe máy Long Biên</strong> hoặc các khu vực lân cận trung tâm thương mại Aeon Mall, cầu Chương Dương, cầu Long Biên cũng sẽ được hỗ trợ giao nhận xe cực kỳ tốc độ và chuyên nghiệp.
-               </p>
+  <!-- New Hero Section with AI Simulator -->
+  <section class="mt-20 relative pt-16 pb-20 bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-gray-900 dark:via-darkBg dark:to-gray-800 overflow-hidden">
+      <!-- Decorative background elements -->
+      <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+          <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-300 dark:bg-blue-900 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-3xl opacity-30"></div>
+          <div class="absolute top-48 -left-24 w-72 h-72 bg-purple-300 dark:bg-purple-900 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-3xl opacity-30"></div>
+      </div>
 
-               <h3 class="text-2xl font-bold text-gray-800 mt-8 mb-4">2. Đa Dạng Dòng Xe - Chất Lượng Đảm Bảo 100%</h3>
-               <p>
-                   Sự an toàn của khách hàng trên mỗi dặm đường là ưu tiên số 1 tại <strong>Cho thuê xe máy Vân Thu</strong>. Chúng tôi không sử dụng các loại xe cũ nát hay xe Trung Quốc kém chất lượng. 100% dàn xe của chúng tôi là các dòng xe chính hãng đến từ Honda, Yamaha, SYM,... luôn được bảo dưỡng định kỳ hàng tháng.
-               </p>
-               <ul class="list-disc pl-6 space-y-2 mt-4">
-                   <li><strong>Xe số siêu bền bỉ:</strong> Honda Wave Alpha, RSX, Yamaha Sirius... Rất phù hợp cho các bạn sinh viên, dân phượt hoặc khách hàng muốn tiết kiệm chi phí nhiên liệu. Khả năng leo dốc tốt, nhỏ gọn dễ luồn lách trong ngõ hẻm Hà Nội.</li>
-                   <li><strong>Xe tay ga thời trang:</strong> Honda Air Blade, Vision, Lead... Đây là lựa chọn yêu thích của các bạn nữ hoặc gia đình đi du lịch nhẹ nhàng trong nội thành, cốp xe rộng rãi chứa được nhiều đồ cá nhân.</li>
-                   <li><strong>Xe côn tay cá tính:</strong> Yamaha Exciter, Honda Winner... Dành riêng cho những tín đồ đam mê tốc độ, muốn chinh phục các cung đường đèo núi ngoại thành Hà Nội như Ba Vì, Tam Đảo, Sóc Sơn.</li>
-               </ul>
+      <div class="container mx-auto px-4 relative z-10">
+          <div class="flex flex-col lg:flex-row items-center gap-12">
+             
+              <!-- Hero Text -->
+              <div class="lg:w-1/2 text-center lg:text-left">
+                  <span class="inline-block py-1 px-3 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300 text-sm font-semibold mb-4 border border-blue-200 dark:border-blue-800">
+                      <i class="fa-solid fa-bolt text-yellow-500 mr-1"></i> Trải nghiệm Web App Tốc Độ Cao
+                  </span>
+                  <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-6 leading-tight">
+                      Cho thuê xe máy Tây Hồ, Hà Nội - Vân Thu
+                  </h1>
+                  <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0">
+                      Hệ thống cho thuê xe máy uy tín hàng đầu. Cam kết xe chất lượng cao, thủ tục không giữ cọc, giao xe tận nơi nội thành Hà Nội chỉ trong 15 phút.
+                  </p>
+                  <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                      <a href="https://thuexemaytaihanoi.github.io/app" target="_blank" class="bg-blue-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-700 transition shadow-lg flex items-center justify-center gap-2">
+                          <i class="fa-solid fa-mobile-screen"></i> Mở Web App Đặt Xe
+                      </a>
+                      <a href="#dich-vu" class="bg-white dark:bg-gray-800 text-gray-800 dark:text-white border border-gray-200 dark:border-gray-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition shadow">
+                          Tìm hiểu thêm
+                      </a>
+                  </div>
+              </div>
 
-               <h2 class="text-3xl font-bold text-gray-800 mt-12 mb-6">Thủ Tục Thuê Xe Máy Vân Thu Có Gì Nổi Bật?</h2>
-               <p>
-                   So với nhiều cơ sở khác, thủ tục <strong>thuê xe máy Hà Nội</strong> tại hệ thống Vân Thu và chi nhánh Mr Tú được tối giản hóa tối đa để tiết kiệm thời gian cho khách hàng. Bạn sẽ trải nghiệm quy trình 3 "KHÔNG":
-               </p>
-               <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 mb-8">
-                   <div class="bg-blue-50 p-6 rounded-lg text-center">
-                       <i class="fa-solid fa-money-bill-wave text-3xl text-blue-600 mb-3"></i>
-                       <h4 class="font-bold text-gray-800">Không Cần Đặt Cọc</h4>
-                       <p class="text-sm mt-2">Đối với khách du lịch có vé máy bay khứ hồi hoặc khách lưu trú tại các khách sạn uy tín.</p>
-                   </div>
-                   <div class="bg-blue-50 p-6 rounded-lg text-center">
-                       <i class="fa-solid fa-clock text-3xl text-blue-600 mb-3"></i>
-                       <h4 class="font-bold text-gray-800">Không Chờ Đợi Lâu</h4>
-                       <p class="text-sm mt-2">Xác nhận hợp đồng online, ký kết nhanh chóng chỉ trong vòng 5 phút ngay khi nhận xe.</p>
-                   </div>
-                   <div class="bg-blue-50 p-6 rounded-lg text-center">
-                       <i class="fa-solid fa-file-signature text-3xl text-blue-600 mb-3"></i>
-                       <h4 class="font-bold text-gray-800">Không Rườm Rà</h4>
-                       <p class="text-sm mt-2">Chỉ cần chuẩn bị CCCD/CMND bản gốc hoặc Hộ chiếu (đối với khách nước ngoài) và Giấy phép lái xe hợp lệ.</p>
-                   </div>
-               </div>
+              <!-- AI Calculator Simulator -->
+              <div class="lg:w-1/2 w-full max-w-md">
+                  <div class="bg-white dark:bg-darkCard rounded-3xl shadow-2xl p-6 sm:p-8 border border-gray-100 dark:border-gray-700 relative">
+                      <!-- AI Badge -->
+                      <div class="absolute -top-4 right-6 bg-gradient-to-r from-purple-600 to-blue-600 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg flex items-center gap-1 ai-pulse">
+                          <i class="fa-solid fa-microchip"></i> AI Estimator
+                      </div>
 
-               <h3 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Gợi Ý Lịch Trình Khám Phá Hà Nội Cùng Xe Máy Vân Thu</h3>
-               <p>
-                   Khi đã có trong tay chiếc xe máy ưng ý từ <strong>Vân Thu Motorbike</strong>, Hà Nội sẽ thu bé lại vừa bằng một vòng bánh xe. Buổi sáng, bạn có thể dạo một vòng quanh Hồ Tây lộng gió, ghé vào một quán phở ven đường Yên Phụ thưởng thức bữa sáng đậm chất Hà Thành. Sau đó, chạy dọc đường Thanh Niên rợp bóng mát, ghé thăm lăng Bác, Hoàng Thành Thăng Long.
-               </p>
-               <p>
-                   Khi chiều buông, hãy điều khiển xe qua cầu Long Biên lịch sử – khu vực do <strong>Mr Tú</strong> quản lý, để ngắm nhìn hoàng hôn rực rỡ trên sông Hồng, sau đó vòng qua khu đô thị sầm uất để thưởng thức ẩm thực đường phố đa dạng. Xe máy chính là phương tiện tuyệt vời nhất để bạn len lỏi vào từng ngõ ngách, cảm nhận trọn vẹn nhịp sống và con người thủ đô.
-               </p>
-               <p class="mt-6 italic text-gray-500">
-                   *Mọi xe cho thuê tại cơ sở Vân Thu đều đi kèm 02 mũ bảo hiểm đạt chuẩn, áo mưa tiện lợi, và hỗ trợ cứu hộ sự cố kỹ thuật 24/7 trong suốt quá trình thuê xe. Liên hệ ngay Hotline: <a href="tel:0913901121" class="text-blue-600 font-bold">0913.901.121</a> để được phục vụ!
-               </p>
-           </article>
-       </div>
-   </section>
+                      <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-2 text-center">Giả Lập Chi Phí Thuê Xe</h3>
+                      <p class="text-center text-sm text-gray-500 dark:text-gray-400 mb-6">Hệ thống AI sẽ tự động tính toán chi phí dự kiến cho chuyến đi của bạn.</p>
 
-   <!-- Pricing Calculator Section -->
-   <section id="bang-gia" class="py-16 bg-gray-100">
-       <div class="container mx-auto px-4 max-w-5xl">
-           <div class="text-center mb-12">
-               <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Công Cụ Ước Tính Chi Phí Thuê Xe</h2>
-               <p class="text-gray-600 mt-4">Bảng giá minh bạch, thuê càng lâu giá càng rẻ!</p>
-           </div>
+                      <div class="space-y-5">
+                          <!-- Loại xe -->
+                          <div>
+                              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Chọn dòng xe muốn thuê</label>
+                              <div class="grid grid-cols-3 gap-3">
+                                  <button type="button" class="ai-vehicle-btn bg-blue-50 dark:bg-gray-700 border-2 border-blue-500 text-blue-700 dark:text-blue-300 rounded-xl p-3 text-center transition" data-price="150000">
+                                      <i class="fa-solid fa-motorcycle text-xl mb-1 block"></i>
+                                      <span class="text-xs font-bold">Xe Số</span>
+                                  </button>
+                                  <button type="button" class="ai-vehicle-btn bg-white dark:bg-gray-800 border-2 border-transparent text-gray-600 dark:text-gray-400 hover:border-gray-300 rounded-xl p-3 text-center transition" data-price="200000">
+                                      <i class="fa-solid fa-moped text-xl mb-1 block"></i>
+                                      <span class="text-xs font-bold">Xe Ga</span>
+                                  </button>
+                                  <button type="button" class="ai-vehicle-btn bg-white dark:bg-gray-800 border-2 border-transparent text-gray-600 dark:text-gray-400 hover:border-gray-300 rounded-xl p-3 text-center transition" data-price="170000">
+                                      <i class="fa-solid fa-plug text-xl mb-1 block"></i>
+                                      <span class="text-xs font-bold">Xe Điện</span>
+                                  </button>
+                              </div>
+                              <input type="hidden" id="ai-price-base" value="150000">
+                          </div>
 
-           <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-               <!-- Price Table -->
-               <div class="bg-white p-8 rounded-2xl shadow-lg">
-                   <h3 class="text-2xl font-bold mb-6 text-gray-800 border-b pb-3">Bảng Giá Tham Khảo</h3>
-                   <ul class="space-y-4">
-                       <li class="flex justify-between items-center">
-                           <span class="flex items-center gap-3"><i class="fa-solid fa-motorcycle text-blue-500"></i> Xe Số (Wave, Sirius)</span>
-                           <span class="font-bold text-gray-700">100k - 120k / Ngày</span>
-                       </li>
-                       <li class="flex justify-between items-center">
-                           <span class="flex items-center gap-3"><i class="fa-solid fa-motorcycle text-green-500"></i> Xe Ga (Vision, Air Blade)</span>
-                           <span class="font-bold text-gray-700">150k - 180k / Ngày</span>
-                       </li>
-                       <li class="flex justify-between items-center">
-                           <span class="flex items-center gap-3"><i class="fa-solid fa-motorcycle text-red-500"></i> Xe Côn / Tay Ga Cao Cấp</span>
-                           <span class="font-bold text-gray-700">200k - 300k / Ngày</span>
-                       </li>
-                   </ul>
-                   <p class="text-sm text-gray-500 mt-6 italic">* Giá có thể thay đổi nhẹ vào dịp Lễ Tết. Thuê theo tuần/tháng vui lòng gọi để có giá tốt nhất.</p>
-               </div>
+                          <!-- Số ngày -->
+                          <div>
+                              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 flex justify-between">
+                                  <span>Số ngày thuê</span>
+                                  <span id="ai-days-display" class="font-bold text-blue-600 dark:text-blue-400">1 ngày</span>
+                              </label>
+                              <input type="range" id="ai-days-input" min="1" max="30" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 accent-blue-600">
+                          </div>
 
-               <!-- Interactive Calculator -->
-               <div class="bg-blue-600 p-8 rounded-2xl shadow-lg text-white">
-                   <h3 class="text-2xl font-bold mb-6">Tính Toán Nhanh</h3>
-                   <form id="calculator-form" class="space-y-5">
-                       <div>
-                           <label class="block text-sm font-medium mb-2">Chọn Loại Xe</label>
-                           <select id="calc-type" class="w-full px-4 py-3 rounded-lg text-gray-800 bg-white border-0 focus:ring-2 focus:ring-blue-300">
-                               <option value="120000">Xe Số (Khoảng 120k/ngày)</option>
-                               <option value="150000">Xe Ga Cơ Bản (Khoảng 150k/ngày)</option>
-                               <option value="200000">Xe Ga Cao Cấp/Xe Côn (Khoảng 200k/ngày)</option>
-                           </select>
-                       </div>
-                       <div>
-                           <label class="block text-sm font-medium mb-2">Số Ngày Thuê</label>
-                           <input type="number" id="calc-days" min="1" max="30" value="1" class="w-full px-4 py-3 rounded-lg text-gray-800 bg-white border-0 focus:ring-2 focus:ring-blue-300">
-                       </div>
-                       <div class="bg-blue-700 p-4 rounded-lg mt-6 text-center">
-                           <p class="text-sm opacity-80 mb-1">Tổng Chi Phí Ước Tính</p>
-                           <p class="text-3xl font-bold text-yellow-300" id="calc-result">120,000 VNĐ</p>
-                       </div>
-                   </form>
-               </div>
-           </div>
-       </div>
-   </section>
+                          <!-- Action Button -->
+                          <button id="ai-calc-btn" class="w-full bg-gray-900 dark:bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-gray-800 dark:hover:bg-blue-700 transition relative overflow-hidden group">
+                              <span class="relative z-10 flex items-center justify-center gap-2">
+                                  <i class="fa-solid fa-wand-magic-sparkles"></i> Tính Toán Ngay
+                              </span>
+                          </button>
 
-   <!-- Mini App & Secure Booking Form -->
-   <section id="ung-dung" class="py-16 bg-white relative">
-       <div class="container mx-auto px-4">
-           <div class="flex flex-col lg:flex-row gap-12 max-w-6xl mx-auto">
-               
-               <!-- App Info -->
-               <div class="lg:w-1/2 flex flex-col justify-center">
-                   <span class="text-blue-600 font-bold uppercase tracking-wider text-sm mb-2">Chuyển đổi số</span>
-                   <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Trải Nghiệm Đặt Xe Qua Mini App</h2>
-                   <p class="text-gray-600 mb-6 leading-relaxed">
-                       Nhằm mang lại sự tiện lợi tối đa, chúng tôi đã phát triển nền tảng Web App. Bạn có thể dễ dàng kiểm tra tình trạng xe trống, lựa chọn mẫu xe yêu thích và đặt lịch giao xe tận nơi chỉ với vài thao tác vuốt chạm.
-                   </p>
-                   <div class="mb-8">
-                       <a href="https://thuexemaytaihanoi.github.io/app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition">
-                           Mở Web App Ngay <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i>
-                       </a>
-                   </div>
-                   <div class="flex gap-4 items-center">
-                       <div class="text-3xl text-gray-400"><i class="fa-brands fa-apple"></i></div>
-                       <div class="text-3xl text-gray-400"><i class="fa-brands fa-android"></i></div>
-                       <span class="text-sm text-gray-500">Hoạt động mượt mà trên mọi trình duyệt điện thoại.</span>
-                   </div>
-               </div>
+                          <!-- Result Area -->
+                          <div id="ai-result-area" class="hidden bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4 border border-gray-100 dark:border-gray-700 text-center mt-4 transition-all">
+                              <div id="ai-loading" class="hidden">
+                                  <i class="fa-solid fa-circle-notch fa-spin text-2xl text-blue-600 dark:text-blue-400 mb-2"></i>
+                                  <p class="text-xs text-gray-500 dark:text-gray-400">AI đang phân tích bảng giá...</p>
+                              </div>
+                              <div id="ai-final-result" class="hidden">
+                                  <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Tổng chi phí ước tính</p>
+                                  <p class="text-3xl font-extrabold text-green-600 dark:text-green-400" id="ai-total-price">150,000đ</p>
+                                  <p class="text-xs text-gray-400 mt-2">*Đã bao gồm mũ bảo hiểm & áo mưa</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
 
-               <!-- Secure Form -->
-               <div id="dat-xe" class="lg:w-1/2">
-                   <div class="bg-white border border-gray-200 rounded-2xl shadow-xl p-8 relative overflow-hidden">
-                       <div class="absolute top-0 left-0 w-full h-2 bg-blue-600"></div>
-                       <h3 class="text-2xl font-bold text-gray-800 mb-6">Gửi Yêu Cầu Đặt Xe</h3>
-                       
-                       <form id="booking-form" class="space-y-4">
-                           <!-- Honeypot for Anti-Spam (Bot trap) -->
-                           <input type="text" name="website_url" id="honeypot" class="hidden" tabindex="-1" autocomplete="off">
-                           
-                           <div>
-                               <label for="b_name" class="block text-sm font-medium text-gray-700 mb-1">Họ và Tên</label>
-                               <input type="text" id="b_name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" placeholder="Ví dụ: Nguyễn Văn A">
-                           </div>
-                           <div>
-                               <label for="b_phone" class="block text-sm font-medium text-gray-700 mb-1">Số điện thoại</label>
-                               <input type="tel" id="b_phone" required pattern="[0-9]{10,11}" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" placeholder="Ví dụ: 0913901121">
-                           </div>
-                           <div class="grid grid-cols-2 gap-4">
-                               <div>
-                                   <label for="b_date" class="block text-sm font-medium text-gray-700 mb-1">Ngày nhận xe</label>
-                                   <input type="date" id="b_date" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
-                               </div>
-                               <div>
-                                   <label for="b_time" class="block text-sm font-medium text-gray-700 mb-1">Giờ nhận</label>
-                                   <input type="time" id="b_time" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
-                               </div>
-                           </div>
-                           <div>
-                               <label for="b_note" class="block text-sm font-medium text-gray-700 mb-1">Địa chỉ giao xe / Ghi chú</label>
-                               <textarea id="b_note" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" placeholder="Nhập địa chỉ khách sạn hoặc loại xe bạn muốn thuê..."></textarea>
-                           </div>
-                           
-                           <div id="form-msg" class="hidden text-sm p-3 rounded-lg"></div>
+          </div>
+      </div>
+  </section>
 
-                           <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition flex justify-center items-center gap-2">
-                               <i class="fa-regular fa-paper-plane"></i> Gửi Yêu Cầu
-                           </button>
-                       </form>
-                   </div>
-               </div>
+  <!-- Main Content -->
+  <section id="dich-vu" class="py-16 bg-white dark:bg-darkBg">
+      <div class="container mx-auto px-4 max-w-4xl">
+         
+          <div class="text-center mb-12">
+              <span class="text-blue-600 dark:text-blue-400 font-bold tracking-wider uppercase text-sm">Về Chúng Tôi</span>
+              <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mt-2">Dịch Vụ Cho Thuê Xe Máy Tây Hồ, Hà Nội Vân Thu</h2>
+              <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded"></div>
+          </div>
 
-           </div>
-       </div>
-   </section>
+          <article class="prose prose-lg prose-blue dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 leading-relaxed">
+              <p>
+                  Chào mừng bạn đến với hệ thống <strong>cho thuê xe máy Tây Hồ, Hà Nội Vân Thu</strong>. Trong nhiều năm qua, chúng tôi tự hào là đơn vị cung cấp phương tiện di chuyển tin cậy cho hàng ngàn du khách trong nước và quốc tế khi đến thăm thủ đô. Sự kết hợp và mở rộng hệ thống mang lại mạng lưới giao nhận xe phủ sóng rộng khắp, từ khu vực phố cổ, Hồ Tây thanh bình cho đến quận Long Biên sầm uất.
+              </p>
 
-   <!-- Contact & Map -->
-   <section id="lien-he" class="py-16 bg-gray-50 border-t border-gray-200">
-       <div class="container mx-auto px-4 max-w-6xl">
-           <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-               
-               <!-- Info block -->
-               <div class="lg:col-span-1 space-y-6">
-                   <div>
-                       <h2 class="text-2xl font-bold text-gray-800 mb-4">Thông Tin Liên Hệ</h2>
-                       <div class="w-12 h-1 bg-blue-600 rounded"></div>
-                   </div>
-                   
-                   <ul class="space-y-4">
-                       <li class="flex items-start">
-                           <div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mt-1">
-                               <i class="fa-solid fa-location-dot"></i>
-                           </div>
-                           <div class="ml-4">
-                               <p class="font-bold text-gray-800">Địa chỉ</p>
-                               <p class="text-gray-600 text-sm">15 Ngõ 150, Yên Phụ, Tây Hồ, Hà Nội, Việt Nam</p>
-                           </div>
-                       </li>
-                       <li class="flex items-start">
-                           <div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mt-1">
-                               <i class="fa-solid fa-phone"></i>
-                           </div>
-                           <div class="ml-4">
-                               <p class="font-bold text-gray-800">Điện thoại</p>
-                               <a href="tel:0913901121" class="text-blue-600 font-bold hover:underline">0913 901 121</a>
-                           </div>
-                       </li>
-                       <li class="flex items-start">
-                           <div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mt-1">
-                               <i class="fa-solid fa-envelope"></i>
-                           </div>
-                           <div class="ml-4">
-                               <p class="font-bold text-gray-800">Email</p>
-                               <a href="mailto:vanthu20301@gmail.com" class="text-gray-600 text-sm hover:text-blue-600 transition">vanthu20301@gmail.com</a>
-                           </div>
-                       </li>
-                       <li class="flex items-start">
-                           <div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mt-1">
-                               <i class="fa-solid fa-clock"></i>
-                           </div>
-                           <div class="ml-4">
-                               <p class="font-bold text-gray-800">Giờ mở cửa</p>
-                               <p class="text-gray-600 text-sm">09:00 – 21:00 (Hàng ngày)</p>
-                           </div>
-                       </li>
-                   </ul>
+              <h3 class="text-2xl font-bold text-gray-800 dark:text-white mt-8 mb-4">1. Vị Trí Đắc Địa - Giao Xe Nhanh Chóng</h3>
+              <p>
+                  Trụ sở chính của chúng tôi tọa lạc tại địa chỉ <strong>15 Ngõ 150, Yên Phụ, Tây Hồ, Hà Nội</strong>. Đây là vị trí "vàng", tiếp giáp với trục đường chính đi ra sân bay Nội Bài, khu vực phố Cổ và các quận trung tâm. Nếu bạn đang ở các khách sạn quanh khu vực Hồ Tây, Ba Đình hay Hoàn Kiếm, nhân viên của Vân Thu sẽ giao xe đến tận tay bạn chỉ trong vòng 10 - 15 phút.
+              </p>
 
-                   <div class="pt-4 border-t border-gray-200">
-                       <p class="font-bold text-gray-800 mb-3">Kết nối với chúng tôi</p>
-                       <div class="flex gap-4">
-                           <a href="https://about.me/chothuexemayvanthu" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition">
-                               <i class="fa-solid fa-link"></i>
-                           </a>
-                           <a href="https://thuexemaynguyentu.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition">
-                               <i class="fa-solid fa-globe"></i>
-                           </a>
-                       </div>
-                   </div>
-               </div>
+              <h3 class="text-2xl font-bold text-gray-800 dark:text-white mt-8 mb-4">2. Đa Dạng Dòng Xe - Chất Lượng Đảm Bảo 100%</h3>
+              <p>
+                  Sự an toàn của khách hàng trên mỗi dặm đường là ưu tiên số 1 tại <strong>Cho thuê xe máy Vân Thu</strong>. 100% dàn xe của chúng tôi là các dòng xe chính hãng đến từ Honda, Yamaha, SYM,... luôn được bảo dưỡng định kỳ.
+              </p>
+              <ul class="list-disc pl-6 space-y-2 mt-4">
+                  <li><strong>Xe số siêu bền bỉ:</strong> Honda Wave Alpha, RSX, Yamaha Sirius... Nhỏ gọn, dễ luồn lách trong ngõ hẻm Hà Nội.</li>
+                  <li><strong>Xe tay ga thời trang:</strong> Honda Air Blade, Vision, Lead... Lựa chọn yêu thích để dạo phố nhẹ nhàng, cốp chứa đồ rộng.</li>
+                  <li><strong>Xe điện bảo vệ môi trường:</strong> Vận hành êm ái, phù hợp di chuyển ngắn quanh Hồ Tây và phố cổ.</li>
+              </ul>
 
-               <!-- Google Maps (Embedded) -->
-               <div class="lg:col-span-2 rounded-xl overflow-hidden shadow-md h-80 lg:h-auto min-h-[300px]">
-                   <!-- Using an iframe mapped to the provided coordinates -->
-                   <iframe
-                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.6596167664687!2d105.83680737599292!3d21.046300487173663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135aba6a5b67a15%3A0xc4f5c4015f66c0!2s15%20Ng.%20150%20P.%20Y%C3%AAn%20Ph%E1%BB%A5%2C%20Y%C3%AAn%20Ph%E1%BB%A5%2C%20T%C3%A2y%20H%E1%BB%93%2C%20H%C3%A0%20N%E1%BB%99i%2C%20Vietnam!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
-                       width="100%"
-                       height="100%"
-                       style="border:0;"
-                       allowfullscreen=""
-                       loading="lazy"
-                       referrerpolicy="no-referrer-when-downgrade"
-                       title="Bản đồ địa chỉ Cho Thuê Xe Máy Vân Thu">
-                   </iframe>
-               </div>
-           </div>
-           <div class="mt-4 text-center">
-               <a href="https://maps.app.goo.gl/1ysW4EL4oki4JbQk6?g_st=ic" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline inline-flex items-center">
-                   <i class="fa-solid fa-map-location-dot mr-2"></i> Mở trên Google Maps App
-               </a>
-           </div>
-       </div>
-   </section>
+              <h2 class="text-3xl font-bold text-gray-800 dark:text-white mt-12 mb-6">Thủ Tục Thuê Xe Tại Vân Thu Có Gì Nổi Bật?</h2>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 mb-8">
+                  <div class="bg-blue-50 dark:bg-darkCard border dark:border-gray-700 p-6 rounded-xl text-center">
+                      <i class="fa-solid fa-money-bill-wave text-3xl text-blue-600 dark:text-blue-400 mb-3"></i>
+                      <h4 class="font-bold text-gray-800 dark:text-white">Không Cần Đặt Cọc</h4>
+                      <p class="text-sm mt-2 text-gray-600 dark:text-gray-400">Đối với khách du lịch có vé khứ hồi hoặc khách lưu trú tại khách sạn uy tín.</p>
+                  </div>
+                  <div class="bg-blue-50 dark:bg-darkCard border dark:border-gray-700 p-6 rounded-xl text-center">
+                      <i class="fa-solid fa-clock text-3xl text-blue-600 dark:text-blue-400 mb-3"></i>
+                      <h4 class="font-bold text-gray-800 dark:text-white">Không Chờ Đợi Lâu</h4>
+                      <p class="text-sm mt-2 text-gray-600 dark:text-gray-400">Xác nhận hợp đồng online, ký kết nhanh chóng chỉ trong vòng 5 phút.</p>
+                  </div>
+                  <div class="bg-blue-50 dark:bg-darkCard border dark:border-gray-700 p-6 rounded-xl text-center">
+                      <i class="fa-solid fa-file-signature text-3xl text-blue-600 dark:text-blue-400 mb-3"></i>
+                      <h4 class="font-bold text-gray-800 dark:text-white">Thủ tục Đơn Giản</h4>
+                      <p class="text-sm mt-2 text-gray-600 dark:text-gray-400">Chỉ cần chuẩn bị CCCD/CMND bản gốc hoặc Hộ chiếu và Giấy phép lái xe hợp lệ.</p>
+                  </div>
+              </div>
+              <p class="mt-6 italic text-gray-500 dark:text-gray-400 text-center">
+                  *Mọi xe cho thuê tại cơ sở Vân Thu đều đi kèm 02 mũ bảo hiểm đạt chuẩn, áo mưa tiện lợi, và hỗ trợ cứu hộ 24/7. Liên hệ: <a href="tel:0913901121" class="text-blue-600 dark:text-blue-400 font-bold">0913.901.121</a>.
+              </p>
+          </article>
+      </div>
+  </section>
 
-   <!-- Footer -->
-   <footer class="bg-gray-900 text-gray-300 py-8">
-       <div class="container mx-auto px-4 text-center md:text-left flex flex-col md:flex-row justify-between items-center">
-           <div class="mb-4 md:mb-0">
-               <div class="text-xl font-bold text-white mb-2">Vân Thu & Mr Tú Motorbike</div>
-               <p class="text-sm text-gray-500">Uy tín tạo niềm tin - Giao xe tận nơi nội thành Hà Nội.</p>
-           </div>
-           <div class="text-sm text-gray-500 space-y-2">
-               <p>© 2024 Cho thuê xe máy Tây Hồ, Hà Nội Vân Thu. Đã đăng ký bản quyền.</p>
-               <div class="flex justify-center md:justify-end space-x-4">
-                   <a href="https://thuexemaytaihanoi.github.io/page/" class="hover:text-white transition">Website chính</a>
-                   <span>|</span>
-                   <a href="https://thuexemaytaihanoi.github.io/app" class="hover:text-white transition">Web App</a>
-               </div>
-           </div>
-       </div>
-   </footer>
+  <!-- Bảng Giá Tổng Quan -->
+  <section id="bang-gia" class="py-16 bg-gray-100 dark:bg-gray-800/50">
+      <div class="container mx-auto px-4 max-w-5xl">
+          <div class="text-center mb-12">
+              <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">Bảng Giá Cho Thuê</h2>
+              <p class="text-gray-600 dark:text-gray-400 mt-4">Mức giá tham khảo minh bạch, rõ ràng.</p>
+          </div>
 
-   <!-- Interactive Scripts -->
-   <script>
-       document.addEventListener('DOMContentLoaded', () => {
-           /* 1. Mobile Sidebar Logic & A11y Focus Trap */
-           const menuBtn = document.getElementById('mobile-menu-btn');
-           const closeBtn = document.getElementById('close-sidebar-btn');
-           const sidebar = document.getElementById('sidebar');
-           const overlay = document.getElementById('sidebar-overlay');
-           const links = document.querySelectorAll('.sidebar-link');
-           
-           // Focusable elements inside sidebar
-           const focusableElements = sidebar.querySelectorAll('a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])');
-           const firstFocusableElement = focusableElements[0];
-           const lastFocusableElement = focusableElements[focusableElements.length - 1];
+          <div class="max-w-3xl mx-auto bg-white dark:bg-darkCard p-8 rounded-2xl shadow-lg border dark:border-gray-700">
+              <ul class="space-y-6">
+                  <li class="flex justify-between items-center pb-4 border-b dark:border-gray-700">
+                      <span class="flex items-center gap-4 text-lg">
+                          <div class="w-12 h-12 rounded-full bg-blue-100 dark:bg-gray-800 flex items-center justify-center text-blue-600 dark:text-blue-400"><i class="fa-solid fa-motorcycle"></i></div>
+                          <span class="font-medium dark:text-white">Xe Số (Wave, Sirius)</span>
+                      </span>
+                      <span class="font-bold text-xl text-gray-800 dark:text-yellow-400">150.000đ <span class="text-sm text-gray-500 font-normal">/ ngày</span></span>
+                  </li>
+                  <li class="flex justify-between items-center pb-4 border-b dark:border-gray-700">
+                      <span class="flex items-center gap-4 text-lg">
+                          <div class="w-12 h-12 rounded-full bg-green-100 dark:bg-gray-800 flex items-center justify-center text-green-600 dark:text-green-400"><i class="fa-solid fa-plug"></i></div>
+                          <span class="font-medium dark:text-white">Xe Điện</span>
+                      </span>
+                      <span class="font-bold text-xl text-gray-800 dark:text-yellow-400">170.000đ <span class="text-sm text-gray-500 font-normal">/ ngày</span></span>
+                  </li>
+                  <li class="flex justify-between items-center">
+                      <span class="flex items-center gap-4 text-lg">
+                          <div class="w-12 h-12 rounded-full bg-purple-100 dark:bg-gray-800 flex items-center justify-center text-purple-600 dark:text-purple-400"><i class="fa-solid fa-moped"></i></div>
+                          <span class="font-medium dark:text-white">Xe Tay Ga (Vision, Air Blade)</span>
+                      </span>
+                      <span class="font-bold text-xl text-gray-800 dark:text-yellow-400">200.000đ <span class="text-sm text-gray-500 font-normal">/ ngày</span></span>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </section>
 
-           function openSidebar() {
-               sidebar.classList.remove('translate-x-full');
-               overlay.classList.remove('hidden');
-               menuBtn.setAttribute('aria-expanded', 'true');
-               sidebar.setAttribute('aria-hidden', 'false');
-               firstFocusableElement.focus();
-               document.body.style.overflow = 'hidden'; // Prevent background scrolling
-           }
+  <!-- Contact & Map -->
+  <section id="lien-he" class="py-16 bg-white dark:bg-darkBg border-t border-gray-200 dark:border-gray-800">
+      <div class="container mx-auto px-4 max-w-6xl">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+             
+              <!-- Info block -->
+              <div class="lg:col-span-1 space-y-6">
+                  <div>
+                      <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Thông Tin Liên Hệ</h2>
+                      <div class="w-12 h-1 bg-blue-600 rounded"></div>
+                  </div>
+                 
+                  <ul class="space-y-4">
+                      <li class="flex items-start">
+                          <div class="flex-shrink-0 w-10 h-10 bg-blue-50 dark:bg-gray-800 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400 mt-1">
+                              <i class="fa-solid fa-location-dot"></i>
+                          </div>
+                          <div class="ml-4">
+                              <p class="font-bold text-gray-800 dark:text-gray-200">Địa chỉ</p>
+                              <p class="text-gray-600 dark:text-gray-400 text-sm">15 Ngõ 150, Yên Phụ, Tây Hồ, Hà Nội</p>
+                          </div>
+                      </li>
+                      <li class="flex items-start">
+                          <div class="flex-shrink-0 w-10 h-10 bg-blue-50 dark:bg-gray-800 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400 mt-1">
+                              <i class="fa-solid fa-phone"></i>
+                          </div>
+                          <div class="ml-4">
+                              <p class="font-bold text-gray-800 dark:text-gray-200">Điện thoại</p>
+                              <a href="tel:0913901121" class="text-blue-600 dark:text-blue-400 font-bold hover:underline">0913 901 121</a>
+                          </div>
+                      </li>
+                      <li class="flex items-start">
+                          <div class="flex-shrink-0 w-10 h-10 bg-blue-50 dark:bg-gray-800 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400 mt-1">
+                              <i class="fa-solid fa-envelope"></i>
+                          </div>
+                          <div class="ml-4">
+                              <p class="font-bold text-gray-800 dark:text-gray-200">Email</p>
+                              <a href="mailto:vanthu20301@gmail.com" class="text-gray-600 dark:text-gray-400 text-sm hover:text-blue-600 transition">vanthu20301@gmail.com</a>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
 
-           function closeSidebar() {
-               sidebar.classList.add('translate-x-full');
-               overlay.classList.add('hidden');
-               menuBtn.setAttribute('aria-expanded', 'false');
-               sidebar.setAttribute('aria-hidden', 'true');
-               menuBtn.focus();
-               document.body.style.overflow = '';
-           }
+              <!-- Google Maps -->
+              <div class="lg:col-span-2 rounded-xl overflow-hidden shadow-md border dark:border-gray-700 h-80 lg:h-auto min-h-[300px]">
+                  <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.6596167664687!2d105.83680737599292!3d21.046300487173663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135aba6a5b67a15%3A0xc4f5c4015f66c0!2s15%20Ng.%20150%20P.%20Y%C3%AAn%20Ph%E1%BB%A5%2C%20Y%C3%AAn%20Ph%E1%BB%A5%2C%20T%C3%A2y%20H%E1%BB%93%2C%20H%C3%A0%20N%E1%BB%99i%2C%20Vietnam!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+                      width="100%"
+                      height="100%"
+                      style="border:0; filter: invert(0);" class="dark-map-adjust"
+                      allowfullscreen=""
+                      loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade"
+                      title="Bản đồ">
+                  </iframe>
+                  <style>
+                      /* Simple map dimming for dark mode */
+                      html.dark .dark-map-adjust { filter: invert(90%) hue-rotate(180deg); }
+                  </style>
+              </div>
+          </div>
+      </div>
+  </section>
 
-           menuBtn.addEventListener('click', openSidebar);
-           closeBtn.addEventListener('click', closeSidebar);
-           overlay.addEventListener('click', closeSidebar);
-           links.forEach(link => link.addEventListener('click', closeSidebar));
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-10 border-t border-gray-800">
+      <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div class="text-center md:text-left">
+              <div class="text-xl font-bold text-white mb-2">
+                  <a href="https://thuexemaytaihanoi.github.io/page/" class="hover:text-blue-400 transition">Cho thuê xe máy - Vân Thu</a>
+              </div>
+              <p class="text-sm text-gray-400">Uy tín tạo niềm tin - Giao xe tận nơi nội thành Hà Nội.</p>
+          </div>
+          <div class="text-sm text-gray-400 text-center md:text-right">
+              <p class="mb-2">© 2024 Cho thuê xe máy Tây Hồ, Hà Nội Vân Thu. All rights reserved.</p>
+              <div class="flex justify-center md:justify-end space-x-4">
+                  <a href="https://thuexemaytaihanoi.github.io/page/" class="hover:text-white transition">Trang chủ</a>
+                  <span>|</span>
+                  <a href="https://thuexemaytaihanoi.github.io/app" class="hover:text-white transition">Web App</a>
+              </div>
+          </div>
+      </div>
+  </footer>
 
-           // Focus Trap Logic
-           sidebar.addEventListener('keydown', function(e) {
-               const isTabPressed = (e.key === 'Tab' || e.keyCode === 9);
-               if (!isTabPressed) {
-                   if (e.key === 'Escape') closeSidebar();
-                   return;
-               }
-               if (e.shiftKey) { // Shift + Tab
-                   if (document.activeElement === firstFocusableElement) {
-                       lastFocusableElement.focus();
-                       e.preventDefault();
-                   }
-               } else { // Tab
-                   if (document.activeElement === lastFocusableElement) {
-                       firstFocusableElement.focus();
-                       e.preventDefault();
-                   }
-               }
-           });
+  <!-- Interactive Scripts -->
+  <script>
+      document.addEventListener('DOMContentLoaded', () => {
+         
+          /* --- 1. Dark/Light Mode Toggle --- */
+          const themeToggleBtn = document.getElementById('theme-toggle');
+          const htmlTag = document.documentElement;
+         
+          // Check local storage or system preference on load
+          if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+              htmlTag.classList.add('dark');
+          } else {
+              htmlTag.classList.remove('dark');
+          }
 
-           /* 2. Pricing Calculator Logic */
-           const calcType = document.getElementById('calc-type');
-           const calcDays = document.getElementById('calc-days');
-           const calcResult = document.getElementById('calc-result');
+          themeToggleBtn.addEventListener('click', function() {
+              if (htmlTag.classList.contains('dark')) {
+                  htmlTag.classList.remove('dark');
+                  localStorage.setItem('color-theme', 'light');
+              } else {
+                  htmlTag.classList.add('dark');
+                  localStorage.setItem('color-theme', 'dark');
+              }
+          });
 
-           function updatePrice() {
-               const pricePerDay = parseInt(calcType.value);
-               let days = parseInt(calcDays.value) || 1;
-               if(days < 1) days = 1;
-               
-               let total = pricePerDay * days;
-               // Simple discount logic: > 3 days = 5% off, > 7 days = 10% off
-               if (days > 7) total = total * 0.9;
-               else if (days > 3) total = total * 0.95;
+          /* --- 2. Mobile Sidebar & Menu Logic --- */
+          const menuBtn = document.getElementById('mobile-menu-btn');
+          const closeBtn = document.getElementById('close-sidebar-btn');
+          const sidebar = document.getElementById('sidebar');
+          const overlay = document.getElementById('sidebar-overlay');
+          const mobileDichVuBtn = document.getElementById('mobile-dichvu-btn');
+          const mobileDichVuMenu = document.getElementById('mobile-dichvu-menu');
+          const mobileDichVuIcon = document.getElementById('mobile-dichvu-icon');
 
-               calcResult.innerText = total.toLocaleString('vi-VN') + ' VNĐ';
-           }
+          function openSidebar() {
+              sidebar.classList.remove('translate-x-full');
+              overlay.classList.remove('hidden');
+              document.body.style.overflow = 'hidden';
+          }
 
-           calcType.addEventListener('change', updatePrice);
-           calcDays.addEventListener('input', updatePrice);
+          function closeSidebar() {
+              sidebar.classList.add('translate-x-full');
+              overlay.classList.add('hidden');
+              document.body.style.overflow = '';
+          }
 
-           /* 3. Secure Booking Form (Honeypot + DOMPurify) */
-           const form = document.getElementById('booking-form');
-           const formMsg = document.getElementById('form-msg');
+          menuBtn.addEventListener('click', openSidebar);
+          closeBtn.addEventListener('click', closeSidebar);
+          overlay.addEventListener('click', closeSidebar);
 
-           form.addEventListener('submit', function(e) {
-               e.preventDefault();
-               
-               // Anti-spam: Check honeypot
-               const honeypot = document.getElementById('honeypot').value;
-               if (honeypot !== "") {
-                   console.warn("Spam bot detected!");
-                   return; // Silently fail for bots
-               }
+          // Mobile Accordion for Dịch Vụ
+          mobileDichVuBtn.addEventListener('click', () => {
+              mobileDichVuMenu.classList.toggle('hidden');
+              mobileDichVuMenu.classList.toggle('flex');
+              if(mobileDichVuMenu.classList.contains('hidden')){
+                  mobileDichVuIcon.style.transform = 'rotate(0deg)';
+              } else {
+                  mobileDichVuIcon.style.transform = 'rotate(180deg)';
+              }
+          });
 
-               // Security: Sanitize inputs using DOMPurify
-               const rawName = document.getElementById('b_name').value;
-               const rawNote = document.getElementById('b_note').value;
-               
-               // Ensure DOMPurify is loaded
-               if (typeof DOMPurify !== 'undefined') {
-                   const cleanName = DOMPurify.sanitize(rawName);
-                   const cleanNote = DOMPurify.sanitize(rawNote);
-                   
-                   // Simulate API Call / Success
-                   formMsg.classList.remove('hidden', 'bg-red-100', 'text-red-700');
-                   formMsg.classList.add('bg-green-100', 'text-green-700');
-                   formMsg.innerHTML = `<i class="fa-solid fa-circle-check"></i> Cảm ơn <b>${cleanName}</b>! Yêu cầu đặt xe của bạn đã được ghi nhận. Chúng tôi sẽ gọi lại ngay.`;
-                   
-                   // Reset form
-                   form.reset();
-                   setTimeout(() => { formMsg.classList.add('hidden'); }, 5000);
-               } else {
-                   alert("Có lỗi xảy ra với hệ thống bảo mật. Vui lòng tải lại trang.");
-               }
-           });
-       });
-   </script>
+          /* --- 3. AI Estimator Logic --- */
+          const vehicleBtns = document.querySelectorAll('.ai-vehicle-btn');
+          const priceBaseInput = document.getElementById('ai-price-base');
+          const daysInput = document.getElementById('ai-days-input');
+          const daysDisplay = document.getElementById('ai-days-display');
+          const calcBtn = document.getElementById('ai-calc-btn');
+          const resultArea = document.getElementById('ai-result-area');
+          const loadingDiv = document.getElementById('ai-loading');
+          const finalResultDiv = document.getElementById('ai-final-result');
+          const totalPriceEl = document.getElementById('ai-total-price');
 
-   <!-- Yêu cầu nhúng Script MotoAI Final -->
-   <script src="https://thuexemayhanoi.github.io/shop/motoai_v40_bm25plus_final.js" defer></script>
+          // Handle vehicle selection
+          vehicleBtns.forEach(btn => {
+              btn.addEventListener('click', function() {
+                  // Reset all buttons styling
+                  vehicleBtns.forEach(b => {
+                      b.classList.remove('bg-blue-50', 'dark:bg-gray-700', 'border-blue-500', 'text-blue-700', 'dark:text-blue-300');
+                      b.classList.add('bg-white', 'dark:bg-gray-800', 'border-transparent', 'text-gray-600', 'dark:text-gray-400');
+                  });
+                  // Active current button
+                  this.classList.remove('bg-white', 'dark:bg-gray-800', 'border-transparent', 'text-gray-600', 'dark:text-gray-400');
+                  this.classList.add('bg-blue-50', 'dark:bg-gray-700', 'border-blue-500', 'text-blue-700', 'dark:text-blue-300');
+                 
+                  priceBaseInput.value = this.getAttribute('data-price');
+                  // Hide result if changed to recalculate
+                  resultArea.classList.add('hidden');
+              });
+          });
+
+          // Handle days slider
+          daysInput.addEventListener('input', function() {
+              daysDisplay.textContent = this.value + ' ngày';
+              resultArea.classList.add('hidden');
+          });
+
+          // Handle calculate button with AI simulation
+          calcBtn.addEventListener('click', function() {
+              resultArea.classList.remove('hidden');
+              loadingDiv.classList.remove('hidden');
+              finalResultDiv.classList.add('hidden');
+             
+              // Disable button during calculation
+              calcBtn.disabled = true;
+              calcBtn.classList.add('opacity-70');
+
+              // Simulate AI thinking time (800ms)
+              setTimeout(() => {
+                  const basePrice = parseInt(priceBaseInput.value);
+                  const days = parseInt(daysInput.value);
+                  let total = basePrice * days;
+                 
+                  // Formatter
+                  totalPriceEl.textContent = new Intl.NumberFormat('vi-VN').format(total) + 'đ';
+                 
+                  loadingDiv.classList.add('hidden');
+                  finalResultDiv.classList.remove('hidden');
+                 
+                  // Re-enable
+                  calcBtn.disabled = false;
+                  calcBtn.classList.remove('opacity-70');
+              }, 800);
+          });
+      });
+  </script>
+
+  <!-- External Scripts -->
+  <script src="https://thuexemayhanoi.github.io/shop/motoai_v40_bm25plus_final.js" defer></script>
 </body>
 </html>
