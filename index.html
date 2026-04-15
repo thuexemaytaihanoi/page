@@ -23,8 +23,8 @@ tailwind.config = {
     theme: {
         extend: {
             colors: {
-                darkBg: '#111827',
-                darkCard: '#1f2937',
+                darkBg: '#0f172a', /* Nền tối chuyển sang tone slate sâu hơn */
+                darkCard: '#1e293b',
             },
             animation: {
                 'wiggle-fast': 'wiggle 1s ease-in-out infinite',
@@ -86,10 +86,10 @@ tailwind.config = {
 <style>
 html { scroll-behavior: smooth; }
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #f1f1f1; }
-html.dark ::-webkit-scrollbar-track { background: #1f2937; }
-::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #2563eb; }
+::-webkit-scrollbar-track { background: #f8fafc; }
+html.dark ::-webkit-scrollbar-track { background: #1e293b; }
+::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #4f46e5; }
 
 /* 1. Ultra Fade-in Effect */
 .ultra-fade-in {
@@ -100,22 +100,34 @@ html.dark ::-webkit-scrollbar-track { background: #1f2937; }
    100% { opacity: 1; transform: translateY(0); }
 }
 
+/* Intersection Observer Motion - Fade In Up */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
+}
+.reveal-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .ai-pulse {
    animation: pulse-shadow 1.5s infinite;
 }
 @keyframes pulse-shadow {
-   0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
-   70% { box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
-   100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+   0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7); }
+   70% { box-shadow: 0 0 0 15px rgba(99, 102, 241, 0); }
+   100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
 }
 
 .ultra-pulse-glow {
    animation: ultra-glow 2s infinite;
 }
 @keyframes ultra-glow {
-   0% { box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.7); transform: scale(1); }
-   50% { box-shadow: 0 0 20px 10px rgba(79, 70, 229, 0.4); transform: scale(1.05); }
-   100% { box-shadow: 0 0 0 0 rgba(79, 70, 229, 0); transform: scale(1); }
+   0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7); transform: scale(1); }
+   50% { box-shadow: 0 0 20px 10px rgba(139, 92, 246, 0.4); transform: scale(1.05); }
+   100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); transform: scale(1); }
 }
 
 /* Accordion Transition */
@@ -129,79 +141,79 @@ html.dark ::-webkit-scrollbar-track { background: #1f2937; }
 }
 </style>
 </head>
-<body class="bg-gray-50 dark:bg-darkBg text-gray-800 dark:text-gray-200 font-sans antialiased overflow-x-hidden transition-colors duration-300 opacity-0 ultra-fade-in">
+<body class="bg-slate-50 dark:bg-darkBg text-slate-800 dark:text-gray-200 font-sans antialiased overflow-x-hidden transition-colors duration-300 opacity-0 ultra-fade-in">
 
-<header class="bg-white/90 dark:bg-darkCard/90 backdrop-blur-md shadow-sm border-b border-gray-100 dark:border-gray-800 fixed w-full top-0 z-50 transition-all duration-300">
+<header class="bg-white/90 dark:bg-darkCard/90 backdrop-blur-md border-b-[0.5px] border-slate-200/60 dark:border-slate-800 fixed w-full top-0 z-50 transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
    <div class="flex justify-between items-center h-20">
        <div class="flex-shrink-0 flex items-center">
-           <a href="https://thuexemaytaihanoi.github.io/page/" class="text-2xl font-extrabold text-blue-600 dark:text-blue-400 tracking-tight flex items-center gap-2">
-               <img src="https://raw.githubusercontent.com/thuexemaytaihanoi/page/refs/heads/main/IMG_1402.png" alt="Logo Vân Thu" class="h-10 w-10 object-cover rounded-full border-2 border-blue-100 dark:border-blue-800 shadow-sm">
+           <a href="https://thuexemaytaihanoi.github.io/page/" class="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 tracking-tight flex items-center gap-2">
+               <img src="https://raw.githubusercontent.com/thuexemaytaihanoi/page/refs/heads/main/IMG_1402.png" alt="Logo Vân Thu" class="h-10 w-10 object-cover rounded-full border-[0.5px] border-indigo-100 dark:border-indigo-800 shadow-sm">
                Vân Thu
            </a>
        </div>
 
-       <nav class="hidden lg:flex lg:space-x-4 xl:space-x-6 items-center text-sm xl:text-base">
-           <a href="https://thuexemaytaihanoi.github.io/page/" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition flex items-center gap-1.5"><i class="fa-solid fa-house text-sm"></i> Trang Chủ</a>
-           <a href="gioithieu.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition flex items-center gap-1.5"><i class="fa-solid fa-info-circle text-sm"></i> Giới Thiệu</a>
+       <nav class="hidden lg:flex lg:space-x-4 xl:space-x-6 items-center text-sm xl:text-base tracking-tight">
+           <a href="https://thuexemaytaihanoi.github.io/page/" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition flex items-center gap-1.5"><i class="fa-solid fa-house text-sm"></i> Trang Chủ</a>
+           <a href="gioithieu.html" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition flex items-center gap-1.5"><i class="fa-solid fa-info-circle text-sm"></i> Giới Thiệu</a>
    
            <div class="relative group">
-               <button class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition flex items-center gap-1.5 py-4">
+               <button class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition flex items-center gap-1.5 py-4">
                    <i class="fa-solid fa-list-ul text-sm"></i> Dịch Vụ <i class="fa-solid fa-chevron-down text-xs ml-0.5"></i>
                </button>
-               <div class="absolute left-0 mt-0 hidden group-hover:block bg-white dark:bg-darkCard shadow-xl border border-gray-100 dark:border-gray-700 rounded-2xl p-4 w-[650px] z-50 transition-all duration-300">
+               <div class="absolute left-0 mt-0 hidden group-hover:block bg-white dark:bg-darkCard shadow-[0_10px_40px_rgba(0,0,0,0.06)] border-[0.5px] border-slate-100 dark:border-slate-700 rounded-2xl p-4 w-[650px] z-50 transition-all duration-300">
                    <div class="grid grid-cols-3 gap-y-3 gap-x-4">
-                       <a href="thuengay.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-calendar-day w-4 text-center"></i> Thuê Ngày</a>
-                       <a href="thuetuan.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-calendar-week w-4 text-center"></i> Thuê Tuần</a>
-                       <a href="thuethang.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-calendar-alt w-4 text-center"></i> Thuê Tháng</a>
+                       <a href="thuengay.html" class="text-sm text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-calendar-day w-4 text-center"></i> Thuê Ngày</a>
+                       <a href="thuetuan.html" class="text-sm text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-calendar-week w-4 text-center"></i> Thuê Tuần</a>
+                       <a href="thuethang.html" class="text-sm text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-calendar-alt w-4 text-center"></i> Thuê Tháng</a>
                  
-                       <a href="long%20bien.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-map-location-dot w-4 text-center text-red-500"></i> Long Biên</a>
-                       <a href="hoankiem.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-map-location-dot w-4 text-center text-red-500"></i> Hoàn Kiếm</a>
-                       <a href="tayho.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-map-location-dot w-4 text-center text-red-500"></i> Tây Hồ</a>
-                       <a href="phoco.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-map-location-dot w-4 text-center text-red-500"></i> Phố Cổ</a>
-                       <a href="badinh.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-map-location-dot w-4 text-center text-red-500"></i> Ba Đình</a>
-                       <a href="dongda.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-map-location-dot w-4 text-center text-red-500"></i> Đống Đa</a>
-                       <a href="haibatrung.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-map-location-dot w-4 text-center text-red-500"></i> Hai Bà Trưng</a>
-                       <a href="gialam.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-map-location-dot w-4 text-center text-red-500"></i> Gia Lâm</a>
+                       <a href="long%20bien.html" class="text-sm text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-map-location-dot w-4 text-center text-red-500"></i> Long Biên</a>
+                       <a href="hoankiem.html" class="text-sm text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-map-location-dot w-4 text-center text-red-500"></i> Hoàn Kiếm</a>
+                       <a href="tayho.html" class="text-sm text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-map-location-dot w-4 text-center text-red-500"></i> Tây Hồ</a>
+                       <a href="phoco.html" class="text-sm text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-map-location-dot w-4 text-center text-red-500"></i> Phố Cổ</a>
+                       <a href="badinh.html" class="text-sm text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-map-location-dot w-4 text-center text-red-500"></i> Ba Đình</a>
+                       <a href="dongda.html" class="text-sm text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-map-location-dot w-4 text-center text-red-500"></i> Đống Đa</a>
+                       <a href="haibatrung.html" class="text-sm text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-map-location-dot w-4 text-center text-red-500"></i> Hai Bà Trưng</a>
+                       <a href="gialam.html" class="text-sm text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-map-location-dot w-4 text-center text-red-500"></i> Gia Lâm</a>
                  
-                       <a href="thutuc.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-file-signature w-4 text-center text-green-500"></i> Thủ Tục</a>
-                       <a href="banggia.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-tags w-4 text-center text-green-500"></i> Bảng Giá</a>
-                       <a href="huongdan.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-book w-4 text-center text-blue-500"></i> Hướng Dẫn</a>
-                       <a href="loaixe.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-motorcycle w-4 text-center text-blue-500"></i> Loại Xe</a>
-                       <a href="kinhnghiem.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-lightbulb w-4 text-center text-yellow-500"></i> Kinh Nghiệm</a>
-                       <a href="khuyenmai.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-gift w-4 text-center text-purple-500"></i> Khuyến Mãi</a>
+                       <a href="thutuc.html" class="text-sm text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-file-signature w-4 text-center text-emerald-500"></i> Thủ Tục</a>
+                       <a href="banggia.html" class="text-sm text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-tags w-4 text-center text-emerald-500"></i> Bảng Giá</a>
+                       <a href="huongdan.html" class="text-sm text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-book w-4 text-center text-indigo-500"></i> Hướng Dẫn</a>
+                       <a href="loaixe.html" class="text-sm text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-motorcycle w-4 text-center text-indigo-500"></i> Loại Xe</a>
+                       <a href="kinhnghiem.html" class="text-sm text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-lightbulb w-4 text-center text-amber-500"></i> Kinh Nghiệm</a>
+                       <a href="khuyenmai.html" class="text-sm text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800 p-2 rounded-xl flex items-center gap-2 transition"><i class="fa-solid fa-gift w-4 text-center text-violet-500"></i> Khuyến Mãi</a>
                    </div>
                </div>
            </div>
 
-           <a href="baomat.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-sm"></i> Bảo Mật</a>
-           <a href="dieukhoan.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition flex items-center gap-1.5"><i class="fa-solid fa-file-contract text-sm"></i> Điều Khoản</a>
-           <a href="Faq.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition flex items-center gap-1.5"><i class="fa-solid fa-circle-question text-sm"></i> Câu Hỏi</a>
-           <a href="lienhe.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition flex items-center gap-1.5"><i class="fa-solid fa-envelope text-sm"></i> Liên Hệ</a>
+           <a href="baomat.html" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-sm"></i> Bảo Mật</a>
+           <a href="dieukhoan.html" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition flex items-center gap-1.5"><i class="fa-solid fa-file-contract text-sm"></i> Điều Khoản</a>
+           <a href="Faq.html" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition flex items-center gap-1.5"><i class="fa-solid fa-circle-question text-sm"></i> Câu Hỏi</a>
+           <a href="lienhe.html" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition flex items-center gap-1.5"><i class="fa-solid fa-envelope text-sm"></i> Liên Hệ</a>
        </nav>
 
        <div class="flex items-center gap-4">
-           <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+           <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 dark:bg-slate-800 border-[0.5px] border-slate-200 dark:border-slate-700">
                <span class="relative flex h-2.5 w-2.5">
-                 <span class="status-ping-js animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-400 opacity-75"></span>
-                 <span class="status-dot-js relative inline-flex rounded-full h-2.5 w-2.5 bg-gray-500"></span>
+                 <span class="status-ping-js animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-400 opacity-75"></span>
+                 <span class="status-dot-js relative inline-flex rounded-full h-2.5 w-2.5 bg-slate-500"></span>
                </span>
-               <span class="status-text-js text-sm font-semibold text-gray-600 dark:text-gray-300">Đang cập nhật...</span>
+               <span class="status-text-js text-sm font-semibold text-slate-600 dark:text-slate-300 tracking-tight">Đang cập nhật...</span>
            </div>
 
-           <button id="theme-toggle" class="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-yellow-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+           <button id="theme-toggle" class="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-yellow-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
                <i class="fa-solid fa-moon dark:hidden"></i>
                <i class="fa-solid fa-sun hidden dark:block"></i>
            </button>
 
            <div class="hidden md:flex">
-               <a href="tel:0913901121" class="bg-blue-600 text-white px-5 py-2.5 rounded-full font-bold hover:bg-blue-700 shadow-lg shadow-blue-500/30 transition transform hover:-translate-y-0.5 flex items-center">
+               <a href="tel:0913901121" class="bg-indigo-600 text-white px-5 py-2.5 rounded-full font-bold hover:bg-indigo-700 shadow-lg shadow-indigo-500/20 transition-all transform hover:-translate-y-0.5 flex items-center tracking-tight">
                    <i class="fa-solid fa-phone mr-2"></i>0913.901.121
                </a>
            </div>
 
            <div class="lg:hidden flex items-center">
-               <button id="mobile-menu-btn" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 focus:outline-none p-2" aria-expanded="false" aria-controls="sidebar">
+               <button id="mobile-menu-btn" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 focus:outline-none p-2" aria-expanded="false" aria-controls="sidebar">
                    <i class="fa-solid fa-bars text-2xl"></i>
                </button>
            </div>
@@ -215,147 +227,147 @@ html.dark ::-webkit-scrollbar-track { background: #1f2937; }
 <aside id="sidebar" class="fixed top-0 right-0 h-[100dvh] w-72 bg-white dark:bg-darkCard shadow-2xl z-[60] transform translate-x-full transition-transform duration-300 ease-in-out" aria-hidden="true">
 <div class="h-full overflow-y-auto p-5 pb-20"> 
    <div class="flex justify-between items-center mb-6">
-       <div class="text-xl font-bold text-blue-600 dark:text-blue-400 flex items-center gap-2">
+       <div class="text-xl font-bold text-indigo-600 dark:text-indigo-400 flex items-center gap-2">
            <img src="https://raw.githubusercontent.com/thuexemaytaihanoi/page/refs/heads/main/IMG_1402.png" alt="Logo" class="w-8 h-8 rounded-full object-cover"> Menu
        </div>
-       <button id="close-sidebar-btn" class="text-gray-500 hover:text-red-500 p-2 bg-gray-100 dark:bg-gray-800 rounded-full">
+       <button id="close-sidebar-btn" class="text-slate-500 hover:text-red-500 p-2 bg-slate-100 dark:bg-slate-800 rounded-full">
            <i class="fa-solid fa-xmark text-xl"></i>
        </button>
    </div>
  
-   <div class="flex items-center gap-3 mb-6 p-3 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-sm">
+   <div class="flex items-center gap-3 mb-6 p-3 rounded-xl bg-slate-50 dark:bg-slate-800 border-[0.5px] border-slate-100 dark:border-slate-700 shadow-sm">
        <span class="relative flex h-3 w-3">
-         <span class="status-ping-js animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-400 opacity-75"></span>
-         <span class="status-dot-js relative inline-flex rounded-full h-3 w-3 bg-gray-500"></span>
+         <span class="status-ping-js animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-400 opacity-75"></span>
+         <span class="status-dot-js relative inline-flex rounded-full h-3 w-3 bg-slate-500"></span>
        </span>
-       <span class="status-text-js text-sm font-bold text-gray-700 dark:text-gray-300">Đang cập nhật...</span>
+       <span class="status-text-js text-sm font-bold text-slate-700 dark:text-slate-300 tracking-tight">Đang cập nhật...</span>
    </div>
 
-   <nav class="flex flex-col space-y-2">
-       <a href="https://thuexemaytaihanoi.github.io/page/" class="sidebar-link py-3 text-lg font-medium text-gray-700 dark:text-gray-200 border-b dark:border-gray-700/50 flex items-center gap-3 hover:text-blue-600 transition"><i class="fa-solid fa-house w-5"></i> Trang Chủ</a>
-       <a href="gioithieu.html" class="sidebar-link py-3 text-lg font-medium text-gray-700 dark:text-gray-200 border-b dark:border-gray-700/50 flex items-center gap-3 hover:text-blue-600 transition"><i class="fa-solid fa-info-circle w-5"></i> Giới Thiệu</a>
+   <nav class="flex flex-col space-y-2 tracking-tight">
+       <a href="https://thuexemaytaihanoi.github.io/page/" class="sidebar-link py-3 text-lg font-medium text-slate-700 dark:text-slate-200 border-b dark:border-slate-700/50 flex items-center gap-3 hover:text-indigo-600 transition"><i class="fa-solid fa-house w-5"></i> Trang Chủ</a>
+       <a href="gioithieu.html" class="sidebar-link py-3 text-lg font-medium text-slate-700 dark:text-slate-200 border-b dark:border-slate-700/50 flex items-center gap-3 hover:text-indigo-600 transition"><i class="fa-solid fa-info-circle w-5"></i> Giới Thiệu</a>
 
-       <div class="border-b dark:border-gray-700/50 py-2">
-           <button id="mobile-dichvu-btn" class="w-full flex justify-between items-center py-1 text-lg font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 transition">
+       <div class="border-b dark:border-slate-700/50 py-2">
+           <button id="mobile-dichvu-btn" class="w-full flex justify-between items-center py-1 text-lg font-medium text-slate-700 dark:text-slate-200 hover:text-indigo-600 transition">
                <span class="flex items-center gap-3"><i class="fa-solid fa-list-ul w-5"></i> Dịch Vụ</span>
                <i class="fa-solid fa-chevron-down text-sm transition-transform" id="mobile-dichvu-icon"></i>
            </button>
            <div id="mobile-dichvu-menu" class="hidden flex-col pl-8 mt-2 space-y-3 pb-2">
-                <a href="thuengay.html" class="text-gray-600 dark:text-gray-400 flex items-center gap-2"><i class="fa-solid fa-calendar-day w-4"></i> Thuê Ngày</a>
-                <a href="thuetuan.html" class="text-gray-600 dark:text-gray-400 flex items-center gap-2"><i class="fa-solid fa-calendar-week w-4"></i> Thuê Tuần</a>
-                <a href="thuethang.html" class="text-gray-600 dark:text-gray-400 flex items-center gap-2"><i class="fa-solid fa-calendar-alt w-4"></i> Thuê Tháng</a>
-                <a href="long%20bien.html" class="text-gray-600 dark:text-gray-400 flex items-center gap-2"><i class="fa-solid fa-map-location-dot w-4 text-red-500"></i> Long Biên</a>
-                <a href="hoankiem.html" class="text-gray-600 dark:text-gray-400 flex items-center gap-2"><i class="fa-solid fa-map-location-dot w-4 text-red-500"></i> Hoàn Kiếm</a>
-                <a href="tayho.html" class="text-gray-600 dark:text-gray-400 flex items-center gap-2"><i class="fa-solid fa-map-location-dot w-4 text-red-500"></i> Tây Hồ</a>
-                <a href="phoco.html" class="text-gray-600 dark:text-gray-400 flex items-center gap-2"><i class="fa-solid fa-map-location-dot w-4 text-red-500"></i> Phố Cổ</a>
-                <a href="badinh.html" class="text-gray-600 dark:text-gray-400 flex items-center gap-2"><i class="fa-solid fa-map-location-dot w-4 text-red-500"></i> Ba Đình</a>
-                <a href="dongda.html" class="text-gray-600 dark:text-gray-400 flex items-center gap-2"><i class="fa-solid fa-map-location-dot w-4 text-red-500"></i> Đống Đa</a>
-                <a href="haibatrung.html" class="text-gray-600 dark:text-gray-400 flex items-center gap-2"><i class="fa-solid fa-map-location-dot w-4 text-red-500"></i> Hai Bà Trưng</a>
-                <a href="gialam.html" class="text-gray-600 dark:text-gray-400 flex items-center gap-2"><i class="fa-solid fa-map-location-dot w-4 text-red-500"></i> Gia Lâm</a>
-                <a href="thutuc.html" class="text-gray-600 dark:text-gray-400 flex items-center gap-2"><i class="fa-solid fa-file-signature w-4 text-green-500"></i> Thủ Tục</a>
-                <a href="banggia.html" class="text-gray-600 dark:text-gray-400 flex items-center gap-2"><i class="fa-solid fa-tags w-4 text-green-500"></i> Bảng Giá</a>
-                <a href="huongdan.html" class="text-gray-600 dark:text-gray-400 flex items-center gap-2"><i class="fa-solid fa-book w-4 text-blue-500"></i> Hướng Dẫn</a>
-                <a href="loaixe.html" class="text-gray-600 dark:text-gray-400 flex items-center gap-2"><i class="fa-solid fa-motorcycle w-4 text-blue-500"></i> Loại Xe</a>
-                <a href="kinhnghiem.html" class="text-gray-600 dark:text-gray-400 flex items-center gap-2"><i class="fa-solid fa-lightbulb w-4 text-yellow-500"></i> Kinh Nghiệm</a>
-                <a href="khuyenmai.html" class="text-gray-600 dark:text-gray-400 flex items-center gap-2"><i class="fa-solid fa-gift w-4 text-purple-500"></i> Khuyến Mãi</a>
+                <a href="thuengay.html" class="text-slate-600 dark:text-slate-400 flex items-center gap-2"><i class="fa-solid fa-calendar-day w-4"></i> Thuê Ngày</a>
+                <a href="thuetuan.html" class="text-slate-600 dark:text-slate-400 flex items-center gap-2"><i class="fa-solid fa-calendar-week w-4"></i> Thuê Tuần</a>
+                <a href="thuethang.html" class="text-slate-600 dark:text-slate-400 flex items-center gap-2"><i class="fa-solid fa-calendar-alt w-4"></i> Thuê Tháng</a>
+                <a href="long%20bien.html" class="text-slate-600 dark:text-slate-400 flex items-center gap-2"><i class="fa-solid fa-map-location-dot w-4 text-red-500"></i> Long Biên</a>
+                <a href="hoankiem.html" class="text-slate-600 dark:text-slate-400 flex items-center gap-2"><i class="fa-solid fa-map-location-dot w-4 text-red-500"></i> Hoàn Kiếm</a>
+                <a href="tayho.html" class="text-slate-600 dark:text-slate-400 flex items-center gap-2"><i class="fa-solid fa-map-location-dot w-4 text-red-500"></i> Tây Hồ</a>
+                <a href="phoco.html" class="text-slate-600 dark:text-slate-400 flex items-center gap-2"><i class="fa-solid fa-map-location-dot w-4 text-red-500"></i> Phố Cổ</a>
+                <a href="badinh.html" class="text-slate-600 dark:text-slate-400 flex items-center gap-2"><i class="fa-solid fa-map-location-dot w-4 text-red-500"></i> Ba Đình</a>
+                <a href="dongda.html" class="text-slate-600 dark:text-slate-400 flex items-center gap-2"><i class="fa-solid fa-map-location-dot w-4 text-red-500"></i> Đống Đa</a>
+                <a href="haibatrung.html" class="text-slate-600 dark:text-slate-400 flex items-center gap-2"><i class="fa-solid fa-map-location-dot w-4 text-red-500"></i> Hai Bà Trưng</a>
+                <a href="gialam.html" class="text-slate-600 dark:text-slate-400 flex items-center gap-2"><i class="fa-solid fa-map-location-dot w-4 text-red-500"></i> Gia Lâm</a>
+                <a href="thutuc.html" class="text-slate-600 dark:text-slate-400 flex items-center gap-2"><i class="fa-solid fa-file-signature w-4 text-emerald-500"></i> Thủ Tục</a>
+                <a href="banggia.html" class="text-slate-600 dark:text-slate-400 flex items-center gap-2"><i class="fa-solid fa-tags w-4 text-emerald-500"></i> Bảng Giá</a>
+                <a href="huongdan.html" class="text-slate-600 dark:text-slate-400 flex items-center gap-2"><i class="fa-solid fa-book w-4 text-indigo-500"></i> Hướng Dẫn</a>
+                <a href="loaixe.html" class="text-slate-600 dark:text-slate-400 flex items-center gap-2"><i class="fa-solid fa-motorcycle w-4 text-indigo-500"></i> Loại Xe</a>
+                <a href="kinhnghiem.html" class="text-slate-600 dark:text-slate-400 flex items-center gap-2"><i class="fa-solid fa-lightbulb w-4 text-amber-500"></i> Kinh Nghiệm</a>
+                <a href="khuyenmai.html" class="text-slate-600 dark:text-slate-400 flex items-center gap-2"><i class="fa-solid fa-gift w-4 text-violet-500"></i> Khuyến Mãi</a>
            </div>
        </div>
 
-       <a href="baomat.html" class="sidebar-link py-3 text-lg font-medium text-gray-700 dark:text-gray-200 border-b dark:border-gray-700/50 flex items-center gap-3 hover:text-blue-600 transition"><i class="fa-solid fa-shield-halved w-5"></i> Bảo Mật</a>
-       <a href="dieukhoan.html" class="sidebar-link py-3 text-lg font-medium text-gray-700 dark:text-gray-200 border-b dark:border-gray-700/50 flex items-center gap-3 hover:text-blue-600 transition"><i class="fa-solid fa-file-contract w-5"></i> Điều Khoản</a>
-       <a href="Faq.html" class="sidebar-link py-3 text-lg font-medium text-gray-700 dark:text-gray-200 border-b dark:border-gray-700/50 flex items-center gap-3 hover:text-blue-600 transition"><i class="fa-solid fa-circle-question w-5"></i> Câu Hỏi</a>
-       <a href="lienhe.html" class="sidebar-link py-3 text-lg font-medium text-gray-700 dark:text-gray-200 border-b dark:border-gray-700/50 flex items-center gap-3 hover:text-blue-600 transition"><i class="fa-solid fa-envelope w-5"></i> Liên Hệ</a>
+       <a href="baomat.html" class="sidebar-link py-3 text-lg font-medium text-slate-700 dark:text-slate-200 border-b dark:border-slate-700/50 flex items-center gap-3 hover:text-indigo-600 transition"><i class="fa-solid fa-shield-halved w-5"></i> Bảo Mật</a>
+       <a href="dieukhoan.html" class="sidebar-link py-3 text-lg font-medium text-slate-700 dark:text-slate-200 border-b dark:border-slate-700/50 flex items-center gap-3 hover:text-indigo-600 transition"><i class="fa-solid fa-file-contract w-5"></i> Điều Khoản</a>
+       <a href="Faq.html" class="sidebar-link py-3 text-lg font-medium text-slate-700 dark:text-slate-200 border-b dark:border-slate-700/50 flex items-center gap-3 hover:text-indigo-600 transition"><i class="fa-solid fa-circle-question w-5"></i> Câu Hỏi</a>
+       <a href="lienhe.html" class="sidebar-link py-3 text-lg font-medium text-slate-700 dark:text-slate-200 border-b dark:border-slate-700/50 flex items-center gap-3 hover:text-indigo-600 transition"><i class="fa-solid fa-envelope w-5"></i> Liên Hệ</a>
    </nav>
    <div class="mt-8">
-       <a href="tel:0913901121" class="w-full block text-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-3.5 rounded-xl font-bold shadow-lg hover:shadow-indigo-500/30 transition transform hover:-translate-y-0.5">
+       <a href="tel:0913901121" class="w-full block text-center bg-gradient-to-r from-indigo-600 to-violet-600 text-white px-4 py-3.5 rounded-xl font-bold shadow-lg hover:shadow-indigo-500/30 transition-all transform hover:-translate-y-1">
            <i class="fa-solid fa-phone mr-2"></i> Gọi Ngay
        </a>
    </div>
 </div>
 </aside>
 
-<section class="relative pt-32 pb-24 bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-darkBg dark:to-gray-800 overflow-hidden">
+<section class="relative pt-40 pb-32 bg-gradient-to-br from-indigo-50 via-slate-50 to-violet-50 dark:from-slate-900 dark:via-darkBg dark:to-slate-800 overflow-hidden">
 <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-   <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-300 dark:bg-blue-900 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-[80px] opacity-40"></div>
-   <div class="absolute top-48 -left-24 w-72 h-72 bg-indigo-300 dark:bg-indigo-900 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-[80px] opacity-40"></div>
+   <div class="absolute -top-24 -right-24 w-96 h-96 bg-indigo-300 dark:bg-indigo-900 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-[100px] opacity-30"></div>
+   <div class="absolute top-48 -left-24 w-72 h-72 bg-violet-300 dark:bg-violet-900 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-[100px] opacity-30"></div>
 </div>
 
-<div class="container mx-auto px-4 relative z-10 max-w-7xl">
-   <div class="flex flex-col lg:flex-row items-center gap-14">
+<div class="container mx-auto px-4 relative z-10 max-w-7xl reveal-up">
+   <div class="flex flex-col lg:flex-row items-center gap-16">
 
        <div class="lg:w-7/12 text-center lg:text-left">
-           <span class="inline-block py-1.5 px-4 rounded-full bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm text-blue-700 dark:text-blue-300 text-sm font-bold mb-6 border border-blue-200/50 dark:border-blue-800/50 shadow-sm">
-               <i class="fa-solid fa-bolt text-yellow-500 mr-1.5"></i> #1 Dịch vụ thuê xe máy Hà Nội
+           <span class="inline-block py-1.5 px-4 rounded-full bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm text-indigo-700 dark:text-indigo-300 text-sm font-bold mb-8 border-[0.5px] border-indigo-200/50 dark:border-indigo-800/50 shadow-sm tracking-tight">
+               <i class="fa-solid fa-bolt text-amber-500 mr-1.5"></i> #1 Dịch vụ thuê xe máy Hà Nội
            </span>
-           <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-6 leading-[1.15] tracking-tight">
+           <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white mb-6 leading-[1.1] tracking-tight">
                Cho thuê xe máy Hà Nội <br class="hidden lg:block"/>
-               <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Thu Vân giao tận nơi</span>
+               <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">Thu Vân giao tận nơi</span>
            </h1>
-           <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+           <p class="text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed tracking-tight">
                Hệ thống cho thuê xe máy uy tín hàng đầu. Cam kết xe chất lượng cao, thủ tục không giữ cọc, giao xe tận nơi nội thành Hà Nội chỉ trong 15 phút.
            </p>
            <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-               <a href="https://thuexemaytaihanoi.github.io/app" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
+               <a href="https://thuexemaytaihanoi.github.io/app" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-indigo-600 to-violet-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-[0_8px_30px_rgba(99,102,241,0.3)] hover:shadow-[0_8px_30px_rgba(99,102,241,0.5)] transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2">
                    <i class="fa-solid fa-mobile-screen"></i> Mở Web App Đặt Xe
                </a>
-               <a href="https://maps.app.goo.gl/Hv5pvqvg4hKYkmqk7?g_st=ic" target="_blank" rel="noopener noreferrer" class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-gray-800 dark:text-white border border-gray-200 dark:border-gray-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-white dark:hover:bg-gray-700 transition shadow flex items-center justify-center">
+               <a href="https://maps.app.goo.gl/Hv5pvqvg4hKYkmqk7?g_st=ic" target="_blank" rel="noopener noreferrer" class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm text-slate-800 dark:text-white border-[0.5px] border-slate-200 dark:border-slate-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-white dark:hover:bg-slate-700 transition-all duration-300 shadow-sm flex items-center justify-center hover:-translate-y-1 hover:shadow-md">
                    Tìm hiểu thêm
                </a>
            </div>
        </div>
 
        <div class="lg:w-5/12 w-full max-w-md mx-auto">
-           <div class="bg-white/80 dark:bg-darkCard/80 backdrop-blur-xl rounded-3xl shadow-2xl p-6 sm:p-8 border border-white/50 dark:border-gray-700 relative">
-               <div class="absolute -top-4 right-6 bg-gradient-to-r from-purple-600 to-blue-600 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg flex items-center gap-1 ai-pulse">
+           <div class="bg-white/80 dark:bg-darkCard/80 backdrop-blur-xl rounded-[2rem] shadow-[0_8px_40px_rgba(0,0,0,0.04)] p-6 sm:p-8 border-[0.5px] border-white/80 dark:border-slate-700 relative">
+               <div class="absolute -top-4 right-6 bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg flex items-center gap-1 ai-pulse">
                    <i class="fa-solid fa-microchip"></i> AI Estimator
                </div>
 
-               <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-2 text-center">Giả Lập Chi Phí Thuê Xe</h3>
-               <p class="text-center text-sm text-gray-500 dark:text-gray-400 mb-6">Hệ thống AI tự động tính toán chi phí dự kiến chuyến đi.</p>
+               <h3 class="text-2xl font-bold text-slate-800 dark:text-white mb-2 text-center tracking-tight">Giả Lập Chi Phí Thuê Xe</h3>
+               <p class="text-center text-sm text-slate-500 dark:text-slate-400 mb-6">Hệ thống AI tự động tính toán chi phí dự kiến chuyến đi.</p>
 
-               <div class="space-y-5">
+               <div class="space-y-6">
                    <div>
-                       <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Chọn dòng xe muốn thuê</label>
+                       <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-3 tracking-tight">Chọn dòng xe muốn thuê</label>
                        <div class="grid grid-cols-3 gap-3">
-                           <button type="button" class="ai-vehicle-btn bg-blue-50 dark:bg-gray-700 border-2 border-blue-500 text-blue-700 dark:text-blue-300 rounded-xl p-3 text-center transition" data-price="150000">
+                           <button type="button" class="ai-vehicle-btn bg-indigo-50 dark:bg-slate-700 border border-indigo-500 text-indigo-700 dark:text-indigo-300 rounded-xl p-3 text-center transition-all duration-300 shadow-sm" data-price="150000">
                                <i class="fa-solid fa-motorcycle text-xl mb-1 block"></i>
-                               <span class="text-xs font-bold">Xe Số</span>
+                               <span class="text-xs font-bold tracking-tight">Xe Số</span>
                            </button>
-                           <button type="button" class="ai-vehicle-btn bg-white dark:bg-gray-800/50 border-2 border-transparent text-gray-600 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-600 rounded-xl p-3 text-center transition" data-price="200000">
+                           <button type="button" class="ai-vehicle-btn bg-white dark:bg-slate-800/50 border border-transparent text-slate-600 dark:text-slate-400 hover:border-slate-200 dark:hover:border-slate-600 rounded-xl p-3 text-center transition-all duration-300" data-price="200000">
                                <i class="fa-solid fa-crown text-xl mb-1 block"></i>
-                               <span class="text-xs font-bold">Xe Ga</span>
+                               <span class="text-xs font-bold tracking-tight">Xe Ga</span>
                            </button>
-                           <button type="button" class="ai-vehicle-btn bg-white dark:bg-gray-800/50 border-2 border-transparent text-gray-600 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-600 rounded-xl p-3 text-center transition" data-price="170000">
+                           <button type="button" class="ai-vehicle-btn bg-white dark:bg-slate-800/50 border border-transparent text-slate-600 dark:text-slate-400 hover:border-slate-200 dark:hover:border-slate-600 rounded-xl p-3 text-center transition-all duration-300" data-price="170000">
                                <i class="fa-solid fa-plug text-xl mb-1 block"></i>
-                               <span class="text-xs font-bold">Xe Điện</span>
+                               <span class="text-xs font-bold tracking-tight">Xe Điện</span>
                            </button>
                        </div>
                        <input type="hidden" id="ai-price-base" value="150000">
                    </div>
 
                    <div>
-                       <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 flex justify-between">
+                       <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-3 flex justify-between tracking-tight">
                            <span>Số ngày thuê</span>
-                           <span id="ai-days-display" class="font-bold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-2 py-0.5 rounded-md">1 ngày</span>
+                           <span id="ai-days-display" class="font-bold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30 px-2 py-0.5 rounded-md">1 ngày</span>
                        </label>
-                       <input type="range" id="ai-days-input" min="1" max="30" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 accent-blue-600">
+                       <input type="range" id="ai-days-input" min="1" max="30" value="1" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer dark:bg-slate-700 accent-indigo-600">
                    </div>
 
-                   <button id="ai-calc-btn" class="w-full bg-gray-900 dark:bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-gray-800 dark:hover:bg-blue-700 transition-all shadow-md relative overflow-hidden group">
+                   <button id="ai-calc-btn" class="w-full bg-slate-900 dark:bg-indigo-600 text-white font-bold py-4 rounded-xl hover:bg-slate-800 dark:hover:bg-indigo-700 transition-all duration-300 shadow-[0_8px_20px_rgba(0,0,0,0.08)] relative overflow-hidden group hover:-translate-y-1 tracking-tight">
                        <span class="relative z-10 flex items-center justify-center gap-2">
                            <i class="fa-solid fa-wand-magic-sparkles"></i> Tính Toán Ngay
                        </span>
                    </button>
 
-                   <div id="ai-result-area" class="hidden bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4 border border-gray-100 dark:border-gray-700 text-center mt-4 transition-all">
+                   <div id="ai-result-area" class="hidden bg-slate-50 dark:bg-slate-800/50 rounded-xl p-4 border-[0.5px] border-slate-200/60 dark:border-slate-700 text-center mt-4 transition-all">
                        <div id="ai-loading" class="hidden">
-                           <i class="fa-solid fa-circle-notch fa-spin text-2xl text-blue-600 dark:text-blue-400 mb-2"></i>
-                           <p class="text-xs text-gray-500 dark:text-gray-400">AI đang phân tích bảng giá...</p>
+                           <i class="fa-solid fa-circle-notch fa-spin text-2xl text-indigo-600 dark:text-indigo-400 mb-2"></i>
+                           <p class="text-xs text-slate-500 dark:text-slate-400 tracking-tight">AI đang phân tích bảng giá...</p>
                        </div>
                        <div id="ai-final-result" class="hidden">
-                           <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Tổng chi phí ước tính</p>
-                           <p class="text-3xl font-extrabold text-green-600 dark:text-green-400" id="ai-total-price">150,000đ</p>
-                           <p class="text-xs text-gray-400 mt-2">*Đã bao gồm mũ bảo hiểm & áo mưa</p>
+                           <p class="text-sm text-slate-500 dark:text-slate-400 mb-1 tracking-tight">Tổng chi phí ước tính</p>
+                           <p class="text-3xl font-extrabold text-emerald-600 dark:text-emerald-400 tracking-tight" id="ai-total-price">150,000đ</p>
+                           <p class="text-xs text-slate-400 mt-2 tracking-tight">*Đã bao gồm mũ bảo hiểm & áo mưa</p>
                        </div>
                    </div>
                </div>
@@ -366,171 +378,170 @@ html.dark ::-webkit-scrollbar-track { background: #1f2937; }
 </div>
 </section>
 
-<section id="dich-vu" class="py-24 relative overflow-hidden bg-gray-50 dark:bg-darkBg">
-<div class="absolute top-1/4 -left-20 w-80 h-80 bg-blue-400 dark:bg-blue-600 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-[120px] opacity-20 animate-pulse"></div>
-<div class="absolute bottom-1/4 right-0 w-96 h-96 bg-indigo-400 dark:bg-indigo-600 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-[120px] opacity-20 animate-pulse" style="animation-delay: 2s;"></div>
+<section id="dich-vu" class="py-28 relative overflow-hidden bg-slate-50 dark:bg-darkBg reveal-up">
+<div class="absolute top-1/4 -left-20 w-80 h-80 bg-indigo-400 dark:bg-indigo-600 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-[120px] opacity-10 animate-pulse"></div>
+<div class="absolute bottom-1/4 right-0 w-96 h-96 bg-violet-400 dark:bg-violet-600 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-[120px] opacity-10 animate-pulse" style="animation-delay: 2s;"></div>
 
 <div class="container mx-auto px-4 max-w-7xl relative z-10">
-   <div class="text-center mb-16">
-       <span class="text-blue-600 dark:text-blue-400 font-bold tracking-widest uppercase text-xs bg-blue-100 dark:bg-blue-900/40 px-3 py-1 rounded-full">Về Chúng Tôi</span>
-       <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white mt-5 tracking-tight">Dịch Vụ Cho Thuê Xe Máy <br class="hidden sm:block"/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Uy Tín Tạo Niềm Tin</span></h2>
-       <div class="w-20 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mt-6 rounded-full"></div>
+   <div class="text-center mb-20">
+       <span class="text-indigo-600 dark:text-indigo-400 font-bold tracking-widest uppercase text-xs bg-indigo-100/50 dark:bg-indigo-900/40 px-3 py-1.5 rounded-full">Về Chúng Tôi</span>
+       <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mt-6 tracking-tight leading-tight">Dịch Vụ Cho Thuê Xe Máy <br class="hidden sm:block"/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">Uy Tín Tạo Niềm Tin</span></h2>
    </div>
 
-   <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
-       <div class="w-full lg:w-5/12 space-y-6 text-gray-600 dark:text-gray-300 leading-relaxed text-lg text-justify relative">
-           <div class="absolute -left-6 -top-6 w-12 h-12 border-t-4 border-l-4 border-blue-600/30 dark:border-blue-500/30 rounded-tl-3xl hidden md:block"></div>
-           <p class="first-letter:text-5xl first-letter:font-bold first-letter:text-blue-600 first-letter:mr-2 first-letter:float-left">
+   <div class="flex flex-col lg:flex-row gap-16 lg:gap-20 items-center">
+       <div class="w-full lg:w-5/12 space-y-6 text-slate-600 dark:text-slate-300 leading-relaxed text-lg text-justify relative">
+           <div class="absolute -left-6 -top-6 w-12 h-12 border-t-4 border-l-4 border-indigo-600/20 dark:border-indigo-500/20 rounded-tl-3xl hidden md:block"></div>
+           <p class="first-letter:text-6xl first-letter:font-extrabold first-letter:text-indigo-600 first-letter:mr-3 first-letter:float-left">
                Hà Nội là trái tim của cả nước, nơi giao thoa giữa nét đẹp cổ kính của ngàn năm văn hiến và nhịp sống đô thị nhộn nhịp. Để có thể len lỏi qua từng con ngõ nhỏ của 36 phố phường, thưởng thức trọn vẹn hương vị ẩm thực vỉa hè hay tận hưởng làn gió mát rượi quanh bờ hồ, không có phương tiện nào tuyệt vời hơn một chiếc xe máy.
            </p>
            <p>
-               Hiểu được nhu cầu thiết yếu đó, <strong>hệ thống cho thuê xe máy Hà Nội Thu Vân</strong> ra đời với sứ mệnh mang lại những chuyến đi an toàn, tiết kiệm. Chúng tôi tự hào là đối tác tin cậy của hàng ngàn khách hàng, cung cấp dịch vụ <a href="tayho.html" class="text-blue-600 dark:text-blue-400 font-bold hover:underline">giao xe tận nơi khu vực Tây Hồ</a> và phủ sóng khắp thủ đô.
+               Hiểu được nhu cầu thiết yếu đó, <strong>hệ thống cho thuê xe máy Hà Nội Thu Vân</strong> ra đời với sứ mệnh mang lại những chuyến đi an toàn, tiết kiệm. Chúng tôi tự hào là đối tác tin cậy của hàng ngàn khách hàng, cung cấp dịch vụ <a href="tayho.html" class="text-indigo-600 dark:text-indigo-400 font-bold hover:underline transition-all">giao xe tận nơi khu vực Tây Hồ</a> và phủ sóng khắp thủ đô.
            </p>
 
-           <div class="grid grid-cols-3 gap-4 pt-6 mt-6 border-t border-gray-200 dark:border-gray-700/50">
+           <div class="grid grid-cols-3 gap-6 pt-8 mt-8 border-t-[0.5px] border-slate-200 dark:border-slate-700/50">
                <div class="text-center">
-                   <div class="text-3xl font-black text-blue-600 dark:text-blue-400">5k+</div>
-                   <div class="text-xs text-gray-500 dark:text-gray-400 mt-1 uppercase tracking-wider font-bold">Khách Hàng</div>
+                   <div class="text-4xl font-black text-indigo-600 dark:text-indigo-400 tracking-tight">5k+</div>
+                   <div class="text-xs text-slate-500 dark:text-slate-400 mt-2 uppercase tracking-widest font-bold">Khách Hàng</div>
                </div>
-               <div class="text-center border-l border-gray-200 dark:border-gray-700/50">
-                   <div class="text-3xl font-black text-indigo-600 dark:text-indigo-400">200+</div>
-                   <div class="text-xs text-gray-500 dark:text-gray-400 mt-1 uppercase tracking-wider font-bold">Đầu Xe Mới</div>
+               <div class="text-center border-l-[0.5px] border-slate-200 dark:border-slate-700/50">
+                   <div class="text-4xl font-black text-violet-600 dark:text-violet-400 tracking-tight">200+</div>
+                   <div class="text-xs text-slate-500 dark:text-slate-400 mt-2 uppercase tracking-widest font-bold">Đầu Xe Mới</div>
                </div>
-               <div class="text-center border-l border-gray-200 dark:border-gray-700/50">
-                   <div class="text-3xl font-black text-blue-600 dark:text-blue-400">6+</div>
-                   <div class="text-xs text-gray-500 dark:text-gray-400 mt-1 uppercase tracking-wider font-bold">Năm K.Nghiệm</div>
+               <div class="text-center border-l-[0.5px] border-slate-200 dark:border-slate-700/50">
+                   <div class="text-4xl font-black text-indigo-600 dark:text-indigo-400 tracking-tight">6+</div>
+                   <div class="text-xs text-slate-500 dark:text-slate-400 mt-2 uppercase tracking-widest font-bold">Năm K.Nghiệm</div>
                </div>
            </div>
 
-           <div class="pt-4">
-               <a href="gioithieu.html" class="inline-flex items-center gap-2 font-bold text-blue-600 dark:text-blue-400 hover:text-indigo-600 transition group">
+           <div class="pt-6">
+               <a href="gioithieu.html" class="inline-flex items-center gap-2 font-bold text-indigo-600 dark:text-indigo-400 hover:text-violet-600 transition group tracking-tight">
                    Khám phá câu chuyện của chúng tôi
                    <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition"></i>
                </a>
            </div>
        </div>
    
-       <div class="w-full lg:w-7/12 grid grid-cols-1 sm:grid-cols-2 gap-6 relative">
-           <div class="bg-white/40 dark:bg-gray-800/40 backdrop-blur-xl border border-white/60 dark:border-gray-700/50 p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-transform duration-300 group">
-               <div class="w-14 h-14 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center text-white mb-6 text-2xl shadow-lg shadow-blue-500/30 transform group-hover:rotate-6 transition">
+       <div class="w-full lg:w-7/12 grid grid-cols-1 sm:grid-cols-2 gap-8 relative">
+           <div class="bg-white/60 dark:bg-slate-800/40 backdrop-blur-xl border-[0.5px] border-white dark:border-slate-700/50 p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-2 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)] transition-all duration-300 group">
+               <div class="w-14 h-14 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-2xl flex items-center justify-center text-white mb-6 text-2xl shadow-lg shadow-indigo-500/20 transform group-hover:rotate-6 transition">
                    <i class="fa-solid fa-motorcycle"></i>
                </div>
-               <h4 class="font-bold text-xl text-gray-900 dark:text-white mb-3">Xe Mới 100%</h4>
-               <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Đội xe luôn được cập nhật đời mới, bảo dưỡng định kỳ hàng tháng đảm bảo động cơ êm ái, phanh lốp an toàn tuyệt đối.</p>
+               <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3 tracking-tight">Xe Mới 100%</h4>
+               <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Đội xe luôn được cập nhật đời mới, bảo dưỡng định kỳ hàng tháng đảm bảo động cơ êm ái, phanh lốp an toàn tuyệt đối.</p>
            </div>
        
-           <div class="bg-white/40 dark:bg-gray-800/40 backdrop-blur-xl border border-white/60 dark:border-gray-700/50 p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-transform duration-300 group sm:mt-12">
-               <div class="w-14 h-14 bg-gradient-to-br from-red-400 to-red-600 rounded-2xl flex items-center justify-center text-white mb-6 text-2xl shadow-lg shadow-red-500/30 transform group-hover:rotate-6 transition">
+           <div class="bg-white/60 dark:bg-slate-800/40 backdrop-blur-xl border-[0.5px] border-white dark:border-slate-700/50 p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-2 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)] transition-all duration-300 group sm:mt-12">
+               <div class="w-14 h-14 bg-gradient-to-br from-rose-400 to-rose-600 rounded-2xl flex items-center justify-center text-white mb-6 text-2xl shadow-lg shadow-rose-500/20 transform group-hover:rotate-6 transition">
                    <i class="fa-solid fa-truck-fast"></i>
                </div>
-               <h4 class="font-bold text-xl text-gray-900 dark:text-white mb-3">Giao Xe Tận Nơi</h4>
-               <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Cam kết dịch vụ cho thuê xe máy Thu Vân giao tận nơi nội thành chỉ trong 15-20 phút kể từ lúc chốt hợp đồng.</p>
+               <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3 tracking-tight">Giao Xe Tận Nơi</h4>
+               <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Cam kết dịch vụ cho thuê xe máy Thu Vân giao tận nơi nội thành chỉ trong 15-20 phút kể từ lúc chốt hợp đồng.</p>
            </div>
        
-           <div class="bg-white/40 dark:bg-gray-800/40 backdrop-blur-xl border border-white/60 dark:border-gray-700/50 p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-transform duration-300 group">
-               <div class="w-14 h-14 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center text-white mb-6 text-2xl shadow-lg shadow-green-500/30 transform group-hover:rotate-6 transition">
+           <div class="bg-white/60 dark:bg-slate-800/40 backdrop-blur-xl border-[0.5px] border-white dark:border-slate-700/50 p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-2 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)] transition-all duration-300 group">
+               <div class="w-14 h-14 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center text-white mb-6 text-2xl shadow-lg shadow-emerald-500/20 transform group-hover:rotate-6 transition">
                    <i class="fa-solid fa-hand-holding-dollar"></i>
                </div>
-               <h4 class="font-bold text-xl text-gray-900 dark:text-white mb-3">Không Giữ Cọc</h4>
-               <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Chính sách ưu đãi tuyệt vời cho khách du lịch có vé máy bay khứ hồi hoặc đang lưu trú tại các khách sạn lớn.</p>
+               <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3 tracking-tight">Không Giữ Cọc</h4>
+               <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Chính sách ưu đãi tuyệt vời cho khách du lịch có vé máy bay khứ hồi hoặc đang lưu trú tại các khách sạn lớn.</p>
            </div>
        
-           <div class="bg-white/40 dark:bg-gray-800/40 backdrop-blur-xl border border-white/60 dark:border-gray-700/50 p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-transform duration-300 group sm:mt-12">
-               <div class="w-14 h-14 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center text-white mb-6 text-2xl shadow-lg shadow-purple-500/30 transform group-hover:rotate-6 transition">
+           <div class="bg-white/60 dark:bg-slate-800/40 backdrop-blur-xl border-[0.5px] border-white dark:border-slate-700/50 p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-2 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)] transition-all duration-300 group sm:mt-12">
+               <div class="w-14 h-14 bg-gradient-to-br from-violet-400 to-violet-600 rounded-2xl flex items-center justify-center text-white mb-6 text-2xl shadow-lg shadow-violet-500/20 transform group-hover:rotate-6 transition">
                    <i class="fa-solid fa-headset"></i>
                </div>
-               <h4 class="font-bold text-xl text-gray-900 dark:text-white mb-3">Hỗ Trợ 24/7</h4>
-               <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Đội ngũ kỹ thuật luôn sẵn sàng ứng cứu, đổi xe tận nơi nếu bạn gặp bất kỳ sự cố nào trên đường di chuyển.</p>
+               <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3 tracking-tight">Hỗ Trợ 24/7</h4>
+               <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Đội ngũ kỹ thuật luôn sẵn sàng ứng cứu, đổi xe tận nơi nếu bạn gặp bất kỳ sự cố nào trên đường di chuyển.</p>
            </div>
        </div>
    </div>
 </div>
 </section>
 
-<section class="py-20 bg-blue-600 dark:bg-indigo-900 text-white relative overflow-hidden">
+<section class="py-28 bg-indigo-600 dark:bg-slate-900 text-white relative overflow-hidden reveal-up">
     <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
     <div class="container mx-auto px-4 max-w-7xl relative z-10">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Cam Kết Lợi Ích Vượt Trội</h2>
-            <p class="text-blue-100 max-w-2xl mx-auto">Chúng tôi không chỉ cho thuê một chiếc xe, chúng tôi mang đến cho bạn sự an tâm tuyệt đối trên mọi nẻo đường Hà Nội.</p>
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">Cam Kết Lợi Ích Vượt Trội</h2>
+            <p class="text-indigo-100 max-w-2xl mx-auto text-lg">Chúng tôi không chỉ cho thuê một chiếc xe, chúng tôi mang đến cho bạn sự an tâm tuyệt đối trên mọi nẻo đường Hà Nội.</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-            <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl text-center hover:bg-white/20 transition-all">
-                <i class="fa-solid fa-helmet-safety text-4xl mb-4 text-yellow-300"></i>
-                <h4 class="font-bold text-lg mb-2">Trang Bị Đầy Đủ</h4>
-                <p class="text-sm text-blue-100">Miễn phí 2 mũ bảo hiểm đạt chuẩn, áo mưa và dây buộc đồ cho mọi hành trình.</p>
+            <div class="bg-white/10 backdrop-blur-md border-[0.5px] border-white/20 p-8 rounded-[2rem] text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-1">
+                <i class="fa-solid fa-helmet-safety text-4xl mb-5 text-amber-300"></i>
+                <h4 class="font-bold text-lg mb-2 tracking-tight">Trang Bị Đầy Đủ</h4>
+                <p class="text-sm text-indigo-100 leading-relaxed">Miễn phí 2 mũ bảo hiểm đạt chuẩn, áo mưa và dây buộc đồ cho mọi hành trình.</p>
             </div>
-            <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl text-center hover:bg-white/20 transition-all">
-                <i class="fa-solid fa-right-left text-4xl mb-4 text-green-300"></i>
-                <h4 class="font-bold text-lg mb-2">1 Đổi 1 Tận Nơi</h4>
-                <p class="text-sm text-blue-100">Nếu xe gặp lỗi kỹ thuật, chúng tôi sẽ lập tức mang xe khác đến tận nơi để đổi cho bạn.</p>
+            <div class="bg-white/10 backdrop-blur-md border-[0.5px] border-white/20 p-8 rounded-[2rem] text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-1">
+                <i class="fa-solid fa-right-left text-4xl mb-5 text-emerald-300"></i>
+                <h4 class="font-bold text-lg mb-2 tracking-tight">1 Đổi 1 Tận Nơi</h4>
+                <p class="text-sm text-indigo-100 leading-relaxed">Nếu xe gặp lỗi kỹ thuật, chúng tôi sẽ lập tức mang xe khác đến tận nơi để đổi cho bạn.</p>
             </div>
-            <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl text-center hover:bg-white/20 transition-all">
-                <i class="fa-solid fa-train-tram text-4xl mb-4 text-pink-300"></i>
-                <h4 class="font-bold text-lg mb-2">Giao Nhận Đa Điểm</h4>
-                <p class="text-sm text-blue-100">Hỗ trợ giao xe tận sân bay Nội Bài, các bến xe, ga tàu hoặc khách sạn nội thành.</p>
+            <div class="bg-white/10 backdrop-blur-md border-[0.5px] border-white/20 p-8 rounded-[2rem] text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-1">
+                <i class="fa-solid fa-train-tram text-4xl mb-5 text-rose-300"></i>
+                <h4 class="font-bold text-lg mb-2 tracking-tight">Giao Nhận Đa Điểm</h4>
+                <p class="text-sm text-indigo-100 leading-relaxed">Hỗ trợ giao xe tận sân bay Nội Bài, các bến xe, ga tàu hoặc khách sạn nội thành.</p>
             </div>
-            <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl text-center hover:bg-white/20 transition-all">
-                <i class="fa-solid fa-file-invoice-dollar text-4xl mb-4 text-cyan-300"></i>
-                <h4 class="font-bold text-lg mb-2">Hóa Đơn Minh Bạch</h4>
-                <p class="text-sm text-blue-100">Cung cấp đầy đủ hợp đồng, xuất hóa đơn VAT theo yêu cầu cho khách hàng doanh nghiệp.</p>
+            <div class="bg-white/10 backdrop-blur-md border-[0.5px] border-white/20 p-8 rounded-[2rem] text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-1">
+                <i class="fa-solid fa-file-invoice-dollar text-4xl mb-5 text-cyan-300"></i>
+                <h4 class="font-bold text-lg mb-2 tracking-tight">Hóa Đơn Minh Bạch</h4>
+                <p class="text-sm text-indigo-100 leading-relaxed">Cung cấp đầy đủ hợp đồng, xuất hóa đơn VAT theo yêu cầu cho khách hàng doanh nghiệp.</p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-20 bg-white dark:bg-gray-900 border-t dark:border-gray-800/50">
+<section class="py-28 bg-white dark:bg-slate-900 border-t-[0.5px] border-slate-100 dark:border-slate-800/50 reveal-up">
 <div class="container mx-auto px-4 max-w-7xl">
-   <div class="text-center mb-16">
-       <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white">Các Dòng Xe Đang Phục Vụ</h2>
-       <p class="text-gray-600 dark:text-gray-400 mt-4 text-lg max-w-3xl mx-auto">Chúng tôi cung cấp đa dạng các chủng loại xe từ phổ thông đến cao cấp, đáp ứng mọi nhu cầu.</p>
+   <div class="text-center mb-20">
+       <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">Các Dòng Xe Đang Phục Vụ</h2>
+       <p class="text-slate-500 dark:text-slate-400 mt-5 text-lg max-w-3xl mx-auto">Chúng tôi cung cấp đa dạng các chủng loại xe từ phổ thông đến cao cấp, đáp ứng mọi nhu cầu.</p>
    </div>
 
-   <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-       <div class="bg-gray-50 dark:bg-darkCard rounded-3xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-700 group hover:-translate-y-2 transition-transform duration-300">
-           <div class="h-56 bg-blue-100 dark:bg-gray-800 flex items-center justify-center overflow-hidden relative">
-               <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-               <i class="fa-solid fa-motorcycle text-7xl text-blue-500 group-hover:scale-110 transition-transform duration-500 relative z-10"></i>
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+       <div class="bg-slate-50 dark:bg-darkCard rounded-[2.5rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-[0.5px] border-slate-200/60 dark:border-slate-700 group hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)]">
+           <div class="h-64 bg-indigo-50/50 dark:bg-slate-800 flex items-center justify-center overflow-hidden relative">
+               <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+               <i class="fa-solid fa-motorcycle text-8xl text-indigo-400 group-hover:scale-110 group-hover:text-indigo-500 transition-all duration-500 relative z-10 drop-shadow-sm"></i>
            </div>
-           <div class="p-8">
-               <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Xe Số Bền Bỉ</h3>
-               <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 leading-relaxed">
-                   Honda Wave Alpha, Yamaha Sirius... Ưu điểm là nhỏ gọn, gầm cao, máy khỏe và cực kỳ tiết kiệm xăng. Hoàn hảo để chạy qua các khu vực cầu như <a href="long%20bien.html" class="text-blue-600 hover:underline font-medium">Long Biên</a>.
+           <div class="p-8 lg:p-10">
+               <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight">Xe Số Bền Bỉ</h3>
+               <p class="text-slate-600 dark:text-slate-400 text-sm mb-8 leading-relaxed">
+                   Honda Wave Alpha, Yamaha Sirius... Ưu điểm là nhỏ gọn, gầm cao, máy khỏe và cực kỳ tiết kiệm xăng. Hoàn hảo để chạy qua các khu vực cầu như <a href="long%20bien.html" class="text-indigo-600 hover:underline font-medium">Long Biên</a>.
                </p>
-               <div class="flex items-center text-sm font-bold text-gray-900 dark:text-yellow-400 bg-white dark:bg-gray-800 inline-flex px-4 py-2 rounded-full border border-gray-200 dark:border-gray-700">
-                   <i class="fa-solid fa-tag text-blue-500 mr-2"></i> Từ 100k - 150k / Ngày
+               <div class="flex items-center text-sm font-bold text-slate-900 dark:text-amber-400 bg-white dark:bg-slate-800 inline-flex px-5 py-2.5 rounded-full border-[0.5px] border-slate-200 dark:border-slate-700 shadow-sm tracking-tight">
+                   <i class="fa-solid fa-tag text-indigo-500 mr-2"></i> Từ 100k - 150k / Ngày
                </div>
            </div>
        </div>
 
-       <div class="bg-gray-50 dark:bg-darkCard rounded-3xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-700 group hover:-translate-y-2 transition-transform duration-300">
-           <div class="h-56 bg-purple-100 dark:bg-gray-800 flex items-center justify-center overflow-hidden relative">
-               <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-               <i class="fa-solid fa-crown text-7xl text-purple-500 group-hover:scale-110 transition-transform duration-500 relative z-10"></i>
+       <div class="bg-slate-50 dark:bg-darkCard rounded-[2.5rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-[0.5px] border-slate-200/60 dark:border-slate-700 group hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)]">
+           <div class="h-64 bg-violet-50/50 dark:bg-slate-800 flex items-center justify-center overflow-hidden relative">
+               <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+               <i class="fa-solid fa-crown text-8xl text-violet-400 group-hover:scale-110 group-hover:text-violet-500 transition-all duration-500 relative z-10 drop-shadow-sm"></i>
            </div>
-           <div class="p-8">
-               <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Xe Tay Ga Thời Trang</h3>
-               <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 leading-relaxed">
+           <div class="p-8 lg:p-10">
+               <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight">Xe Tay Ga Thời Trang</h3>
+               <p class="text-slate-600 dark:text-slate-400 text-sm mb-8 leading-relaxed">
                    Honda Air Blade, Vision, Lead... Cốp chứa đồ siêu rộng để balo, áo mưa và thao tác lái nhàn rỗi. Rất phù hợp dạo phố phường check-in cà phê cực kỳ sang trọng.
                </p>
-               <div class="flex items-center text-sm font-bold text-gray-900 dark:text-yellow-400 bg-white dark:bg-gray-800 inline-flex px-4 py-2 rounded-full border border-gray-200 dark:border-gray-700">
-                   <i class="fa-solid fa-tag text-purple-500 mr-2"></i> Từ 150k - 200k / Ngày
+               <div class="flex items-center text-sm font-bold text-slate-900 dark:text-amber-400 bg-white dark:bg-slate-800 inline-flex px-5 py-2.5 rounded-full border-[0.5px] border-slate-200 dark:border-slate-700 shadow-sm tracking-tight">
+                   <i class="fa-solid fa-tag text-violet-500 mr-2"></i> Từ 150k - 200k / Ngày
                </div>
            </div>
        </div>
 
-       <div class="bg-gray-50 dark:bg-darkCard rounded-3xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-700 group hover:-translate-y-2 transition-transform duration-300">
-           <div class="h-56 bg-green-100 dark:bg-gray-800 flex items-center justify-center overflow-hidden relative">
-               <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-               <i class="fa-solid fa-plug text-7xl text-green-500 group-hover:scale-110 transition-transform duration-500 relative z-10"></i>
+       <div class="bg-slate-50 dark:bg-darkCard rounded-[2.5rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-[0.5px] border-slate-200/60 dark:border-slate-700 group hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)]">
+           <div class="h-64 bg-emerald-50/50 dark:bg-slate-800 flex items-center justify-center overflow-hidden relative">
+               <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+               <i class="fa-solid fa-plug text-8xl text-emerald-400 group-hover:scale-110 group-hover:text-emerald-500 transition-all duration-500 relative z-10 drop-shadow-sm"></i>
            </div>
-           <div class="p-8">
-               <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Xe Điện Thông Minh</h3>
-               <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 leading-relaxed">
+           <div class="p-8 lg:p-10">
+               <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight">Xe Điện Thông Minh</h3>
+               <p class="text-slate-600 dark:text-slate-400 text-sm mb-8 leading-relaxed">
                    Vinfast vận hành êm ái, không tiếng ồn, không khói bụi. Đáp ứng tốt việc di chuyển cự ly ngắn để dạo quanh Hồ Tây hóng gió, uống trà đá vỉa hè.
                </p>
-               <div class="flex items-center text-sm font-bold text-gray-900 dark:text-yellow-400 bg-white dark:bg-gray-800 inline-flex px-4 py-2 rounded-full border border-gray-200 dark:border-gray-700">
-                   <i class="fa-solid fa-tag text-green-500 mr-2"></i> Từ 170k / Ngày
+               <div class="flex items-center text-sm font-bold text-slate-900 dark:text-amber-400 bg-white dark:bg-slate-800 inline-flex px-5 py-2.5 rounded-full border-[0.5px] border-slate-200 dark:border-slate-700 shadow-sm tracking-tight">
+                   <i class="fa-solid fa-tag text-emerald-500 mr-2"></i> Từ 170k / Ngày
                </div>
            </div>
        </div>
@@ -538,325 +549,354 @@ html.dark ::-webkit-scrollbar-track { background: #1f2937; }
 </div>
 </section>
 
-<section id="bang-gia" class="py-20 bg-gray-50 dark:bg-darkBg border-t dark:border-gray-800">
+<section id="bang-gia" class="py-28 bg-slate-50 dark:bg-darkBg border-t-[0.5px] border-slate-200 dark:border-slate-800 reveal-up">
 <div class="container mx-auto px-4 max-w-5xl">
-   <div class="text-center mb-12">
-       <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Bảng Giá Cho Thuê Xe Cập Nhật Mới Nhất</h2>
-       <p class="text-gray-600 dark:text-gray-400 mt-4 text-lg">Cam kết minh bạch, không phát sinh. Có chiết khấu khi <a href="thuengay.html" class="text-blue-600 font-medium hover:underline">thuê dài ngày</a>.</p>
+   <div class="text-center mb-16">
+       <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">Bảng Giá Cho Thuê Xe Mới Nhất</h2>
+       <p class="text-slate-500 dark:text-slate-400 mt-5 text-lg">Cam kết minh bạch, không phát sinh. Có chiết khấu khi <a href="thuengay.html" class="text-indigo-600 font-medium hover:underline">thuê dài ngày</a>.</p>
    </div>
 
-   <div class="max-w-4xl mx-auto bg-white dark:bg-darkCard p-8 lg:p-10 rounded-[2.5rem] shadow-xl border border-gray-100 dark:border-gray-700">
-       <ul class="space-y-6">
-           <li class="flex flex-col sm:flex-row sm:justify-between sm:items-center pb-6 border-b border-gray-100 dark:border-gray-700/50 gap-4">
-               <span class="flex items-center gap-5 text-lg">
-                   <div class="w-16 h-16 rounded-2xl bg-blue-50 dark:bg-gray-800 flex items-center justify-center text-blue-600 dark:text-blue-400 text-2xl shadow-inner border border-blue-100 dark:border-gray-700"><i class="fa-solid fa-motorcycle"></i></div>
+   <div class="max-w-4xl mx-auto bg-white dark:bg-darkCard p-8 lg:p-12 rounded-[3rem] shadow-[0_8px_40px_rgb(0,0,0,0.04)] border-[0.5px] border-slate-200/80 dark:border-slate-700">
+       <ul class="space-y-8">
+           <li class="flex flex-col sm:flex-row sm:justify-between sm:items-center pb-8 border-b-[0.5px] border-slate-100 dark:border-slate-700/50 gap-4">
+               <span class="flex items-center gap-6 text-lg">
+                   <div class="w-20 h-20 rounded-[1.5rem] bg-indigo-50 dark:bg-slate-800 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-3xl shadow-inner border-[0.5px] border-indigo-100 dark:border-slate-700"><i class="fa-solid fa-motorcycle"></i></div>
                    <div>
-                       <span class="font-bold block text-gray-900 dark:text-white text-xl">Xe Số Phổ Thông</span>
-                       <span class="text-sm text-gray-500 dark:text-gray-400">Wave Alpha, Sirius, Blade...</span>
+                       <span class="font-extrabold block text-slate-900 dark:text-white text-2xl tracking-tight">Xe Số Phổ Thông</span>
+                       <span class="text-sm text-slate-500 dark:text-slate-400 mt-1 block">Wave Alpha, Sirius, Blade...</span>
                    </div>
                </span>
                <div class="text-left sm:text-right">
-                   <span class="font-black text-2xl text-blue-600 dark:text-blue-400">100.000đ - 150.000đ</span>
-                   <span class="block text-sm text-gray-500 font-normal">/ ngày (24h tính từ lúc nhận xe)</span>
+                   <span class="font-black text-3xl text-indigo-600 dark:text-indigo-400 tracking-tight">100k - 150k</span>
+                   <span class="block text-sm text-slate-400 font-normal mt-1">/ ngày (24h tính từ lúc nhận)</span>
                </div>
            </li>
        
-           <li class="flex flex-col sm:flex-row sm:justify-between sm:items-center pb-6 border-b border-gray-100 dark:border-gray-700/50 gap-4">
-               <span class="flex items-center gap-5 text-lg">
-                   <div class="w-16 h-16 rounded-2xl bg-green-50 dark:bg-gray-800 flex items-center justify-center text-green-600 dark:text-green-400 text-2xl shadow-inner border border-green-100 dark:border-gray-700"><i class="fa-solid fa-plug"></i></div>
+           <li class="flex flex-col sm:flex-row sm:justify-between sm:items-center pb-8 border-b-[0.5px] border-slate-100 dark:border-slate-700/50 gap-4">
+               <span class="flex items-center gap-6 text-lg">
+                   <div class="w-20 h-20 rounded-[1.5rem] bg-emerald-50 dark:bg-slate-800 flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-3xl shadow-inner border-[0.5px] border-emerald-100 dark:border-slate-700"><i class="fa-solid fa-plug"></i></div>
                    <div>
-                       <span class="font-bold block text-gray-900 dark:text-white text-xl">Xe Điện Thông Minh</span>
-                       <span class="text-sm text-gray-500 dark:text-gray-400">Vinfast Feliz, Klara...</span>
+                       <span class="font-extrabold block text-slate-900 dark:text-white text-2xl tracking-tight">Xe Điện Thông Minh</span>
+                       <span class="text-sm text-slate-500 dark:text-slate-400 mt-1 block">Vinfast Feliz, Klara...</span>
                    </div>
                </span>
                <div class="text-left sm:text-right">
-                   <span class="font-black text-2xl text-green-600 dark:text-green-400">150.000đ - 170.000đ</span>
-                   <span class="block text-sm text-gray-500 font-normal">/ ngày (Kèm bộ sạc chuẩn)</span>
+                   <span class="font-black text-3xl text-emerald-600 dark:text-emerald-400 tracking-tight">150k - 170k</span>
+                   <span class="block text-sm text-slate-400 font-normal mt-1">/ ngày (Kèm bộ sạc chuẩn)</span>
                </div>
            </li>
        
            <li class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
-               <span class="flex items-center gap-5 text-lg">
-                   <div class="w-16 h-16 rounded-2xl bg-purple-50 dark:bg-gray-800 flex items-center justify-center text-purple-600 dark:text-purple-400 text-2xl shadow-inner border border-purple-100 dark:border-gray-700"><i class="fa-solid fa-crown"></i></div>
+               <span class="flex items-center gap-6 text-lg">
+                   <div class="w-20 h-20 rounded-[1.5rem] bg-violet-50 dark:bg-slate-800 flex items-center justify-center text-violet-600 dark:text-violet-400 text-3xl shadow-inner border-[0.5px] border-violet-100 dark:border-slate-700"><i class="fa-solid fa-crown"></i></div>
                    <div>
-                       <span class="font-bold block text-gray-900 dark:text-white text-xl">Xe Tay Ga Thời Trang</span>
-                       <span class="text-sm text-gray-500 dark:text-gray-400">Vision, Air Blade 125, Lead...</span>
+                       <span class="font-extrabold block text-slate-900 dark:text-white text-2xl tracking-tight">Xe Tay Ga Thời Trang</span>
+                       <span class="text-sm text-slate-500 dark:text-slate-400 mt-1 block">Vision, Air Blade 125, Lead...</span>
                    </div>
                </span>
                <div class="text-left sm:text-right">
-                   <span class="font-black text-2xl text-purple-600 dark:text-purple-400">150.000đ - 200.000đ</span>
-                   <span class="block text-sm text-gray-500 font-normal">/ ngày (Bao gồm mũ + áo mưa)</span>
+                   <span class="font-black text-3xl text-violet-600 dark:text-violet-400 tracking-tight">150k - 200k</span>
+                   <span class="block text-sm text-slate-400 font-normal mt-1">/ ngày (Bao gồm mũ + áo mưa)</span>
                </div>
            </li>
        </ul>
    </div>
-   <p class="text-center mt-8 text-sm text-gray-500 dark:text-gray-400 italic bg-gray-100 dark:bg-gray-800 inline-block px-6 py-2 rounded-full max-w-max mx-auto">
+   <p class="text-center mt-10 text-sm text-slate-500 dark:text-slate-400 italic bg-white dark:bg-slate-800 inline-block px-8 py-3 rounded-full max-w-max mx-auto shadow-[0_4px_20px_rgb(0,0,0,0.03)] border-[0.5px] border-slate-200 dark:border-slate-700">
        *Giá có thể thay đổi nhẹ dịp Lễ/Tết. Giá sỉ cực tốt khi thuê tuần/tháng.
    </p>
 </div>
 </section>
 
-<section class="py-20 bg-white dark:bg-gray-900 border-t dark:border-gray-800">
+<section class="py-28 bg-white dark:bg-slate-900 border-t-[0.5px] border-slate-100 dark:border-slate-800 reveal-up">
     <div class="container mx-auto px-4 max-w-7xl">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white">Quy Trình Bảo Dưỡng Khắt Khe</h2>
-            <p class="text-gray-600 dark:text-gray-400 mt-4 text-lg max-w-3xl mx-auto">Sự an toàn của bạn là ưu tiên số 1. Mỗi chiếc xe trước khi giao đều phải vượt qua 4 bước kiểm định nghiêm ngặt.</p>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">Quy Trình Bảo Dưỡng Khắt Khe</h2>
+            <p class="text-slate-500 dark:text-slate-400 mt-5 text-lg max-w-3xl mx-auto">Sự an toàn của bạn là ưu tiên số 1. Mỗi chiếc xe trước khi giao đều phải vượt qua 4 bước kiểm định nghiêm ngặt.</p>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div class="bg-gray-50 dark:bg-darkCard p-6 rounded-2xl border border-gray-100 dark:border-gray-700 text-center relative">
-                <div class="w-16 h-16 mx-auto bg-blue-100 dark:bg-gray-800 rounded-full flex items-center justify-center text-2xl text-blue-600 mb-4 font-black">1</div>
-                <h4 class="font-bold text-gray-900 dark:text-white text-lg mb-2">Vệ Sinh Sạch Sẽ</h4>
-                <p class="text-sm text-gray-600 dark:text-gray-400">Rửa sạch toàn bộ xe, kiểm tra thẩm mỹ, đảm bảo xe luôn trong trạng thái sáng bóng nhất.</p>
-                <i class="fa-solid fa-chevron-right absolute hidden md:block -right-4 top-1/2 transform -translate-y-1/2 text-gray-300 text-2xl"></i>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="bg-slate-50 dark:bg-darkCard p-8 rounded-[2rem] border-[0.5px] border-slate-200/80 dark:border-slate-700 text-center relative shadow-sm hover:shadow-md transition-all">
+                <div class="w-20 h-20 mx-auto bg-indigo-50 dark:bg-slate-800 rounded-[1.5rem] flex items-center justify-center text-3xl text-indigo-600 mb-6 font-black border-[0.5px] border-indigo-100 dark:border-slate-700">1</div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-xl mb-3 tracking-tight">Vệ Sinh Sạch Sẽ</h4>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Rửa sạch toàn bộ xe, kiểm tra thẩm mỹ, đảm bảo xe luôn trong trạng thái sáng bóng nhất.</p>
+                <i class="fa-solid fa-chevron-right absolute hidden md:block -right-4 top-1/2 transform -translate-y-1/2 text-slate-300 text-2xl"></i>
             </div>
-            <div class="bg-gray-50 dark:bg-darkCard p-6 rounded-2xl border border-gray-100 dark:border-gray-700 text-center relative">
-                <div class="w-16 h-16 mx-auto bg-blue-100 dark:bg-gray-800 rounded-full flex items-center justify-center text-2xl text-blue-600 mb-4 font-black">2</div>
-                <h4 class="font-bold text-gray-900 dark:text-white text-lg mb-2">Kiểm Tra Động Cơ</h4>
-                <p class="text-sm text-gray-600 dark:text-gray-400">Thay nhớt định kỳ, kiểm tra hệ thống khởi động, bugi, bình ắc quy đảm bảo máy móc nổ êm.</p>
-                <i class="fa-solid fa-chevron-right absolute hidden md:block -right-4 top-1/2 transform -translate-y-1/2 text-gray-300 text-2xl"></i>
+            <div class="bg-slate-50 dark:bg-darkCard p-8 rounded-[2rem] border-[0.5px] border-slate-200/80 dark:border-slate-700 text-center relative shadow-sm hover:shadow-md transition-all">
+                <div class="w-20 h-20 mx-auto bg-indigo-50 dark:bg-slate-800 rounded-[1.5rem] flex items-center justify-center text-3xl text-indigo-600 mb-6 font-black border-[0.5px] border-indigo-100 dark:border-slate-700">2</div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-xl mb-3 tracking-tight">Kiểm Tra Động Cơ</h4>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Thay nhớt định kỳ, kiểm tra hệ thống khởi động, bugi, bình ắc quy đảm bảo máy móc nổ êm.</p>
+                <i class="fa-solid fa-chevron-right absolute hidden md:block -right-4 top-1/2 transform -translate-y-1/2 text-slate-300 text-2xl"></i>
             </div>
-            <div class="bg-gray-50 dark:bg-darkCard p-6 rounded-2xl border border-gray-100 dark:border-gray-700 text-center relative">
-                <div class="w-16 h-16 mx-auto bg-blue-100 dark:bg-gray-800 rounded-full flex items-center justify-center text-2xl text-blue-600 mb-4 font-black">3</div>
-                <h4 class="font-bold text-gray-900 dark:text-white text-lg mb-2">An Toàn Phanh Lốp</h4>
-                <p class="text-sm text-gray-600 dark:text-gray-400">Kiểm tra độ mòn của lốp, độ căng của phanh trước/sau, hệ thống đèn còi và gương chiếu hậu.</p>
-                <i class="fa-solid fa-chevron-right absolute hidden md:block -right-4 top-1/2 transform -translate-y-1/2 text-gray-300 text-2xl"></i>
+            <div class="bg-slate-50 dark:bg-darkCard p-8 rounded-[2rem] border-[0.5px] border-slate-200/80 dark:border-slate-700 text-center relative shadow-sm hover:shadow-md transition-all">
+                <div class="w-20 h-20 mx-auto bg-indigo-50 dark:bg-slate-800 rounded-[1.5rem] flex items-center justify-center text-3xl text-indigo-600 mb-6 font-black border-[0.5px] border-indigo-100 dark:border-slate-700">3</div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-xl mb-3 tracking-tight">An Toàn Phanh Lốp</h4>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Kiểm tra độ mòn của lốp, độ căng của phanh trước/sau, hệ thống đèn còi và gương chiếu hậu.</p>
+                <i class="fa-solid fa-chevron-right absolute hidden md:block -right-4 top-1/2 transform -translate-y-1/2 text-slate-300 text-2xl"></i>
             </div>
-            <div class="bg-gray-50 dark:bg-darkCard p-6 rounded-2xl border border-gray-100 dark:border-gray-700 text-center">
-                <div class="w-16 h-16 mx-auto bg-green-100 dark:bg-gray-800 rounded-full flex items-center justify-center text-2xl text-green-600 mb-4 font-black"><i class="fa-solid fa-check"></i></div>
-                <h4 class="font-bold text-gray-900 dark:text-white text-lg mb-2">Chạy Thử & Bàn Giao</h4>
-                <p class="text-sm text-gray-600 dark:text-gray-400">Kỹ thuật viên chạy thử thực tế trước khi dán tem đạt chuẩn và sẵn sàng giao đến tay khách hàng.</p>
+            <div class="bg-slate-50 dark:bg-darkCard p-8 rounded-[2rem] border-[0.5px] border-slate-200/80 dark:border-slate-700 text-center shadow-sm hover:shadow-md transition-all">
+                <div class="w-20 h-20 mx-auto bg-emerald-50 dark:bg-slate-800 rounded-[1.5rem] flex items-center justify-center text-3xl text-emerald-600 mb-6 font-black border-[0.5px] border-emerald-100 dark:border-slate-700"><i class="fa-solid fa-check"></i></div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-xl mb-3 tracking-tight">Chạy Thử & Bàn Giao</h4>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Kỹ thuật viên chạy thử thực tế trước khi dán tem đạt chuẩn và sẵn sàng giao đến tay khách hàng.</p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-20 bg-blue-600 dark:bg-gray-900 border-t border-b border-blue-700 dark:border-gray-800 relative overflow-hidden">
+<section class="py-28 bg-indigo-600 dark:bg-slate-900 border-t border-b border-indigo-700 dark:border-slate-800 relative overflow-hidden reveal-up">
 <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
 <div class="container mx-auto px-4 max-w-7xl relative z-10">
-   <div class="text-center mb-16">
-       <h2 class="text-3xl md:text-4xl font-extrabold text-white">Thủ Tục Cho Thuê Nhanh Chóng</h2>
-       <p class="text-blue-100 dark:text-gray-300 mt-4 text-lg">4 bước đơn giản thao tác ngay trên điện thoại theo hướng dẫn <a href="thutuc.html" class="text-white font-bold underline">thủ tục thuê xe</a>.</p>
+   <div class="text-center mb-20">
+       <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Thủ Tục Cho Thuê Nhanh Chóng</h2>
+       <p class="text-indigo-100 dark:text-slate-300 mt-5 text-lg">4 bước đơn giản thao tác ngay trên điện thoại theo hướng dẫn <a href="thutuc.html" class="text-white font-bold underline hover:text-indigo-200">thủ tục thuê xe</a>.</p>
    </div>
 
-   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-       <div class="hidden lg:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-blue-400/50 dark:bg-gray-700 z-0"></div>
+   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 relative">
+       <div class="hidden lg:block absolute top-[3.5rem] left-[12%] right-[12%] h-[0.5px] bg-indigo-300/50 dark:bg-slate-700 z-0"></div>
 
        <div class="relative z-10 flex flex-col items-center text-center">
-           <div class="w-24 h-24 bg-white dark:bg-darkCard rounded-full border-8 border-blue-500/30 flex items-center justify-center text-3xl font-black text-blue-600 dark:text-blue-400 mb-6 shadow-xl">01</div>
-           <h4 class="text-xl font-bold text-white mb-3">Liên Hệ & Đặt Xe</h4>
-           <p class="text-blue-100 dark:text-gray-400 text-sm">Gọi 0913.901.121 hoặc đặt qua App. Cung cấp loại xe và địa chỉ giao nhận.</p>
+           <div class="w-28 h-28 bg-white dark:bg-darkCard rounded-[2rem] border-8 border-indigo-500/30 flex items-center justify-center text-4xl font-black text-indigo-600 dark:text-indigo-400 mb-6 shadow-xl">01</div>
+           <h4 class="text-xl font-bold text-white mb-3 tracking-tight">Liên Hệ & Đặt Xe</h4>
+           <p class="text-indigo-100 dark:text-slate-400 text-sm leading-relaxed">Gọi 0913.901.121 hoặc đặt qua App. Cung cấp loại xe và địa chỉ giao nhận.</p>
        </div>
 
        <div class="relative z-10 flex flex-col items-center text-center">
-           <div class="w-24 h-24 bg-white dark:bg-darkCard rounded-full border-8 border-blue-500/30 flex items-center justify-center text-3xl font-black text-blue-600 dark:text-blue-400 mb-6 shadow-xl">02</div>
-           <h4 class="text-xl font-bold text-white mb-3">Chuẩn Bị Giấy Tờ</h4>
-           <p class="text-blue-100 dark:text-gray-400 text-sm">Chỉ cần CCCD/CMND bản gốc (hoặc Passport) và GPLX hợp lệ.</p>
+           <div class="w-28 h-28 bg-white dark:bg-darkCard rounded-[2rem] border-8 border-indigo-500/30 flex items-center justify-center text-4xl font-black text-indigo-600 dark:text-indigo-400 mb-6 shadow-xl">02</div>
+           <h4 class="text-xl font-bold text-white mb-3 tracking-tight">Chuẩn Bị Giấy Tờ</h4>
+           <p class="text-indigo-100 dark:text-slate-400 text-sm leading-relaxed">Chỉ cần CCCD/CMND bản gốc (hoặc Passport) và GPLX hợp lệ.</p>
        </div>
 
        <div class="relative z-10 flex flex-col items-center text-center">
-           <div class="w-24 h-24 bg-white dark:bg-darkCard rounded-full border-8 border-blue-500/30 flex items-center justify-center text-3xl font-black text-blue-600 dark:text-blue-400 mb-6 shadow-xl">03</div>
-           <h4 class="text-xl font-bold text-white mb-3">Giao Nhận Tận Nơi</h4>
-           <p class="text-blue-100 dark:text-gray-400 text-sm">Kiểm tra tình trạng xe, mức xăng, mũ bảo hiểm và ký hợp đồng trong 5 phút.</p>
+           <div class="w-28 h-28 bg-white dark:bg-darkCard rounded-[2rem] border-8 border-indigo-500/30 flex items-center justify-center text-4xl font-black text-indigo-600 dark:text-indigo-400 mb-6 shadow-xl">03</div>
+           <h4 class="text-xl font-bold text-white mb-3 tracking-tight">Giao Nhận Tận Nơi</h4>
+           <p class="text-indigo-100 dark:text-slate-400 text-sm leading-relaxed">Kiểm tra tình trạng xe, mức xăng, mũ bảo hiểm và ký hợp đồng trong 5 phút.</p>
        </div>
 
        <div class="relative z-10 flex flex-col items-center text-center">
-           <div class="w-24 h-24 bg-white dark:bg-darkCard rounded-full border-8 border-blue-500/30 flex items-center justify-center text-3xl font-black text-blue-600 dark:text-blue-400 mb-6 shadow-xl">04</div>
-           <h4 class="text-xl font-bold text-white mb-3">Thanh Toán Trả Xe</h4>
-           <p class="text-blue-100 dark:text-gray-400 text-sm">Thanh toán linh hoạt. Nhân viên tới tận nơi lấy xe và trả lại giấy tờ.</p>
+           <div class="w-28 h-28 bg-white dark:bg-darkCard rounded-[2rem] border-8 border-indigo-500/30 flex items-center justify-center text-4xl font-black text-indigo-600 dark:text-indigo-400 mb-6 shadow-xl">04</div>
+           <h4 class="text-xl font-bold text-white mb-3 tracking-tight">Thanh Toán Trả Xe</h4>
+           <p class="text-indigo-100 dark:text-slate-400 text-sm leading-relaxed">Thanh toán linh hoạt. Nhân viên tới tận nơi lấy xe và trả lại giấy tờ.</p>
        </div>
    </div>
 </div>
 </section>
 
-<section class="py-20 bg-gray-50 dark:bg-darkBg">
+<section class="py-28 bg-slate-50 dark:bg-darkBg reveal-up">
 <div class="container mx-auto px-4 max-w-7xl">
    <div class="text-center mb-16">
-       <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white">Hành Trình Khám Phá Hà Nội</h2>
-       <p class="text-gray-600 dark:text-gray-400 mt-4 text-lg max-w-3xl mx-auto">Sở hữu xe tốt, mọi ngóc ngách thủ đô nằm trong tầm với. Xem <a href="kinhnghiem.html" class="text-blue-600 font-bold hover:underline">kinh nghiệm du lịch</a>.</p>
+       <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">Hành Trình Khám Phá Hà Nội</h2>
+       <p class="text-slate-500 dark:text-slate-400 mt-5 text-lg max-w-3xl mx-auto">Sở hữu xe tốt, mọi ngóc ngách thủ đô nằm trong tầm với. Xem <a href="kinhnghiem.html" class="text-indigo-600 font-bold hover:underline">kinh nghiệm du lịch</a>.</p>
    </div>
 
    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-       <div class="bg-white dark:bg-darkCard p-8 lg:p-10 rounded-3xl shadow-md border border-gray-100 dark:border-gray-700/50">
+       <div class="bg-white dark:bg-darkCard p-8 lg:p-10 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.03)] border-[0.5px] border-slate-200/80 dark:border-slate-700/50 hover:shadow-lg transition-all hover:-translate-y-1">
            <div class="flex items-center mb-6">
-               <div class="w-14 h-14 bg-red-50 dark:bg-red-900/20 rounded-2xl flex items-center justify-center mr-4">
-                   <i class="fa-solid fa-map-location-dot text-3xl text-red-500"></i>
+               <div class="w-16 h-16 bg-rose-50 dark:bg-rose-900/20 rounded-[1.5rem] flex items-center justify-center mr-5 border-[0.5px] border-rose-100 dark:border-slate-700">
+                   <i class="fa-solid fa-map-location-dot text-3xl text-rose-500"></i>
                </div>
-               <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Cung Đường Hồ Tây</h3>
+               <h3 class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">Cung Đường Hồ Tây</h3>
            </div>
-           <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+           <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm lg:text-base">
                Đường vòng hồ khoảng 15km cực kỳ lý tưởng để chạy xe ga/điện của Vân Thu. Tấp lề ăn kem Tràng Tiền, chụp hoàng hôn tuyệt đẹp tại Phủ Tây Hồ, đường Thanh Niên.
            </p>
        </div>
 
-       <div class="bg-white dark:bg-darkCard p-8 lg:p-10 rounded-3xl shadow-md border border-gray-100 dark:border-gray-700/50">
+       <div class="bg-white dark:bg-darkCard p-8 lg:p-10 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.03)] border-[0.5px] border-slate-200/80 dark:border-slate-700/50 hover:shadow-lg transition-all hover:-translate-y-1">
            <div class="flex items-center mb-6">
-               <div class="w-14 h-14 bg-blue-50 dark:bg-blue-900/20 rounded-2xl flex items-center justify-center mr-4">
-                   <i class="fa-solid fa-city text-3xl text-blue-500"></i>
+               <div class="w-16 h-16 bg-indigo-50 dark:bg-indigo-900/20 rounded-[1.5rem] flex items-center justify-center mr-5 border-[0.5px] border-indigo-100 dark:border-slate-700">
+                   <i class="fa-solid fa-city text-3xl text-indigo-500"></i>
                </div>
-               <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Luồn Lách Phố Cổ</h3>
+               <h3 class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">Luồn Lách Phố Cổ</h3>
            </div>
-           <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+           <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm lg:text-base">
                Với đặc sản "ngõ nhỏ", một chiếc Honda Wave Alpha là vị cứu tinh. Dễ dàng ghé chợ Đồng Xuân, ngõ Phất Lộc, phố Nguyễn Hữu Huân mà không lo tìm bãi đỗ ô tô đắt đỏ.
+           </p>
+       </div>
+
+       <div class="bg-white dark:bg-darkCard p-8 lg:p-10 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.03)] border-[0.5px] border-slate-200/80 dark:border-slate-700/50 hover:shadow-lg transition-all hover:-translate-y-1">
+           <div class="flex items-center mb-6">
+               <div class="w-16 h-16 bg-emerald-50 dark:bg-emerald-900/20 rounded-[1.5rem] flex items-center justify-center mr-5 border-[0.5px] border-emerald-100 dark:border-slate-700">
+                   <i class="fa-solid fa-landmark text-3xl text-emerald-500"></i>
+               </div>
+               <h3 class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">Dạo Quanh Lăng Bác</h3>
+           </div>
+           <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm lg:text-base">
+               Khu vực Quảng trường Ba Đình, Hoàng Diệu rợp bóng cây cổ thụ. Buổi sáng chạy xe ngắm bình minh hoặc tối xem lễ hạ cờ là trải nghiệm đậm chất Hà Nội.
+           </p>
+       </div>
+
+       <div class="bg-white dark:bg-darkCard p-8 lg:p-10 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.03)] border-[0.5px] border-slate-200/80 dark:border-slate-700/50 hover:shadow-lg transition-all hover:-translate-y-1">
+           <div class="flex items-center mb-6">
+               <div class="w-16 h-16 bg-amber-50 dark:bg-amber-900/20 rounded-[1.5rem] flex items-center justify-center mr-5 border-[0.5px] border-amber-100 dark:border-slate-700">
+                   <i class="fa-solid fa-mountain text-3xl text-amber-500"></i>
+               </div>
+               <h3 class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">Khám Phá Ngoại Thành</h3>
+           </div>
+           <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm lg:text-base">
+               Cuối tuần đổi gió với các cung đường phượt nhẹ bằng xe số Thu Vân: Cắm trại tại Vườn Quốc Gia Ba Vì, Làng gốm Bát Tràng hay ngắm hoàng hôn đê Ngọc Thụy.
            </p>
        </div>
    </div>
 </div>
 </section>
 
-<section class="py-20 bg-white dark:bg-gray-900 border-t dark:border-gray-800">
+<section class="py-28 bg-white dark:bg-slate-900 border-t-[0.5px] dark:border-slate-800 reveal-up">
     <div class="container mx-auto px-4 max-w-7xl">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white">Cẩm Nang Ăn Chơi Thủ Đô</h2>
-            <p class="text-gray-600 dark:text-gray-400 mt-4 text-lg max-w-3xl mx-auto">Gợi ý những địa điểm ẩm thực và vui chơi bạn không thể bỏ lỡ khi vi vu xe máy.</p>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">Cẩm Nang Ăn Chơi Thủ Đô</h2>
+            <p class="text-slate-500 dark:text-slate-400 mt-5 text-lg max-w-3xl mx-auto">Gợi ý những địa điểm ẩm thực và vui chơi bạn không thể bỏ lỡ khi vi vu xe máy.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="rounded-2xl overflow-hidden group cursor-pointer shadow-lg">
-                <div class="h-48 bg-gray-200 dark:bg-gray-800 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all z-10"></div>
-                    <div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500" style="background-image: url('https://images.unsplash.com/photo-1559592413-7cea4ee848c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                    <h3 class="absolute bottom-4 left-4 z-20 text-white font-bold text-xl drop-shadow-md">Phở Bò Gia Truyền</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="rounded-[2.5rem] overflow-hidden group cursor-pointer shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-2 border-[0.5px] border-slate-200/80 dark:border-slate-700 bg-white dark:bg-darkCard">
+                <div class="h-56 bg-indigo-50/50 dark:bg-slate-800 flex flex-col items-center justify-center relative overflow-hidden border-b-[0.5px] border-slate-200/80 dark:border-slate-700 p-6">
+                    <svg class="w-24 h-24 text-indigo-400 dark:text-indigo-500 opacity-80 group-hover:scale-110 transition-transform duration-500 mb-4" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 13a9 9 0 0018 0H3zM6 9h12M8 5h8"></path>
+                    </svg>
+                    <h3 class="text-slate-900 dark:text-white font-bold text-2xl tracking-tight relative z-20">Phở Bò Gia Truyền</h3>
                 </div>
-                <div class="p-6 bg-white dark:bg-darkCard border border-t-0 border-gray-100 dark:border-gray-700 rounded-b-2xl">
-                    <p class="text-sm text-gray-600 dark:text-gray-400">Thưởng thức bát phở nóng hổi tại Phở Bát Đàn, Phở Thìn Lò Đúc. Chỗ để xe máy ngay trước cửa cực kỳ tiện lợi.</p>
-                </div>
-            </div>
-            <div class="rounded-2xl overflow-hidden group cursor-pointer shadow-lg">
-                <div class="h-48 bg-gray-200 dark:bg-gray-800 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all z-10"></div>
-                    <div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500" style="background-image: url('https://images.unsplash.com/photo-1583594589338-765f1c9006e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                    <h3 class="absolute bottom-4 left-4 z-20 text-white font-bold text-xl drop-shadow-md">Cà Phê Trứng Giảng</h3>
-                </div>
-                <div class="p-6 bg-white dark:bg-darkCard border border-t-0 border-gray-100 dark:border-gray-700 rounded-b-2xl">
-                    <p class="text-sm text-gray-600 dark:text-gray-400">Nằm khuất trong ngõ nhỏ phố Nguyễn Hữu Huân, lý tưởng nhất là đi xe ga chui vào hẻm thưởng thức ly cafe béo ngậy.</p>
+                <div class="p-8">
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Thưởng thức bát phở nóng hổi tại Phở Bát Đàn, Phở Thìn Lò Đúc. Chỗ để xe máy ngay trước cửa cực kỳ tiện lợi.</p>
                 </div>
             </div>
-            <div class="rounded-2xl overflow-hidden group cursor-pointer shadow-lg">
-                <div class="h-48 bg-gray-200 dark:bg-gray-800 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all z-10"></div>
-                    <div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500" style="background-image: url('https://images.unsplash.com/photo-1559410162-85db9a35e076?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                    <h3 class="absolute bottom-4 left-4 z-20 text-white font-bold text-xl drop-shadow-md">Lượn Cầu Long Biên</h3>
+            <div class="rounded-[2.5rem] overflow-hidden group cursor-pointer shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-2 border-[0.5px] border-slate-200/80 dark:border-slate-700 bg-white dark:bg-darkCard">
+                <div class="h-56 bg-violet-50/50 dark:bg-slate-800 flex flex-col items-center justify-center relative overflow-hidden border-b-[0.5px] border-slate-200/80 dark:border-slate-700 p-6">
+                    <svg class="w-24 h-24 text-violet-400 dark:text-violet-500 opacity-80 group-hover:scale-110 transition-transform duration-500 mb-4" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 8h12v4a6 6 0 01-6 6v0a6 6 0 01-6-6V8zM18 10h1a2 2 0 010 4h-1M8 3v2M12 2v3M16 3v2"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 20h16"></path>
+                    </svg>
+                    <h3 class="text-slate-900 dark:text-white font-bold text-2xl tracking-tight relative z-20">Cà Phê Trứng Giảng</h3>
                 </div>
-                <div class="p-6 bg-white dark:bg-darkCard border border-t-0 border-gray-100 dark:border-gray-700 rounded-b-2xl">
-                    <p class="text-sm text-gray-600 dark:text-gray-400">Chạy xe máy chậm rãi trên cầu Long Biên lúc chiều tà, đón gió sông Hồng mát rượi là trải nghiệm khó quên.</p>
+                <div class="p-8">
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Nằm khuất trong ngõ nhỏ phố Nguyễn Hữu Huân, lý tưởng nhất là đi xe ga chui vào hẻm thưởng thức ly cafe béo ngậy.</p>
+                </div>
+            </div>
+            <div class="rounded-[2.5rem] overflow-hidden group cursor-pointer shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-2 border-[0.5px] border-slate-200/80 dark:border-slate-700 bg-white dark:bg-darkCard">
+                <div class="h-56 bg-emerald-50/50 dark:bg-slate-800 flex flex-col items-center justify-center relative overflow-hidden border-b-[0.5px] border-slate-200/80 dark:border-slate-700 p-6">
+                    <svg class="w-24 h-24 text-emerald-400 dark:text-emerald-500 opacity-80 group-hover:scale-110 transition-transform duration-500 mb-4" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 10l9-6 9 6M5 10v10M19 10v10M9 20v-6a2 2 0 014 0v6M3 20h18"></path>
+                    </svg>
+                    <h3 class="text-slate-900 dark:text-white font-bold text-2xl tracking-tight relative z-20">Lượn Cầu Long Biên</h3>
+                </div>
+                <div class="p-8">
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Chạy xe máy chậm rãi trên cầu Long Biên lúc chiều tà, đón gió sông Hồng mát rượi là trải nghiệm khó quên.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-20 bg-gray-50 dark:bg-darkBg border-t dark:border-gray-800">
+<section class="py-28 bg-slate-50 dark:bg-darkBg border-t-[0.5px] dark:border-slate-800 reveal-up">
     <div class="container mx-auto px-4 max-w-7xl">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white">Khách Hàng Nói Gì Về Thu Vân?</h2>
-            <p class="text-gray-600 dark:text-gray-400 mt-4 text-lg max-w-3xl mx-auto">Hàng ngàn chuyến đi thành công là thước đo chuẩn xác nhất cho chất lượng dịch vụ của chúng tôi.</p>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">Khách Hàng Nói Gì Về Thu Vân?</h2>
+            <p class="text-slate-500 dark:text-slate-400 mt-5 text-lg max-w-3xl mx-auto">Hàng ngàn chuyến đi thành công là thước đo chuẩn xác nhất cho chất lượng dịch vụ của chúng tôi.</p>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-white dark:bg-darkCard p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-blue-100 dark:bg-gray-800 rounded-full flex items-center justify-center font-bold text-blue-600 text-xl mr-4">H</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white dark:bg-darkCard p-8 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.03)] border-[0.5px] border-slate-200/80 dark:border-slate-700 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgb(0,0,0,0.06)] transition-all duration-300">
+                <div class="flex items-center mb-5">
+                    <div class="w-14 h-14 bg-indigo-50 dark:bg-slate-800 rounded-full flex items-center justify-center font-bold text-indigo-600 text-xl mr-4 border-[0.5px] border-indigo-100 dark:border-slate-700">H</div>
                     <div>
-                        <h4 class="font-bold text-gray-900 dark:text-white">Hoàng Nam</h4>
-                        <div class="text-yellow-400 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <h4 class="font-bold text-slate-900 dark:text-white">Hoàng Nam</h4>
+                        <div class="text-amber-400 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     </div>
                 </div>
-                <p class="text-gray-600 dark:text-gray-400 text-sm italic">"Xe mới tinh, chạy cực êm. Mình book lúc 9h tối mà anh nhân viên vẫn giao tận khách sạn ở Phố Cổ chỉ trong 15 phút. Rất ưng ý!"</p>
+                <p class="text-slate-600 dark:text-slate-400 text-sm italic leading-relaxed">"Xe mới tinh, chạy cực êm. Mình book lúc 9h tối mà anh nhân viên vẫn giao tận khách sạn ở Phố Cổ chỉ trong 15 phút. Rất ưng ý!"</p>
             </div>
-            <div class="bg-white dark:bg-darkCard p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-pink-100 dark:bg-gray-800 rounded-full flex items-center justify-center font-bold text-pink-600 text-xl mr-4">L</div>
+            <div class="bg-white dark:bg-darkCard p-8 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.03)] border-[0.5px] border-slate-200/80 dark:border-slate-700 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgb(0,0,0,0.06)] transition-all duration-300">
+                <div class="flex items-center mb-5">
+                    <div class="w-14 h-14 bg-rose-50 dark:bg-slate-800 rounded-full flex items-center justify-center font-bold text-rose-600 text-xl mr-4 border-[0.5px] border-rose-100 dark:border-slate-700">L</div>
                     <div>
-                        <h4 class="font-bold text-gray-900 dark:text-white">Linh Nga</h4>
-                        <div class="text-yellow-400 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <h4 class="font-bold text-slate-900 dark:text-white">Linh Nga</h4>
+                        <div class="text-amber-400 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     </div>
                 </div>
-                <p class="text-gray-600 dark:text-gray-400 text-sm italic">"Thủ tục thuê không cần đặt cọc siêu tiện lợi cho khách du lịch như mình. Xe Vision cốp rộng tha hồ để đồ đi lượn Hồ Tây."</p>
+                <p class="text-slate-600 dark:text-slate-400 text-sm italic leading-relaxed">"Thủ tục thuê không cần đặt cọc siêu tiện lợi cho khách du lịch như mình. Xe Vision cốp rộng tha hồ để đồ đi lượn Hồ Tây."</p>
             </div>
-            <div class="bg-white dark:bg-darkCard p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-green-100 dark:bg-gray-800 rounded-full flex items-center justify-center font-bold text-green-600 text-xl mr-4">T</div>
+            <div class="bg-white dark:bg-darkCard p-8 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.03)] border-[0.5px] border-slate-200/80 dark:border-slate-700 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgb(0,0,0,0.06)] transition-all duration-300">
+                <div class="flex items-center mb-5">
+                    <div class="w-14 h-14 bg-emerald-50 dark:bg-slate-800 rounded-full flex items-center justify-center font-bold text-emerald-600 text-xl mr-4 border-[0.5px] border-emerald-100 dark:border-slate-700">T</div>
                     <div>
-                        <h4 class="font-bold text-gray-900 dark:text-white">Trần Tuấn</h4>
-                        <div class="text-yellow-400 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+                        <h4 class="font-bold text-slate-900 dark:text-white">Trần Tuấn</h4>
+                        <div class="text-amber-400 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
                     </div>
                 </div>
-                <p class="text-gray-600 dark:text-gray-400 text-sm italic">"Thuê xe Wave đi ngoại thành. Xe bảo dưỡng tốt, máy khỏe không hỏng vặt. Lần sau ra HN chắc chắn sẽ tiếp tục ủng hộ Vân Thu."</p>
+                <p class="text-slate-600 dark:text-slate-400 text-sm italic leading-relaxed">"Thuê xe Wave đi ngoại thành. Xe bảo dưỡng tốt, máy khỏe không hỏng vặt. Lần sau ra HN chắc chắn sẽ tiếp tục ủng hộ Vân Thu."</p>
             </div>
-            <div class="bg-white dark:bg-darkCard p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 md:col-start-1 lg:col-start-auto">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-purple-100 dark:bg-gray-800 rounded-full flex items-center justify-center font-bold text-purple-600 text-xl mr-4">M</div>
+            <div class="bg-white dark:bg-darkCard p-8 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.03)] border-[0.5px] border-slate-200/80 dark:border-slate-700 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgb(0,0,0,0.06)] transition-all duration-300 md:col-start-1 lg:col-start-auto">
+                <div class="flex items-center mb-5">
+                    <div class="w-14 h-14 bg-violet-50 dark:bg-slate-800 rounded-full flex items-center justify-center font-bold text-violet-600 text-xl mr-4 border-[0.5px] border-violet-100 dark:border-slate-700">M</div>
                     <div>
-                        <h4 class="font-bold text-gray-900 dark:text-white">Mai Phương</h4>
-                        <div class="text-yellow-400 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <h4 class="font-bold text-slate-900 dark:text-white">Mai Phương</h4>
+                        <div class="text-amber-400 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     </div>
                 </div>
-                <p class="text-gray-600 dark:text-gray-400 text-sm italic">"Chị chủ cực kỳ nhiệt tình, hỗ trợ sẵn luôn 2 mũ bảo hiểm xịn và áo mưa trong cốp. Xe sạch sẽ và thơm tho."</p>
+                <p class="text-slate-600 dark:text-slate-400 text-sm italic leading-relaxed">"Chị chủ cực kỳ nhiệt tình, hỗ trợ sẵn luôn 2 mũ bảo hiểm xịn và áo mưa trong cốp. Xe sạch sẽ và thơm tho."</p>
             </div>
-            <div class="bg-white dark:bg-darkCard p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 md:col-start-2 lg:col-start-auto">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-yellow-100 dark:bg-gray-800 rounded-full flex items-center justify-center font-bold text-yellow-600 text-xl mr-4">K</div>
+            <div class="bg-white dark:bg-darkCard p-8 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.03)] border-[0.5px] border-slate-200/80 dark:border-slate-700 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgb(0,0,0,0.06)] transition-all duration-300 md:col-start-2 lg:col-start-auto">
+                <div class="flex items-center mb-5">
+                    <div class="w-14 h-14 bg-amber-50 dark:bg-slate-800 rounded-full flex items-center justify-center font-bold text-amber-600 text-xl mr-4 border-[0.5px] border-amber-100 dark:border-slate-700">K</div>
                     <div>
-                        <h4 class="font-bold text-gray-900 dark:text-white">Kevin Smith</h4>
-                        <div class="text-yellow-400 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <h4 class="font-bold text-slate-900 dark:text-white">Kevin Smith</h4>
+                        <div class="text-amber-400 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     </div>
                 </div>
-                <p class="text-gray-600 dark:text-gray-400 text-sm italic">"Great service! They delivered the bike to my hotel in Tay Ho very fast. The bike was in perfect condition. Highly recommended."</p>
+                <p class="text-slate-600 dark:text-slate-400 text-sm italic leading-relaxed">"Great service! They delivered the bike to my hotel in Tay Ho very fast. The bike was in perfect condition. Highly recommended."</p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-20 bg-white dark:bg-gray-900 border-t dark:border-gray-800">
+<section class="py-28 bg-white dark:bg-slate-900 border-t-[0.5px] dark:border-slate-800 reveal-up">
     <div class="container mx-auto px-4 max-w-4xl">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white">Câu Hỏi Thường Gặp (FAQ)</h2>
-            <p class="text-gray-600 dark:text-gray-400 mt-4 text-lg">Giải đáp nhanh các thắc mắc phổ biến của khách hàng.</p>
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">Câu Hỏi Thường Gặp (FAQ)</h2>
+            <p class="text-slate-500 dark:text-slate-400 mt-5 text-lg">Giải đáp nhanh các thắc mắc phổ biến của khách hàng.</p>
         </div>
         
         <div class="space-y-4">
-            <div class="border border-gray-200 dark:border-gray-700 rounded-xl bg-gray-50 dark:bg-darkCard overflow-hidden">
-                <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                    <span>1. Tôi không có hộ khẩu Hà Nội thì có thuê được không?</span>
+            <div class="border-[0.5px] border-slate-200 dark:border-slate-700 rounded-[1.5rem] bg-slate-50 dark:bg-darkCard overflow-hidden shadow-sm">
+                <button class="faq-btn w-full px-8 py-5 text-left flex justify-between items-center font-bold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                    <span class="tracking-tight text-lg">1. Tôi không có hộ khẩu Hà Nội thì có thuê được không?</span>
                     <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
                 </button>
-                <div class="faq-content hidden px-6 pb-4 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                <div class="faq-content hidden px-8 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                     Hoàn toàn được! Thu Vân hỗ trợ mọi du khách và người lao động ngoại tỉnh. Bạn chỉ cần có Căn cước công dân bản gốc (hoặc Passport) và Giấy phép lái xe hợp lệ là có thể làm thủ tục nhận xe.
                 </div>
             </div>
-            <div class="border border-gray-200 dark:border-gray-700 rounded-xl bg-gray-50 dark:bg-darkCard overflow-hidden">
-                <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                    <span>2. Dịch vụ giao xe tận nơi có mất thêm phí không?</span>
+            <div class="border-[0.5px] border-slate-200 dark:border-slate-700 rounded-[1.5rem] bg-slate-50 dark:bg-darkCard overflow-hidden shadow-sm">
+                <button class="faq-btn w-full px-8 py-5 text-left flex justify-between items-center font-bold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                    <span class="tracking-tight text-lg">2. Dịch vụ giao xe tận nơi có mất thêm phí không?</span>
                     <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
                 </button>
-                <div class="faq-content hidden px-6 pb-4 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                <div class="faq-content hidden px-8 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                     Chúng tôi miễn phí giao nhận xe tận nơi trong bán kính 3km khu vực Tây Hồ. Các khu vực nội thành khác như Phố Cổ, Hoàn Kiếm, Đống Đa sẽ có tính phí ship hỗ trợ nhân viên (chỉ từ 20k - 50k tùy khoảng cách).
                 </div>
             </div>
-            <div class="border border-gray-200 dark:border-gray-700 rounded-xl bg-gray-50 dark:bg-darkCard overflow-hidden">
-                <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                    <span>3. Đang đi đường xe bị hỏng thì xử lý thế nào?</span>
+            <div class="border-[0.5px] border-slate-200 dark:border-slate-700 rounded-[1.5rem] bg-slate-50 dark:bg-darkCard overflow-hidden shadow-sm">
+                <button class="faq-btn w-full px-8 py-5 text-left flex justify-between items-center font-bold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                    <span class="tracking-tight text-lg">3. Đang đi đường xe bị hỏng thì xử lý thế nào?</span>
                     <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
                 </button>
-                <div class="faq-content hidden px-6 pb-4 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                <div class="faq-content hidden px-8 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                     Bạn hãy gọi ngay vào Hotline hỗ trợ kỹ thuật 24/7 của chúng tôi. Kỹ thuật viên sẽ hướng dẫn khắc phục hoặc lập tức mang xe khác đến tận nơi để đổi cho bạn, không làm gián đoạn lịch trình (hoàn toàn miễn phí nếu do lỗi kỹ thuật của xe).
                 </div>
             </div>
-            <div class="border border-gray-200 dark:border-gray-700 rounded-xl bg-gray-50 dark:bg-darkCard overflow-hidden">
-                <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                    <span>4. Thuê xe dài ngày có chính sách giảm giá không?</span>
+            <div class="border-[0.5px] border-slate-200 dark:border-slate-700 rounded-[1.5rem] bg-slate-50 dark:bg-darkCard overflow-hidden shadow-sm">
+                <button class="faq-btn w-full px-8 py-5 text-left flex justify-between items-center font-bold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                    <span class="tracking-tight text-lg">4. Thuê xe dài ngày có chính sách giảm giá không?</span>
                     <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
                 </button>
-                <div class="faq-content hidden px-6 pb-4 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                <div class="faq-content hidden px-8 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                     Chắc chắn có! Thu Vân có chính sách ưu đãi giá cực sốc dành cho khách hàng thuê theo Tuần (giảm từ 15-20%) và thuê theo Tháng (giảm tới 40% so với giá thuê ngày). Vui lòng liên hệ trực tiếp để có báo giá sỉ tốt nhất.
                 </div>
             </div>
-            <div class="border border-gray-200 dark:border-gray-700 rounded-xl bg-gray-50 dark:bg-darkCard overflow-hidden">
-                <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                    <span>5. Thời gian tính 1 ngày thuê xe như thế nào?</span>
+            <div class="border-[0.5px] border-slate-200 dark:border-slate-700 rounded-[1.5rem] bg-slate-50 dark:bg-darkCard overflow-hidden shadow-sm">
+                <button class="faq-btn w-full px-8 py-5 text-left flex justify-between items-center font-bold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                    <span class="tracking-tight text-lg">5. Thời gian tính 1 ngày thuê xe như thế nào?</span>
                     <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
                 </button>
-                <div class="faq-content hidden px-6 pb-4 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                <div class="faq-content hidden px-8 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                     Khác với một số bên tính theo ngày dương lịch, Thu Vân tính 1 ngày thuê là trọn vẹn 24 tiếng kể từ lúc bạn ký hợp đồng nhận xe. Ví dụ bạn nhận xe lúc 15h hôm nay thì 15h chiều mai mới tính là tròn 1 ngày.
                 </div>
             </div>
@@ -864,57 +904,57 @@ html.dark ::-webkit-scrollbar-track { background: #1f2937; }
     </div>
 </section>
 
-<section id="lien-he" class="py-24 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 relative">
+<section id="lien-he" class="py-28 bg-white dark:bg-slate-900 border-t-[0.5px] border-slate-100 dark:border-slate-800 relative reveal-up">
 <div class="container mx-auto px-4 max-w-7xl">
    <div class="text-center mb-16">
-       <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white">Kết Nối Với Chúng Tôi</h2>
-       <div class="w-20 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mt-6 rounded-full"></div>
+       <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">Kết Nối Với Chúng Tôi</h2>
+       <div class="w-20 h-1.5 bg-gradient-to-r from-indigo-600 to-violet-600 mx-auto mt-6 rounded-full"></div>
    </div>
 
    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
 
        <div class="lg:col-span-4 space-y-8">
-           <div class="bg-gray-50 dark:bg-darkCard rounded-3xl p-8 border border-gray-100 dark:border-gray-700 shadow-sm h-full">
-               <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 border-b dark:border-gray-700 pb-4">Thông Tin Liên Hệ</h3>
+           <div class="bg-slate-50 dark:bg-darkCard rounded-[2.5rem] p-8 lg:p-10 border-[0.5px] border-slate-200/80 dark:border-slate-700 shadow-[0_8px_30px_rgb(0,0,0,0.03)] h-full">
+               <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-8 border-b-[0.5px] dark:border-slate-700 pb-4 tracking-tight">Thông Tin Liên Hệ</h3>
            
-               <ul class="space-y-6">
+               <ul class="space-y-8">
                    <li class="flex items-start">
-                       <div class="flex-shrink-0 w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 mt-1">
+                       <div class="flex-shrink-0 w-14 h-14 bg-indigo-50 dark:bg-indigo-900/30 rounded-[1.2rem] flex items-center justify-center text-indigo-600 dark:text-indigo-400 mt-1 border-[0.5px] border-indigo-100 dark:border-slate-700">
                            <i class="fa-solid fa-location-dot text-lg"></i>
                        </div>
-                       <div class="ml-4">
-                           <p class="font-bold text-gray-900 dark:text-gray-200">Trụ sở giao xe</p>
-                           <p class="text-gray-600 dark:text-gray-400 mt-1 leading-relaxed text-sm">15 Ngõ 150, Yên Phụ, Tây Hồ, Hà Nội, Việt Nam.</p>
+                       <div class="ml-5">
+                           <p class="font-bold text-slate-900 dark:text-slate-200">Trụ sở giao xe</p>
+                           <p class="text-slate-600 dark:text-slate-400 mt-1.5 leading-relaxed text-sm">15 Ngõ 150, Yên Phụ, Tây Hồ, Hà Nội, Việt Nam.</p>
                        </div>
                    </li>
                
                    <li class="flex items-start">
-                       <div class="flex-shrink-0 w-12 h-12 bg-yellow-100 dark:bg-yellow-900/30 rounded-2xl flex items-center justify-center text-yellow-600 dark:text-yellow-400 mt-1">
+                       <div class="flex-shrink-0 w-14 h-14 bg-amber-50 dark:bg-amber-900/30 rounded-[1.2rem] flex items-center justify-center text-amber-600 dark:text-amber-400 mt-1 border-[0.5px] border-amber-100 dark:border-slate-700">
                            <i class="fa-solid fa-clock text-lg"></i>
                        </div>
-                       <div class="ml-4">
-                           <p class="font-bold text-gray-900 dark:text-gray-200">Giờ mở cửa</p>
-                           <p class="text-gray-600 dark:text-gray-400 mt-1 text-sm">9h - 21h (Tất cả các ngày trong tuần)</p>
+                       <div class="ml-5">
+                           <p class="font-bold text-slate-900 dark:text-slate-200">Giờ mở cửa</p>
+                           <p class="text-slate-600 dark:text-slate-400 mt-1.5 text-sm">9h - 21h (Tất cả các ngày)</p>
                        </div>
                    </li>
 
                    <li class="flex items-start">
-                       <div class="flex-shrink-0 w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-2xl flex items-center justify-center text-green-600 dark:text-green-400 mt-1">
+                       <div class="flex-shrink-0 w-14 h-14 bg-emerald-50 dark:bg-emerald-900/30 rounded-[1.2rem] flex items-center justify-center text-emerald-600 dark:text-emerald-400 mt-1 border-[0.5px] border-emerald-100 dark:border-slate-700">
                            <i class="fa-solid fa-phone text-lg"></i>
                        </div>
-                       <div class="ml-4">
-                           <p class="font-bold text-gray-900 dark:text-gray-200">Hotline đặt xe (24/7)</p>
-                           <a href="tel:0913901121" class="text-blue-600 dark:text-blue-400 font-black hover:underline text-lg mt-1 block">0913 901 121</a>
+                       <div class="ml-5">
+                           <p class="font-bold text-slate-900 dark:text-slate-200">Hotline đặt xe (24/7)</p>
+                           <a href="tel:0913901121" class="text-indigo-600 dark:text-indigo-400 font-black hover:underline text-lg mt-1.5 block tracking-tight">0913 901 121</a>
                        </div>
                    </li>
 
                    <li class="flex items-start">
-                       <div class="flex-shrink-0 w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 dark:text-purple-400 mt-1">
+                       <div class="flex-shrink-0 w-14 h-14 bg-violet-50 dark:bg-violet-900/30 rounded-[1.2rem] flex items-center justify-center text-violet-600 dark:text-violet-400 mt-1 border-[0.5px] border-violet-100 dark:border-slate-700">
                            <i class="fa-solid fa-envelope text-lg"></i>
                        </div>
-                       <div class="ml-4">
-                           <p class="font-bold text-gray-900 dark:text-gray-200">Email phản hồi</p>
-                           <a href="mailto:vanthu20301@gmail.com" class="text-gray-600 dark:text-gray-400 text-sm hover:text-blue-600 mt-1 block transition">vanthu20301@gmail.com</a>
+                       <div class="ml-5">
+                           <p class="font-bold text-slate-900 dark:text-slate-200">Email phản hồi</p>
+                           <a href="mailto:vanthu20301@gmail.com" class="text-slate-600 dark:text-slate-400 text-sm hover:text-indigo-600 mt-1.5 block transition">vanthu20301@gmail.com</a>
                        </div>
                    </li>
                </ul>
@@ -923,12 +963,12 @@ html.dark ::-webkit-scrollbar-track { background: #1f2937; }
 
        <div class="lg:col-span-8 flex flex-col gap-8">
        
-           <div class="rounded-3xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-700 h-[300px] w-full">
+           <div class="rounded-[2.5rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-[0.5px] border-slate-200/80 dark:border-slate-700 h-[300px] w-full">
                <iframe
                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.6596167664687!2d105.83680737599292!3d21.046300487173663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135aba6a5b67a15%3A0xc4f5c4015f66c0!2s15%20Ng.%20150%20P.%20Y%C3%AAn%20Ph%E1%BB%A5%2C%20Y%C3%AAn%20Ph%E1%BB%A5%2C%20T%C3%A2y%20H%E1%BB%93%2C%20H%C3%A0%20N%E1%BB%99i%2C%20Vietnam!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
                    width="100%"
                    height="100%"
-                   style="border:0; filter: invert(0);" class="dark-map-adjust"
+                   style="border:0; filter: invert(0);" class="dark-map-adjust w-full h-full"
                    allowfullscreen=""
                    loading="lazy"
                    referrerpolicy="no-referrer-when-downgrade"
@@ -939,30 +979,30 @@ html.dark ::-webkit-scrollbar-track { background: #1f2937; }
                </style>
            </div>
 
-           <div class="bg-gray-50 dark:bg-darkCard rounded-3xl shadow-md border border-gray-100 dark:border-gray-700 p-8 lg:p-10 relative overflow-hidden">
-               <div class="absolute top-0 right-0 w-32 h-32 bg-blue-100/50 dark:bg-blue-900/20 rounded-bl-full z-0"></div>
-               <div class="absolute bottom-0 left-0 w-24 h-24 bg-indigo-100/50 dark:bg-indigo-900/20 rounded-tr-full z-0"></div>
+           <div class="bg-slate-50 dark:bg-darkCard rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-[0.5px] border-slate-200/80 dark:border-slate-700 p-8 lg:p-12 relative overflow-hidden">
+               <div class="absolute top-0 right-0 w-40 h-40 bg-indigo-100/50 dark:bg-indigo-900/20 rounded-bl-full z-0"></div>
+               <div class="absolute bottom-0 left-0 w-32 h-32 bg-violet-100/50 dark:bg-violet-900/20 rounded-tr-full z-0"></div>
            
                <div class="relative z-10">
-                   <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Gửi tin nhắn cho chúng tôi</h3>
-                   <p class="text-gray-500 dark:text-gray-400 text-sm mb-8">Bạn cần tư vấn thêm? Hãy để lại thông tin, nhân viên Thu Vân sẽ phản hồi ngay.</p>
+                   <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2 tracking-tight">Gửi tin nhắn cho chúng tôi</h3>
+                   <p class="text-slate-500 dark:text-slate-400 text-sm mb-8">Bạn cần tư vấn thêm? Hãy để lại thông tin, nhân viên Thu Vân sẽ phản hồi ngay.</p>
 
                    <form class="space-y-6" onsubmit="event.preventDefault();">
                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                            <div>
-                               <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Họ và tên</label>
-                               <input type="text" class="w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all dark:text-white shadow-sm" placeholder="Nhập tên của bạn">
+                               <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Họ và tên</label>
+                               <input type="text" class="w-full bg-white dark:bg-slate-800 border-[0.5px] border-slate-300 dark:border-slate-600 rounded-[1.2rem] px-5 py-4 outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all dark:text-white shadow-sm text-sm" placeholder="Nhập tên của bạn">
                            </div>
                            <div>
-                               <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Số điện thoại</label>
-                               <input type="tel" class="w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all dark:text-white shadow-sm" placeholder="09xx xxx xxx">
+                               <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Số điện thoại</label>
+                               <input type="tel" class="w-full bg-white dark:bg-slate-800 border-[0.5px] border-slate-300 dark:border-slate-600 rounded-[1.2rem] px-5 py-4 outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all dark:text-white shadow-sm text-sm" placeholder="09xx xxx xxx">
                            </div>
                        </div>
                        <div>
-                           <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Nội dung yêu cầu</label>
-                           <textarea rows="4" class="w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all dark:text-white resize-none shadow-sm" placeholder="Ví dụ: Tôi muốn thuê 1 xe Vision tại khách sạn khu vực Phố Cổ..."></textarea>
+                           <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Nội dung yêu cầu</label>
+                           <textarea rows="4" class="w-full bg-white dark:bg-slate-800 border-[0.5px] border-slate-300 dark:border-slate-600 rounded-[1.2rem] px-5 py-4 outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all dark:text-white resize-none shadow-sm text-sm" placeholder="Ví dụ: Tôi muốn thuê 1 xe Vision tại khách sạn khu vực Phố Cổ..."></textarea>
                        </div>
-                       <button class="w-full sm:w-auto px-10 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl shadow-lg hover:shadow-indigo-500/30 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                       <button class="w-full sm:w-auto px-10 py-4 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white font-bold rounded-[1.2rem] shadow-[0_8px_20px_rgba(99,102,241,0.3)] hover:shadow-[0_8px_20px_rgba(99,102,241,0.5)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2 tracking-tight">
                            <i class="fa-solid fa-paper-plane"></i> Gửi Yêu Cầu Tư Vấn
                        </button>
                    </form>
@@ -973,6 +1013,7 @@ html.dark ::-webkit-scrollbar-track { background: #1f2937; }
    </div>
 </div>
 </section>
+
 <footer class="bg-gray-900 text-gray-300 pt-16 pb-8 border-t border-gray-800">
 <div class="container mx-auto px-4 max-w-7xl">
    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-8 mb-12">
@@ -983,23 +1024,23 @@ html.dark ::-webkit-scrollbar-track { background: #1f2937; }
                <span class="text-3xl font-extrabold text-white tracking-tight">Vân Thu</span>
            </div>
      
-           <p class="text-blue-400 font-medium italic mb-4 text-sm">"Hành trình trọn vẹn - Trải nghiệm tuyệt vời"</p>
+           <p class="text-indigo-400 font-medium italic mb-4 text-sm">"Hành trình trọn vẹn - Trải nghiệm tuyệt vời"</p>
      
            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
                Vân Thu tự hào cung cấp dịch vụ cho thuê xe máy uy tín tại Tây Hồ, Hà Nội với thủ tục nhanh, không cọc, giao xe tận nơi 24/7.
            </p>
 
            <div class="flex flex-wrap gap-3">
-               <a href="https://www.facebook.com/chothuexemaythuvan/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all shadow" title="Facebook">
+               <a href="https://www.facebook.com/chothuexemaythuvan/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all shadow" title="Facebook">
                    <i class="fa-brands fa-facebook-f text-lg"></i>
                </a>
-               <a href="https://maps.app.goo.gl/NCWYLRVv1HX8V3xP8?g_st=ic" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-500 hover:text-white transition-all shadow" title="Google Maps">
+               <a href="https://maps.app.goo.gl/NCWYLRVv1HX8V3xP8?g_st=ic" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-rose-500 hover:text-white transition-all shadow" title="Google Maps">
                    <i class="fa-solid fa-map-location-dot text-lg"></i>
                </a>
-               <a href="https://about.me/chothuexemayvanthu" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-400 hover:text-white transition-all shadow" title="About.me">
+               <a href="https://about.me/chothuexemayvanthu" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-indigo-400 hover:text-white transition-all shadow" title="About.me">
                    <i class="fa-solid fa-address-card text-lg"></i>
                </a>
-               <a href="https://thuexemaynguyentu.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-500 hover:text-white transition-all shadow" title="Hệ thống đối tác">
+               <a href="https://thuexemaynguyentu.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-all shadow" title="Hệ thống đối tác">
                    <i class="fa-solid fa-globe text-lg"></i>
                </a>
            </div>
@@ -1009,17 +1050,17 @@ html.dark ::-webkit-scrollbar-track { background: #1f2937; }
            <button class="footer-accordion-btn w-full flex justify-between items-center md:pointer-events-none md:cursor-default text-left">
                <h3 class="text-lg font-bold text-white relative inline-block">
                    Dịch Vụ & Bảng Giá
-                   <span class="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-blue-500 hidden md:block"></span>
+                   <span class="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-indigo-500 hidden md:block"></span>
                </h3>
                <i class="fa-solid fa-chevron-down md:hidden transition-transform duration-300 text-gray-400"></i>
            </button>
            <ul class="accordion-content max-h-0 opacity-0 overflow-hidden md:max-h-[500px] md:opacity-100 md:overflow-visible md:mt-6 space-y-3">
-               <li><a href="thuengay.html" class="text-gray-400 hover:text-blue-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Thuê Ngày</a></li>
-               <li><a href="thuetuan.html" class="text-gray-400 hover:text-blue-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Thuê Tuần</a></li>
-               <li><a href="thuethang.html" class="text-gray-400 hover:text-blue-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Thuê Tháng</a></li>
-               <li><a href="banggia.html" class="text-gray-400 hover:text-blue-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Bảng Giá</a></li>
-               <li><a href="thutuc.html" class="text-gray-400 hover:text-blue-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Thủ Tục</a></li>
-               <li><a href="loaixe.html" class="text-gray-400 hover:text-blue-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Loại Xe</a></li>
+               <li><a href="thuengay.html" class="text-gray-400 hover:text-indigo-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Thuê Ngày</a></li>
+               <li><a href="thuetuan.html" class="text-gray-400 hover:text-indigo-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Thuê Tuần</a></li>
+               <li><a href="thuethang.html" class="text-gray-400 hover:text-indigo-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Thuê Tháng</a></li>
+               <li><a href="banggia.html" class="text-gray-400 hover:text-indigo-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Bảng Giá</a></li>
+               <li><a href="thutuc.html" class="text-gray-400 hover:text-indigo-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Thủ Tục</a></li>
+               <li><a href="loaixe.html" class="text-gray-400 hover:text-indigo-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Loại Xe</a></li>
            </ul>
        </div>
 
@@ -1027,17 +1068,17 @@ html.dark ::-webkit-scrollbar-track { background: #1f2937; }
            <button class="footer-accordion-btn w-full flex justify-between items-center md:pointer-events-none md:cursor-default text-left">
                <h3 class="text-lg font-bold text-white relative inline-block">
                    Khu Vực Giao Xe
-                   <span class="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-blue-500 hidden md:block"></span>
+                   <span class="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-indigo-500 hidden md:block"></span>
                </h3>
                <i class="fa-solid fa-chevron-down md:hidden transition-transform duration-300 text-gray-400"></i>
            </button>
            <ul class="accordion-content max-h-0 opacity-0 overflow-hidden md:max-h-[500px] md:opacity-100 md:overflow-visible md:mt-6 space-y-3">
-               <li><a href="tayho.html" class="text-gray-400 hover:text-blue-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Tây Hồ</a></li>
-               <li><a href="hoankiem.html" class="text-gray-400 hover:text-blue-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Hoàn Kiếm</a></li>
-               <li><a href="phoco.html" class="text-gray-400 hover:text-blue-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Phố Cổ</a></li>
-               <li><a href="badinh.html" class="text-gray-400 hover:text-blue-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Ba Đình</a></li>
-               <li><a href="dongda.html" class="text-gray-400 hover:text-blue-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Đống Đa</a></li>
-               <li><a href="long%20bien.html" class="text-gray-400 hover:text-blue-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Long Biên</a></li>
+               <li><a href="tayho.html" class="text-gray-400 hover:text-indigo-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Tây Hồ</a></li>
+               <li><a href="hoankiem.html" class="text-gray-400 hover:text-indigo-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Hoàn Kiếm</a></li>
+               <li><a href="phoco.html" class="text-gray-400 hover:text-indigo-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Phố Cổ</a></li>
+               <li><a href="badinh.html" class="text-gray-400 hover:text-indigo-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Ba Đình</a></li>
+               <li><a href="dongda.html" class="text-gray-400 hover:text-indigo-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Đống Đa</a></li>
+               <li><a href="long%20bien.html" class="text-gray-400 hover:text-indigo-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Long Biên</a></li>
            </ul>
        </div>
 
@@ -1045,26 +1086,26 @@ html.dark ::-webkit-scrollbar-track { background: #1f2937; }
            <button class="footer-accordion-btn w-full flex justify-between items-center md:pointer-events-none md:cursor-default text-left">
                <h3 class="text-lg font-bold text-white relative inline-block">
                    Hỗ Trợ Khách Hàng
-                   <span class="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-blue-500 hidden md:block"></span>
+                   <span class="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-indigo-500 hidden md:block"></span>
                </h3>
                <i class="fa-solid fa-chevron-down md:hidden transition-transform duration-300 text-gray-400"></i>
            </button>
            <div class="accordion-content max-h-0 opacity-0 overflow-hidden md:max-h-[800px] md:opacity-100 md:overflow-visible md:mt-6">
                <ul class="space-y-3 mb-6">
-                   <li><a href="huongdan.html" class="text-gray-400 hover:text-blue-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Hướng Dẫn</a></li>
-                   <li><a href="kinhnghiem.html" class="text-gray-400 hover:text-blue-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Kinh Nghiệm</a></li>
-                   <li><a href="Faq.html" class="text-gray-400 hover:text-blue-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Câu Hỏi (FAQ)</a></li>
-                   <li><a href="dieukhoan.html" class="text-gray-400 hover:text-blue-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Điều Khoản</a></li>
+                   <li><a href="huongdan.html" class="text-gray-400 hover:text-indigo-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Hướng Dẫn</a></li>
+                   <li><a href="kinhnghiem.html" class="text-gray-400 hover:text-indigo-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Kinh Nghiệm</a></li>
+                   <li><a href="Faq.html" class="text-gray-400 hover:text-indigo-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Câu Hỏi (FAQ)</a></li>
+                   <li><a href="dieukhoan.html" class="text-gray-400 hover:text-indigo-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Điều Khoản</a></li>
                </ul>
            
                <div class="bg-gray-800/50 p-4 rounded-xl border border-gray-700/50 mt-4">
                    <ul class="space-y-2 text-sm text-gray-400">
                       <li class="flex items-start gap-2">
-                          <i class="fa-solid fa-phone mt-1 text-blue-400"></i>
+                          <i class="fa-solid fa-phone mt-1 text-indigo-400"></i>
                           <span>0913 901 121</span>
                       </li>
                       <li class="flex items-start gap-2">
-                          <i class="fa-solid fa-envelope mt-1 text-green-400"></i>
+                          <i class="fa-solid fa-envelope mt-1 text-emerald-400"></i>
                           <span class="break-all">vanthu20301@gmail.com</span>
                       </li>
                    </ul>
@@ -1076,27 +1117,27 @@ html.dark ::-webkit-scrollbar-track { background: #1f2937; }
            <button class="footer-accordion-btn w-full flex justify-between items-center md:pointer-events-none md:cursor-default text-left">
                <h3 class="text-lg font-bold text-white relative inline-block">
                    Liên Hệ
-                   <span class="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-blue-500 hidden md:block"></span>
+                   <span class="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-indigo-500 hidden md:block"></span>
                </h3>
                <i class="fa-solid fa-chevron-down md:hidden transition-transform duration-300 text-gray-400"></i>
            </button>
            <div class="accordion-content max-h-0 opacity-0 overflow-hidden md:max-h-[800px] md:opacity-100 md:overflow-visible md:mt-6">
                <ul class="space-y-4 text-sm text-gray-400">
                    <li class="flex items-start gap-3">
-                       <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                       <svg class="w-5 h-5 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                        <span>Trụ sở giao xe<br><strong class="text-gray-300 font-medium">15 Ngõ 150, Yên Phụ, Tây Hồ, Hà Nội, Việt Nam.</strong></span>
                    </li>
                    <li class="flex items-start gap-3">
-                       <svg class="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                       <span>Giờ mở cửa<br><strong class="text-gray-300 font-medium">9h - 21h (Tất cả các ngày trong tuần)</strong></span>
+                       <svg class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                       <span>Giờ mở cửa<br><strong class="text-gray-300 font-medium">9h - 21h (Tất cả các ngày)</strong></span>
                    </li>
                    <li class="flex items-start gap-3">
-                       <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                       <span>Hotline đặt xe (24/7)<br><a href="tel:0913901121" class="text-gray-300 font-medium hover:text-blue-400 transition">0913 901 121</a></span>
+                       <svg class="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                       <span>Hotline đặt xe (24/7)<br><a href="tel:0913901121" class="text-gray-300 font-medium hover:text-indigo-400 transition">0913 901 121</a></span>
                    </li>
                    <li class="flex items-start gap-3">
-                       <svg class="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                       <span>Email phản hồi<br><a href="mailto:vanthu20301@gmail.com" class="text-gray-300 font-medium hover:text-blue-400 transition break-all">vanthu20301@gmail.com</a></span>
+                       <svg class="w-5 h-5 text-violet-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                       <span>Email phản hồi<br><a href="mailto:vanthu20301@gmail.com" class="text-gray-300 font-medium hover:text-indigo-400 transition break-all">vanthu20301@gmail.com</a></span>
                    </li>
                </ul>
            </div>
@@ -1106,39 +1147,39 @@ html.dark ::-webkit-scrollbar-track { background: #1f2937; }
 
    <div class="border-t border-gray-800 pt-6 text-center text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center">
        <p>© 2024 Cho thuê xe máy Vân Thu. All rights reserved.</p>
-       <p class="mt-2 md:mt-0">Thiết kế hệ thống <i class="fa-solid fa-heart text-red-500 mx-1"></i> Vân Thu</p>
+       <p class="mt-2 md:mt-0">Thiết kế hệ thống <i class="fa-solid fa-heart text-rose-500 mx-1"></i> Vân Thu</p>
    </div>
 </div>
 </footer>
 
 <div id="quickcall-ultra" class="fixed bottom-6 left-6 z-[100] flex flex-col-reverse items-start gap-3 group">
-<button id="quickcall-toggle" class="relative w-16 h-16 bg-gradient-to-tr from-blue-600 to-indigo-500 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-105 transition-all duration-300 z-50 overflow-hidden ultra-pulse-glow border-2 border-white/20 dark:border-gray-800">
+<button id="quickcall-toggle" class="relative w-16 h-16 bg-gradient-to-tr from-indigo-600 to-violet-500 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-105 transition-all duration-300 z-50 overflow-hidden ultra-pulse-glow border-[0.5px] border-white/20 dark:border-slate-800">
   <div class="absolute inset-0 bg-white/20 animate-pulse"></div>
   <i class="fa-solid fa-headset text-2xl relative z-10 transition-transform duration-300" id="quickcall-icon"></i>
   <span class="absolute top-0 right-0 flex h-4 w-4">
-    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-    <span class="relative inline-flex rounded-full h-4 w-4 bg-red-500 border-2 border-white dark:border-gray-900"></span>
+    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+    <span class="relative inline-flex rounded-full h-4 w-4 bg-rose-500 border-2 border-white dark:border-slate-900"></span>
   </span>
 </button>
 
 <div id="quickcall-menu" class="flex flex-col gap-4 origin-bottom transition-all duration-300 scale-0 opacity-0 pointer-events-none absolute bottom-20 left-0">
   <a href="tel:0913901121" class="flex items-center gap-3 group/item justify-start flex-row">
-      <div class="w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform border-2 border-white dark:border-gray-800 relative z-10">
+      <div class="w-14 h-14 bg-emerald-500 text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform border-[0.5px] border-white dark:border-slate-800 relative z-10">
           <i class="fa-solid fa-phone-volume text-2xl animate-wiggle-fast"></i>
       </div>
-      <span class="bg-white dark:bg-gray-800 text-gray-800 dark:text-white px-4 py-2 rounded-xl text-sm font-bold shadow-xl opacity-0 -translate-x-4 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all border border-gray-100 dark:border-gray-700 whitespace-nowrap">Gọi Ngay</span>
+      <span class="bg-white dark:bg-slate-800 text-slate-800 dark:text-white px-4 py-2 rounded-xl text-sm font-bold shadow-xl opacity-0 -translate-x-4 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all border-[0.5px] border-slate-100 dark:border-slate-700 whitespace-nowrap">Gọi Ngay</span>
   </a>
   <a href="https://wa.me/84913901121" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 group/item justify-start flex-row">
-      <div class="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform border-2 border-white dark:border-gray-800 relative z-10">
+      <div class="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform border-[0.5px] border-white dark:border-slate-800 relative z-10">
           <i class="fa-brands fa-whatsapp text-3xl"></i>
       </div>
-      <span class="bg-white dark:bg-gray-800 text-gray-800 dark:text-white px-4 py-2 rounded-xl text-sm font-bold shadow-xl opacity-0 -translate-x-4 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all border border-gray-100 dark:border-gray-700 whitespace-nowrap">WhatsApp</span>
+      <span class="bg-white dark:bg-slate-800 text-slate-800 dark:text-white px-4 py-2 rounded-xl text-sm font-bold shadow-xl opacity-0 -translate-x-4 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all border-[0.5px] border-slate-100 dark:border-slate-700 whitespace-nowrap">WhatsApp</span>
   </a>
   <a href="https://maps.app.goo.gl/NCWYLRVv1HX8V3xP8?g_st=ic" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 group/item justify-start flex-row">
-      <div class="w-14 h-14 bg-red-500 text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform border-2 border-white dark:border-gray-800 relative z-10">
+      <div class="w-14 h-14 bg-rose-500 text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform border-[0.5px] border-white dark:border-slate-800 relative z-10">
           <i class="fa-solid fa-location-dot text-2xl"></i>
       </div>
-      <span class="bg-white dark:bg-gray-800 text-gray-800 dark:text-white px-4 py-2 rounded-xl text-sm font-bold shadow-xl opacity-0 -translate-x-4 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all border border-gray-100 dark:border-gray-700 whitespace-nowrap">Chỉ Đường Map</span>
+      <span class="bg-white dark:bg-slate-800 text-slate-800 dark:text-white px-4 py-2 rounded-xl text-sm font-bold shadow-xl opacity-0 -translate-x-4 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all border-[0.5px] border-slate-100 dark:border-slate-700 whitespace-nowrap">Chỉ Đường Map</span>
   </a>
 </div>
 </div>
@@ -1216,11 +1257,11 @@ document.addEventListener('DOMContentLoaded', () => {
    vehicleBtns.forEach(btn => {
        btn.addEventListener('click', function() {
            vehicleBtns.forEach(b => {
-               b.classList.remove('bg-blue-50', 'dark:bg-gray-700', 'border-blue-500', 'text-blue-700', 'dark:text-blue-300');
-               b.classList.add('bg-white', 'dark:bg-gray-800/50', 'border-transparent', 'text-gray-600', 'dark:text-gray-400');
+               b.classList.remove('bg-indigo-50', 'dark:bg-slate-700', 'border-indigo-500', 'text-indigo-700', 'dark:text-indigo-300');
+               b.classList.add('bg-white', 'dark:bg-slate-800/50', 'border-transparent', 'text-slate-600', 'dark:text-slate-400');
            });
-           this.classList.remove('bg-white', 'dark:bg-gray-800/50', 'border-transparent', 'text-gray-600', 'dark:text-gray-400');
-           this.classList.add('bg-blue-50', 'dark:bg-gray-700', 'border-blue-500', 'text-blue-700', 'dark:text-blue-300');
+           this.classList.remove('bg-white', 'dark:bg-slate-800/50', 'border-transparent', 'text-slate-600', 'dark:text-slate-400');
+           this.classList.add('bg-indigo-50', 'dark:bg-slate-700', 'border-indigo-500', 'text-indigo-700', 'dark:text-indigo-300');
    
            priceBaseInput.value = this.getAttribute('data-price');
            resultArea.classList.add('hidden');
@@ -1324,31 +1365,31 @@ document.addEventListener('DOMContentLoaded', () => {
        statusTexts.forEach(el => {
            el.textContent = isOpen ? 'Mở cửa (9h-21h)' : 'Đóng cửa (9h-21h)';
            if (isOpen) {
-               el.classList.remove('text-red-600', 'dark:text-red-400', 'text-gray-600');
-               el.classList.add('text-green-600', 'dark:text-green-400');
+               el.classList.remove('text-rose-600', 'dark:text-rose-400', 'text-slate-600');
+               el.classList.add('text-emerald-600', 'dark:text-emerald-400');
            } else {
-               el.classList.remove('text-green-600', 'dark:text-green-400', 'text-gray-600');
-               el.classList.add('text-red-600', 'dark:text-red-400');
+               el.classList.remove('text-emerald-600', 'dark:text-emerald-400', 'text-slate-600');
+               el.classList.add('text-rose-600', 'dark:text-rose-400');
            }
        });
 
        statusDots.forEach(el => {
            if(isOpen) {
-               el.classList.remove('bg-red-500', 'bg-gray-500');
-               el.classList.add('bg-green-500');
+               el.classList.remove('bg-rose-500', 'bg-slate-500');
+               el.classList.add('bg-emerald-500');
            } else {
-               el.classList.remove('bg-green-500', 'bg-gray-500');
-               el.classList.add('bg-red-500');
+               el.classList.remove('bg-emerald-500', 'bg-slate-500');
+               el.classList.add('bg-rose-500');
            }
        });
 
        statusPings.forEach(el => {
            if(isOpen) {
-               el.classList.remove('bg-red-400', 'bg-gray-400');
-               el.classList.add('bg-green-400');
+               el.classList.remove('bg-rose-400', 'bg-slate-400');
+               el.classList.add('bg-emerald-400');
            } else {
-               el.classList.remove('bg-green-400', 'bg-gray-400');
-               el.classList.add('bg-red-400');
+               el.classList.remove('bg-emerald-400', 'bg-slate-400');
+               el.classList.add('bg-rose-400');
            }
        });
    }
@@ -1372,6 +1413,27 @@ document.addEventListener('DOMContentLoaded', () => {
                icon.style.transform = 'rotate(180deg)';
            }
        });
+   });
+
+   /* --- 8. Intersection Observer for Scroll Motion --- */
+   const observerOptions = {
+       root: null,
+       rootMargin: '0px',
+       threshold: 0.15
+   };
+   
+   const observer = new IntersectionObserver((entries, observer) => {
+       entries.forEach(entry => {
+           if (entry.isIntersecting) {
+               entry.target.classList.add('active');
+               // Dừng observe sau khi đã hiện để tối ưu hiệu năng
+               observer.unobserve(entry.target);
+           }
+       });
+   }, observerOptions);
+
+   document.querySelectorAll('.reveal-up').forEach(el => {
+       observer.observe(el);
    });
 
 });
