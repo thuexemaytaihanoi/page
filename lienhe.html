@@ -585,7 +585,7 @@ html.dark ::-webkit-scrollbar-track { background: #1e293b; }
                         <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
                     </button>
                     <div class="faq-content hidden px-8 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                        Giờ mở cửa chính thức là 9:00 - 21:00. Tuy nhiên, nếu bạn có lịch trình bay sớm hoặc cần di chuyển trước 6h sáng, hãy **gọi liên hệ đặt xe trước từ tối hôm trước**. Chúng tôi sẽ linh động giao xe vào buổi tối cho bạn cất giữ tại khách sạn để sáng hôm sau có thể xuất phát sớm nhất mà không tính thêm phí qua đêm của ngày hôm trước.
+                        Giờ mở cửa chính thức là 9:00 - 21:00. Tuy nhiên, nếu bạn có lịch trình bay sớm hoặc cần di chuyển trước 6h sáng, hãy <strong>gọi liên hệ đặt xe trước từ tối hôm trước</strong>. Chúng tôi sẽ linh động giao xe vào buổi tối cho bạn cất giữ tại khách sạn để sáng hôm sau có thể xuất phát sớm nhất mà không tính thêm phí qua đêm của ngày hôm trước.
                     </div>
                 </div>
 
@@ -1004,7 +1004,7 @@ document.addEventListener('DOMContentLoaded', () => {
          el.textContent = isOpen ? 'Mở cửa (9h-21h)' : 'Đóng cửa (9h-21h)';
          if (isOpen) {
              el.classList.remove('text-rose-600', 'dark:text-rose-400', 'text-slate-600');
-             el.classList.add('text-emerald-600', 'dark:text-emerald-400');
+             el.classList.add('text-emerald-600', 'dark:textemerald-400');
          } else {
              el.classList.remove('text-emerald-600', 'dark:text-emerald-400', 'text-slate-600');
              el.classList.add('text-rose-600', 'dark:text-rose-400');
