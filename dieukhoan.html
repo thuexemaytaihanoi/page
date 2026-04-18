@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="p:domain_verify" content="c3cada1bae52a6987231eba53f12ac59"/>
-<title>Điều Khoản Sử Dụng Cho Thuê Xe Máy Tây Hồ, Hà Nội - Thu Vân</title>
-<meta name="description" content="Chi tiết chính sách bảo mật & điều khoản sử dụng cho thuê xe máy Tây Hồ, Hà Nội tại Thu Vân. Đảm bảo quyền lợi, bảo mật thông tin 100%. Xem và đặt xe ngay!">
-<meta name="keywords" content="Điều khoản sử dụng cho thuê xe máy Tây Hồ Hà Nội, chính sách bảo mật Thu Vân, quy định thuê xe máy Hà Nội, bảo mật thông tin khách hàng, hợp đồng thuê xe máy">
-<meta name="author" content="Vân Thu">
-<link rel="canonical" href="https://thuexemaytaihanoi.github.io/page/baomat.html">
 
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://thuexemaytaihanoi.github.io/page/baomat.html">
-<meta property="og:title" content="Điều Khoản Sử Dụng Cho Thuê Xe Máy Tây Hồ, Hà Nội - Thu Vân">
-<meta property="og:description" content="Chi tiết chính sách bảo mật & điều khoản sử dụng cho thuê xe máy Tây Hồ, Hà Nội tại Thu Vân. Đảm bảo quyền lợi, bảo mật thông tin 100%. Xem và đặt xe ngay!">
+<title>Điều Khoản Sử Dụng Thuê Xe Máy Tây Hồ, Hà Nội - Thu Vân</title>
+<meta name="description" content="Chi tiết điều khoản sử dụng thuê xe máy Tây Hồ, Hà Nội tại Thu Vân. Minh bạch quyền lợi, trách nhiệm, chính sách bồi thường và xử lý sự cố. Đọc ngay!">
+<meta name="keywords" content="Điều khoản sử dụng thuê xe máy Tây Hồ Hà Nội Thu Vân, quy định thuê xe máy Thu Vân, hợp đồng thuê xe máy Tây Hồ, chính sách thuê xe máy Hà Nội">
+<meta name="author" content="Vân Thu">
+<link rel="canonical" href="https://thuexemaytaihanoi.github.io/page/dieukhoan.html">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thuexemaytaihanoi.github.io/page/dieukhoan.html">
+<meta property="og:title" content="Điều Khoản Sử Dụng Thuê Xe Máy Tây Hồ, Hà Nội - Thu Vân">
+<meta property="og:description" content="Nắm rõ các quy định, quyền lợi và trách nhiệm khi sử dụng dịch vụ thuê xe máy Thu Vân tại Tây Hồ, Hà Nội. Dịch vụ uy tín, minh bạch, rõ ràng.">
 <meta property="og:image" content="https://raw.githubusercontent.com/thuexemaytaihanoi/page/refs/heads/main/IMG_1402.png">
 
 <script src="https://cdn.tailwindcss.com"></script>
@@ -23,7 +23,7 @@ tailwind.config = {
   theme: {
       extend: {
           colors: {
-              darkBg: '#0f172a',
+              darkBg: '#0f172a', 
               darkCard: '#1e293b',
           },
           animation: {
@@ -39,6 +39,8 @@ tailwind.config = {
   }
 }
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 html { scroll-behavior: smooth; }
@@ -48,15 +50,25 @@ html.dark ::-webkit-scrollbar-track { background: #1e293b; }
 ::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: #4f46e5; }
 
+/* 1. Ultra Fade-in Effect (Đã Nâng Cấp) */
 .ultra-fade-in {
  animation: ultraFade 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
  will-change: opacity, transform, filter;
 }
 @keyframes ultraFade {
- 0% { opacity: 0; transform: translateY(30px) scale(0.96); filter: blur(12px); }
- 100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+ 0% {
+     opacity: 0;
+     transform: translateY(30px) scale(0.96);
+     filter: blur(12px);
+ }
+ 100% {
+     opacity: 1;
+     transform: translateY(0) scale(1);
+     filter: blur(0);
+ }
 }
 
+/* Intersection Observer Motion - Fade In Up */
 .reveal-up {
   opacity: 0;
   transform: translateY(40px) scale(0.98);
@@ -70,26 +82,38 @@ html.dark ::-webkit-scrollbar-track { background: #1e293b; }
   filter: blur(0);
 }
 
-.ai-pulse { animation: pulse-shadow 1.5s infinite; }
+.ai-pulse {
+ animation: pulse-shadow 1.5s infinite;
+}
 @keyframes pulse-shadow {
  0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7); }
  70% { box-shadow: 0 0 0 15px rgba(99, 102, 241, 0); }
  100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
 }
 
-.ultra-pulse-glow { animation: ultra-glow 2s infinite; }
+.ultra-pulse-glow {
+ animation: ultra-glow 2s infinite;
+}
 @keyframes ultra-glow {
  0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7); transform: scale(1); }
  50% { box-shadow: 0 0 20px 10px rgba(139, 92, 246, 0.4); transform: scale(1.05); }
  100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); transform: scale(1); }
 }
 
-.accordion-content { transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, margin 0.4s ease-in-out; }
-.faq-content { transition: all 0.3s ease-in-out; }
+/* Accordion Transition */
+.accordion-content {
+ transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, margin 0.4s ease-in-out;
+}
+
+/* FAQ Transition */
+.faq-content {
+  transition: all 0.3s ease-in-out;
+}
 </style>
 </head>
 <body class="bg-slate-50 dark:bg-darkBg text-slate-800 dark:text-gray-200 font-sans antialiased overflow-x-hidden transition-colors duration-300 opacity-0 ultra-fade-in">
 
+<!-- Menu Header -->
 <header class="bg-white/90 dark:bg-darkCard/90 backdrop-blur-md border-b-[0.5px] border-slate-200/60 dark:border-slate-800 fixed w-full top-0 z-50 transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
  <div class="flex justify-between items-center h-20">
@@ -133,8 +157,8 @@ html.dark ::-webkit-scrollbar-track { background: #1e293b; }
              </div>
          </div>
 
-         <a href="baomat.html" class="text-indigo-600 dark:text-indigo-400 font-bold transition flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-sm"></i> Bảo Mật</a>
-         <a href="dieukhoan.html" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition flex items-center gap-1.5"><i class="fa-solid fa-file-contract text-sm"></i> Điều Khoản</a>
+         <a href="baomat.html" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-sm"></i> Bảo Mật</a>
+         <a href="dieukhoan.html" class="text-indigo-600 dark:text-indigo-400 font-medium transition flex items-center gap-1.5"><i class="fa-solid fa-file-contract text-sm"></i> Điều Khoản</a>
          <a href="Faq.html" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition flex items-center gap-1.5"><i class="fa-solid fa-circle-question text-sm"></i> Câu Hỏi</a>
          <a href="lienhe.html" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition flex items-center gap-1.5"><i class="fa-solid fa-envelope text-sm"></i> Liên Hệ</a>
      </nav>
@@ -169,6 +193,7 @@ html.dark ::-webkit-scrollbar-track { background: #1e293b; }
 </div>
 </header>
 
+<!-- Mobile Sidebar -->
 <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden transition-opacity" aria-hidden="true"></div>
 
 <aside id="sidebar" class="fixed top-0 right-0 h-[100dvh] w-72 bg-white dark:bg-darkCard shadow-2xl z-[60] transform translate-x-full transition-transform duration-300 ease-in-out" aria-hidden="true">
@@ -220,8 +245,8 @@ html.dark ::-webkit-scrollbar-track { background: #1e293b; }
          </div>
      </div>
 
-     <a href="baomat.html" class="sidebar-link py-3 text-lg font-bold text-indigo-600 dark:text-indigo-400 border-b dark:border-slate-700/50 flex items-center gap-3 transition"><i class="fa-solid fa-shield-halved w-5"></i> Bảo Mật</a>
-     <a href="dieukhoan.html" class="sidebar-link py-3 text-lg font-medium text-slate-700 dark:text-slate-200 border-b dark:border-slate-700/50 flex items-center gap-3 hover:text-indigo-600 transition"><i class="fa-solid fa-file-contract w-5"></i> Điều Khoản</a>
+     <a href="baomat.html" class="sidebar-link py-3 text-lg font-medium text-slate-700 dark:text-slate-200 border-b dark:border-slate-700/50 flex items-center gap-3 hover:text-indigo-600 transition"><i class="fa-solid fa-shield-halved w-5"></i> Bảo Mật</a>
+     <a href="dieukhoan.html" class="sidebar-link py-3 text-lg font-medium text-indigo-600 dark:text-indigo-400 border-b dark:border-slate-700/50 flex items-center gap-3 transition"><i class="fa-solid fa-file-contract w-5"></i> Điều Khoản</a>
      <a href="Faq.html" class="sidebar-link py-3 text-lg font-medium text-slate-700 dark:text-slate-200 border-b dark:border-slate-700/50 flex items-center gap-3 hover:text-indigo-600 transition"><i class="fa-solid fa-circle-question w-5"></i> Câu Hỏi</a>
      <a href="lienhe.html" class="sidebar-link py-3 text-lg font-medium text-slate-700 dark:text-slate-200 border-b dark:border-slate-700/50 flex items-center gap-3 hover:text-indigo-600 transition"><i class="fa-solid fa-envelope w-5"></i> Liên Hệ</a>
  </nav>
@@ -233,6 +258,7 @@ html.dark ::-webkit-scrollbar-track { background: #1e293b; }
 </div>
 </aside>
 
+<!-- Section 1: Hero Section -->
 <section class="relative pt-40 pb-32 bg-gradient-to-br from-indigo-50 via-slate-50 to-violet-50 dark:from-slate-900 dark:via-darkBg dark:to-slate-800 overflow-hidden">
 <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
  <div class="absolute -top-24 -right-24 w-96 h-96 bg-indigo-300 dark:bg-indigo-900 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-[100px] opacity-30"></div>
@@ -244,21 +270,21 @@ html.dark ::-webkit-scrollbar-track { background: #1e293b; }
 
      <div class="lg:w-7/12 text-center lg:text-left">
          <span class="inline-block py-1.5 px-4 rounded-full bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm text-indigo-700 dark:text-indigo-300 text-sm font-bold mb-8 border-[0.5px] border-indigo-200/50 dark:border-indigo-800/50 shadow-sm tracking-tight">
-             <i class="fa-solid fa-shield-halved text-emerald-500 mr-1.5"></i> Uy tín & Minh bạch
+             <i class="fa-solid fa-gavel text-amber-500 mr-1.5"></i> Trung tâm hỗ trợ pháp lý
          </span>
-         <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white mb-6 leading-[1.1] tracking-tight">
-             Chính Sách Bảo Mật & <br class="hidden lg:block"/>
-             <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">Điều Khoản Sử Dụng</span>
+         <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white mb-6 leading-[1.1] tracking-tight">
+             Điều Khoản Sử Dụng <br class="hidden lg:block"/>
+             <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">Thuê Xe Máy Tây Hồ, Hà Nội</span>
          </h1>
          <p class="text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed tracking-tight">
-             Bản điều khoản sử dụng cho thuê xe máy Tây Hồ, Hà Nội của hệ thống Thu Vân được xây dựng nhằm đảm bảo quyền lợi tối đa và bảo mật tuyệt đối thông tin cá nhân của mọi khách hàng.
+             Bản điều khoản này quy định chi tiết các quyền lợi, trách nhiệm và nghĩa vụ của khách hàng khi sử dụng dịch vụ tại hệ thống Thu Vân. Vui lòng đọc kỹ trước khi xác nhận đặt xe.
          </p>
          <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-             <a href="#noidung" class="bg-gradient-to-r from-indigo-600 to-violet-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-[0_8px_30px_rgba(99,102,241,0.3)] hover:shadow-[0_8px_30px_rgba(99,102,241,0.5)] transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2">
-                 <i class="fa-solid fa-book-open"></i> Đọc Toàn Bộ Chính Sách
+             <a href="https://thuexemaytaihanoi.github.io/app" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-indigo-600 to-violet-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-[0_8px_30px_rgba(99,102,241,0.3)] hover:shadow-[0_8px_30px_rgba(99,102,241,0.5)] transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                 <i class="fa-solid fa-check"></i> Tôi Đã Hiểu & Đặt Xe
              </a>
-             <a href="https://thuexemaytaihanoi.github.io/app" target="_blank" rel="noopener noreferrer" class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm text-slate-800 dark:text-white border-[0.5px] border-slate-200 dark:border-slate-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-white dark:hover:bg-slate-700 transition-all duration-300 shadow-sm flex items-center justify-center hover:-translate-y-1 hover:shadow-md">
-                 Mở Web App Đặt Xe
+             <a href="#dieu-khoan-chung" class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm text-slate-800 dark:text-white border-[0.5px] border-slate-200 dark:border-slate-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-white dark:hover:bg-slate-700 transition-all duration-300 shadow-sm flex items-center justify-center hover:-translate-y-1 hover:shadow-md">
+                 Đọc Chi Tiết Xuống Dưới
              </a>
          </div>
      </div>
@@ -325,149 +351,276 @@ html.dark ::-webkit-scrollbar-track { background: #1e293b; }
 </div>
 </section>
 
-<!-- MAIN CONTENT SECTION: 5 SECTIONS, ~1500 WORDS -->
-<section id="noidung" class="py-24 bg-white dark:bg-darkBg relative overflow-hidden">
-<div class="container mx-auto px-4 max-w-5xl relative z-10">
-    
-    <!-- Section 1: Tổng quan và Mục đích -->
-    <article class="mb-20 reveal-up">
-        <div class="flex items-center gap-4 mb-8 border-b-[0.5px] border-slate-200 dark:border-slate-800 pb-4">
-            <div class="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-2xl border-[0.5px] border-indigo-100 dark:border-slate-700">
-                <i class="fa-solid fa-gavel"></i>
-            </div>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">1. Mục Đích & Phạm Vi Áp Dụng</h2>
+<!-- Section 2: Điều Khoản Chung -->
+<section id="dieu-khoan-chung" class="py-24 bg-white dark:bg-slate-900 border-t-[0.5px] border-slate-100 dark:border-slate-800 reveal-up">
+    <div class="container mx-auto px-4 max-w-5xl">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">1. Giới Thiệu Về Thỏa Thuận & Điều Khoản Sử Dụng</h2>
+            <div class="w-20 h-1.5 bg-gradient-to-r from-indigo-600 to-violet-600 mx-auto mt-6 rounded-full"></div>
         </div>
-        
-        <div class="prose prose-lg dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 text-justify">
-            <p class="mb-6 leading-relaxed">
-                Chào mừng quý khách đến với hệ thống dịch vụ của Thu Vân. Bản <strong class="font-bold text-indigo-600 dark:text-indigo-400">điều khoản sử dụng cho thuê xe máy Tây Hồ, Hà Nội</strong> này được biên soạn và công bố công khai nhằm mục đích thiết lập một khuôn khổ giao dịch minh bạch, công bằng và an toàn cho cả hai bên: Đơn vị cung cấp dịch vụ (Thu Vân) và Khách hàng (Người thuê xe). Khi quý khách hàng quyết định tiến hành việc đặt xe qua điện thoại, website, hoặc trực tiếp ký kết hợp đồng tại cửa hàng, điều đó đồng nghĩa với việc quý khách đã đọc, hiểu rõ và chấp thuận hoàn toàn các quy định được nêu ra trong văn bản này.
+        <div class="prose prose-lg dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 leading-relaxed text-justify">
+            <p class="mb-6">
+                Chào mừng Quý khách đến với hệ thống dịch vụ <strong>cho thuê xe máy Hà Nội Thu Vân</strong>. Bản <strong>điều khoản sử dụng thuê xe máy Tây Hồ, Hà Nội</strong> này (sau đây gọi tắt là "Điều Khoản") là một thỏa thuận pháp lý chính thức, có tính ràng buộc giữa hệ thống Thu Vân (Bên Cho Thuê) và Quý khách hàng (Bên Thuê).
             </p>
-            <p class="mb-6 leading-relaxed">
-                Khu vực Tây Hồ và toàn thành phố Hà Nội là nơi có mật độ giao thông đông đúc, việc sử dụng phương tiện di chuyển cá nhân đòi hỏi ý thức trách nhiệm cao từ phía người điều khiển. Chính vì vậy, những <strong class="font-bold text-slate-800 dark:text-white">quy định thuê xe máy Hà Nội</strong> của chúng tôi không chỉ nhằm bảo vệ tài sản của cửa hàng, mà quan trọng hơn hết là đảm bảo sự an toàn về tính mạng, sức khỏe và quyền lợi hợp pháp của chính quý khách hàng trong suốt lịch trình khám phá thủ đô.
+            <p class="mb-6">
+                Bằng việc xác nhận đặt xe qua website, điện thoại, các kênh mạng xã hội, hoặc đặt bút ký vào biên bản bàn giao xe tại cơ sở của chúng tôi, Quý khách được hiểu là đã đọc, hiểu rõ và đồng ý tuân thủ tuyệt đối mọi quy định được nêu trong tài liệu này. Bản điều khoản này được soạn thảo dựa trên các quy định của pháp luật nước Cộng hòa Xã hội Chủ nghĩa Việt Nam hiện hành, nhằm đảm bảo tối đa tính minh bạch, công bằng và quyền lợi hợp pháp cho cả hai bên trong suốt quá trình giao dịch và trải nghiệm dịch vụ.
             </p>
-            <p class="mb-6 leading-relaxed">
-                Phạm vi áp dụng của bản điều khoản này bao trùm toàn bộ các hoạt động giao dịch từ khâu tư vấn, báo <a href="banggia.html" class="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold transition">bảng giá thuê xe máy</a>, thực hiện giao nhận xe tận nơi, quá trình quý khách sử dụng xe lưu thông trên đường, cho đến khâu thanh lý hợp đồng và trả lại tài sản. Hệ thống cho thuê xe máy Thu Vân cam kết luôn hoạt động dựa trên tôn chỉ "Khách hàng là trung tâm", mọi chính sách đều được xây dựng dựa trên nền tảng của sự tôn trọng và tuân thủ tuyệt đối pháp luật nước Cộng hòa Xã hội Chủ nghĩa Việt Nam.
+            <p>
+                Chúng tôi bảo lưu quyền thay đổi, chỉnh sửa, thêm hoặc lược bỏ bất kỳ phần nào trong Điều khoản sử dụng này vào bất cứ lúc nào. Các thay đổi có hiệu lực ngay khi được đăng tải trên trang web chính thức mà không cần thông báo trước. Việc Quý khách tiếp tục sử dụng dịch vụ thuê xe máy của Thu Vân sau khi các thay đổi về Điều khoản này được đăng tải đồng nghĩa với việc Quý khách chấp nhận với những sự thay đổi đó.
             </p>
         </div>
-    </article>
+    </div>
+</section>
 
-    <!-- Section 2: Chính sách bảo mật thông tin -->
-    <article class="mb-20 reveal-up">
-        <div class="flex items-center gap-4 mb-8 border-b-[0.5px] border-slate-200 dark:border-slate-800 pb-4">
-            <div class="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-2xl border-[0.5px] border-emerald-100 dark:border-slate-700">
-                <i class="fa-solid fa-lock"></i>
+<!-- Section 3: Điều Kiện & Tiêu Chuẩn -->
+<section class="py-24 bg-slate-50 dark:bg-darkBg border-t-[0.5px] border-slate-200 dark:border-slate-800 reveal-up">
+    <div class="container mx-auto px-4 max-w-5xl">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">2. Điều Kiện & Tiêu Chuẩn Đối Với Người Thuê Xe</h2>
+            <div class="w-20 h-1.5 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto mt-6 rounded-full"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="bg-white dark:bg-darkCard p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-[0.5px] border-slate-200/80 dark:border-slate-700">
+                <h3 class="text-xl font-bold text-indigo-600 dark:text-indigo-400 mb-4"><i class="fa-solid fa-id-card mr-2"></i> Yêu Cầu Năng Lực Pháp Lý</h3>
+                <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4 text-justify">
+                    Khách hàng thuê xe phải là người đã <strong>đủ 18 tuổi trở lên</strong>, có đầy đủ năng lực hành vi dân sự theo quy định của pháp luật. Người thuê buộc phải sở hữu Giấy phép lái xe (GPLX) hạng A1, A2 (hoặc cao hơn) hợp lệ do cơ quan có thẩm quyền của Việt Nam cấp.
+                </p>
+                <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed text-justify">
+                    Đối với khách hàng mang quốc tịch nước ngoài, yêu cầu phải có Bằng lái xe quốc tế (IDP - International Driving Permit) hợp lệ kèm theo bằng lái xe gốc của quốc gia sở tại, có giá trị sử dụng tại lãnh thổ Việt Nam.
+                </p>
             </div>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">2. Chính Sách Bảo Mật Thông Tin Khách Hàng</h2>
-        </div>
-        
-        <div class="prose prose-lg dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 text-justify">
-            <p class="mb-6 leading-relaxed">
-                Trong thời đại công nghệ số hiện nay, bảo mật dữ liệu là vấn đề được quan tâm hàng đầu. Nằm trong nội dung của <strong class="font-bold text-indigo-600 dark:text-indigo-400">điều khoản sử dụng cho thuê xe máy Tây Hồ, Hà Nội</strong>, chúng tôi muốn khẳng định mạnh mẽ <strong class="font-bold text-slate-800 dark:text-white">chính sách bảo mật Thu Vân</strong> đối với mọi thông tin cá nhân mà quý khách cung cấp. Chúng tôi hiểu rằng việc giao lại giấy tờ tùy thân như Căn cước công dân (CCCD), Chứng minh nhân dân (CMND) hay Hộ chiếu (Passport) là một sự tin tưởng tuyệt đối mà khách hàng dành cho chúng tôi.
-            </p>
-            <h3 class="text-2xl font-bold text-slate-800 dark:text-white mb-4 mt-8">Thu Thập Thông Tin Phục Vụ Giao Dịch</h3>
-            <p class="mb-6 leading-relaxed">
-                Để thực hiện <a href="thutuc.html" class="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold transition">thủ tục thuê xe máy</a> hợp pháp, chúng tôi chỉ thu thập những thông tin thiết yếu nhất, bao gồm: Họ và tên, số điện thoại liên hệ, địa chỉ khách sạn hoặc nơi lưu trú (để phục vụ việc giao xe tận nơi), và hình ảnh chụp/bản cứng của các giấy tờ tùy thân hợp lệ. Việc thu thập này hoàn toàn nhằm mục đích lập hợp đồng, quản lý tài sản và hỗ trợ quý khách kịp thời trong những trường hợp khẩn cấp xảy ra trên đường.
-            </p>
-            <h3 class="text-2xl font-bold text-slate-800 dark:text-white mb-4 mt-8">Cam Kết Không Chia Sẻ Dữ Liệu Chéo</h3>
-            <p class="mb-6 leading-relaxed">
-                Toàn bộ dữ liệu cá nhân, thông tin liên lạc và giấy tờ tùy thân của quý khách được lưu trữ một cách an toàn và bảo mật cao nhất tại hệ thống nội bộ của Thu Vân. Chúng tôi cam kết danh dự 100% không trao đổi, mua bán, hoặc chia sẻ thông tin của quý khách cho bất kỳ bên thứ ba nào vì mục đích thương mại, quảng cáo hay bất kỳ mục đích nào khác nằm ngoài khuôn khổ hợp đồng <strong class="font-bold text-slate-800 dark:text-white">bảo mật thông tin khách hàng thuê xe</strong>. Việc trích xuất dữ liệu chỉ được thực hiện trong trường hợp có yêu cầu bằng văn bản chính thức từ các cơ quan chức năng có thẩm quyền theo đúng quy định của pháp luật.
-            </p>
-            <p class="mb-6 leading-relaxed">
-                Sau khi kết thúc quá trình thuê xe theo ngày, tuần hoặc tháng, mọi bản sao hình ảnh giấy tờ tùy thân lưu trữ trên nền tảng kỹ thuật số sẽ được bộ phận quản lý tiến hành xóa bỏ định kỳ nhằm loại trừ mọi rủi ro về việc rò rỉ thông tin mạng. Các bản hợp đồng giấy được lưu trữ an toàn trong tủ hồ sơ có khóa và sẽ được tiêu hủy sau một khoảng thời gian nhất định theo đúng quy chuẩn bảo mật doanh nghiệp.
-            </p>
-        </div>
-    </article>
-
-    <!-- Section 3: Quy định điều kiện thuê xe -->
-    <article class="mb-20 reveal-up">
-        <div class="flex items-center gap-4 mb-8 border-b-[0.5px] border-slate-200 dark:border-slate-800 pb-4">
-            <div class="w-12 h-12 rounded-xl bg-amber-50 dark:bg-amber-900/30 flex items-center justify-center text-amber-600 dark:text-amber-400 text-2xl border-[0.5px] border-amber-100 dark:border-slate-700">
-                <i class="fa-solid fa-clipboard-check"></i>
-            </div>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">3. Quy Định Và Điều Kiện Thuê Xe Cơ Bản</h2>
-        </div>
-        
-        <div class="prose prose-lg dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 text-justify">
-            <p class="mb-6 leading-relaxed">
-                Để có thể <a href="tayho.html" class="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold transition">thuê xe máy Tây Hồ</a> hoặc bất kỳ khu vực nào khác thông qua hệ thống của chúng tôi, việc tuân thủ các quy định cơ bản là điều kiện kiên quyết. Bản <strong class="font-bold text-indigo-600 dark:text-indigo-400">điều khoản sử dụng cho thuê xe máy Tây Hồ, Hà Nội</strong> quy định rất rõ ràng về độ tuổi cũng như năng lực hành vi dân sự của người đứng tên trên hợp đồng.
-            </p>
-            <h3 class="text-2xl font-bold text-slate-800 dark:text-white mb-4 mt-8">Tiêu Chuẩn Đối Với Người Đứng Tên Hợp Đồng</h3>
-            <ul class="list-disc pl-6 space-y-3 mb-6">
-                <li>Quý khách hàng phải đủ từ 18 tuổi trở lên, có đầy đủ năng lực hành vi dân sự theo pháp luật.</li>
-                <li>Bắt buộc phải có Giấy phép lái xe mô tô (Hạng A1 hoặc A2) hợp lệ, do cơ quan có thẩm quyền cấp và còn hiệu lực pháp luật. Đối với khách quốc tế, yêu cầu có Giấy phép lái xe quốc tế (IDP) có giá trị sử dụng tại Việt Nam.</li>
-                <li>Phải cung cấp được một trong các giấy tờ tùy thân bản gốc: Căn cước công dân, Chứng minh nhân dân hoặc Hộ chiếu (Passport) để đối chiếu thông tin và làm cơ sở lưu trữ bảo lãnh tài sản trong quá trình thuê xe mà không cần đặt cọc tiền mặt.</li>
-            </ul>
-            <h3 class="text-2xl font-bold text-slate-800 dark:text-white mb-4 mt-8">Trách Nhiệm Sử Dụng Phương Tiện Của Khách Hàng</h3>
-            <p class="mb-6 leading-relaxed">
-                Khách hàng sau khi nhận bàn giao xe, bao gồm chìa khóa, nón bảo hiểm và các phụ kiện đi kèm, sẽ chính thức chịu trách nhiệm hoàn toàn về mặt vật chất cũng như pháp lý đối với phương tiện. Nghiêm cấm tuyệt đối việc sử dụng xe máy của Thu Vân để tham gia vào các hoạt động đua xe trái phép, chở quá số người quy định, vận chuyển hàng hóa cấm, chất cháy nổ hoặc các hoạt động vi phạm pháp luật hình sự và dân sự. 
-            </p>
-            <p class="mb-6 leading-relaxed">
-                Khách hàng không được phép tự ý tháo lắp, thay đổi cấu trúc, màu sơn hoặc đem xe đi cầm cố, thế chấp dưới mọi hình thức. Nếu phát hiện hành vi cố ý phá hoại hoặc sử dụng sai mục đích nghiêm trọng, hệ thống Thu Vân có quyền đơn phương chấm dứt hợp đồng ngay lập tức, thu hồi phương tiện mà không hoàn lại tiền <a href="thuengay.html" class="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold transition">thuê xe ngày</a> đã thanh toán, đồng thời yêu cầu bồi thường thiệt hại và trình báo với cơ quan Công an.
-            </p>
-        </div>
-    </article>
-
-    <!-- Section 4: Giao nhận, thanh toán và xử lý sự cố -->
-    <article class="mb-20 reveal-up">
-        <div class="flex items-center gap-4 mb-8 border-b-[0.5px] border-slate-200 dark:border-slate-800 pb-4">
-            <div class="w-12 h-12 rounded-xl bg-rose-50 dark:bg-rose-900/30 flex items-center justify-center text-rose-600 dark:text-rose-400 text-2xl border-[0.5px] border-rose-100 dark:border-slate-700">
-                <i class="fa-solid fa-truck-fast"></i>
-            </div>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">4. Giao Nhận Xe, Thanh Toán & Xử Lý Sự Cố</h2>
-        </div>
-        
-        <div class="prose prose-lg dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 text-justify">
-            <p class="mb-6 leading-relaxed">
-                Mục đích cốt lõi của <strong class="font-bold text-indigo-600 dark:text-indigo-400">điều khoản sử dụng cho thuê xe máy Tây Hồ, Hà Nội</strong> là vạch ra một quy trình trơn tru, giúp quý khách hàng tiết kiệm thời gian tối đa nhưng vẫn nắm vững quyền lợi của mình. Quy trình giao nhận xe tại Thu Vân được thiết kế để tối ưu hóa sự thuận tiện thông qua dịch vụ giao xe tận nơi nhanh chóng trong khu vực nội thành.
-            </p>
-            <h3 class="text-2xl font-bold text-slate-800 dark:text-white mb-4 mt-8">Quy Định Về Giao Nhận và Thanh Toán</h3>
-            <p class="mb-6 leading-relaxed">
-                Việc thanh toán chi phí thuê xe sẽ được thực hiện 100% tại thời điểm bàn giao xe và ký kết <strong class="font-bold text-slate-800 dark:text-white">hợp đồng thuê xe máy Hà Nội</strong>. Quý khách có thể lựa chọn thanh toán linh hoạt qua tiền mặt, chuyển khoản ngân hàng hoặc các ví điện tử phổ biến. Quý khách có nghĩa vụ kiểm tra kỹ tình trạng bên ngoài của xe, hệ thống phanh, đèn còi, lốp xe và mức xăng trước khi nhận bàn giao. Khi trả xe, phương tiện cần được giao trả trong tình trạng nguyên vẹn như lúc ban đầu (trừ những hao mòn vật lý thông thường trong quá trình sử dụng cho phép).
-            </p>
-            <p class="mb-6 leading-relaxed">
-                Về mặt thời gian, một ngày thuê xe tại Thu Vân được tính tròn 24 giờ đồng hồ tính từ mốc thời gian quý khách nhận xe. Trong trường hợp quý khách có nhu cầu trả xe trễ hơn dự kiến, hệ thống sẽ áp dụng mức phụ phí công khai: trả muộn từ 1 đến 6 tiếng sẽ phụ thu một khoản nhỏ tương ứng theo bảng giá (thường từ 20,000đ - 30,000đ/giờ), nếu trễ quá 6 tiếng sẽ được tính tròn thành 01 ngày thuê mới.
-            </p>
-            <h3 class="text-2xl font-bold text-slate-800 dark:text-white mb-4 mt-8">Quy Trình Xử Lý Các Sự Cố Phát Sinh</h3>
-            <p class="mb-6 leading-relaxed">
-                Đề phòng các rủi ro có thể xảy ra trên đường, chúng tôi phân định rõ trách nhiệm xử lý sự cố. Nếu xe gặp trục trặc kỹ thuật do lỗi cấu tạo từ bên trong máy móc (như đứt dây curoa, hỏng bugi, chết máy không rõ nguyên nhân), Thu Vân sẽ chịu hoàn toàn trách nhiệm và chi phí sửa chữa. Chúng tôi cam kết sẽ có mặt tận nơi nhanh nhất có thể để khắc phục hoặc đổi cho quý khách một chiếc xe tương đương.
-            </p>
-            <p class="mb-6 leading-relaxed">
-                Ngược lại, nếu sự cố phát sinh xuất phát từ lỗi chủ quan của người điều khiển như: làm thủng lốp, vỡ yếm xe do va quệt, mất chìa khóa, vi phạm luật giao thông đường bộ dẫn đến việc xe bị cơ quan chức năng tạm giữ, khách hàng sẽ phải chịu trách nhiệm chi trả toàn bộ chi phí sửa chữa, thay thế phụ tùng chính hãng, phí phạt và bồi thường doanh thu số ngày xe không thể hoạt động cho cửa hàng.
-            </p>
-        </div>
-    </article>
-
-    <!-- Section 5: Cam kết và Hướng dẫn hỗ trợ -->
-    <article class="mb-10 reveal-up">
-        <div class="flex items-center gap-4 mb-8 border-b-[0.5px] border-slate-200 dark:border-slate-800 pb-4">
-            <div class="w-12 h-12 rounded-xl bg-violet-50 dark:bg-violet-900/30 flex items-center justify-center text-violet-600 dark:text-violet-400 text-2xl border-[0.5px] border-violet-100 dark:border-slate-700">
-                <i class="fa-solid fa-handshake-angle"></i>
-            </div>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">5. Cam Kết Của Thu Vân & Hỗ Trợ 24/7</h2>
-        </div>
-        
-        <div class="prose prose-lg dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 text-justify">
-            <p class="mb-6 leading-relaxed">
-                Chúng tôi không chỉ cung cấp một phương tiện đi lại, chúng tôi mang đến cho quý khách sự an tâm tuyệt đối trên mọi hành trình. Những <strong class="font-bold text-indigo-600 dark:text-indigo-400">điều khoản sử dụng cho thuê xe máy Tây Hồ, Hà Nội</strong> được biên soạn ra không nhằm mục đích làm khó khách hàng, mà để vạch ra một quy chuẩn dịch vụ chuyên nghiệp nhất. Sự trung thực, minh bạch và thái độ phục vụ tận tâm chính là kim chỉ nam trong suốt chặng đường phát triển của Thu Vân.
-            </p>
-            <p class="mb-6 leading-relaxed">
-                Chúng tôi cam kết cung cấp 100% dòng xe đời mới, thường xuyên được bảo dưỡng định kỳ bởi đội ngũ kỹ thuật lành nghề. Chúng tôi luôn lắng nghe mọi phản hồi, góp ý từ phía khách hàng để không ngừng cải thiện chất lượng dịch vụ. Nếu quý khách cảm thấy không hài lòng về chất lượng xe được giao, hãy liên hệ ngay trong vòng 30 phút đầu tiên, chúng tôi sẵn sàng đổi xe hoặc hoàn trả lại tiền mà không có bất kỳ rào cản nào.
-            </p>
-            <p class="mb-6 leading-relaxed">
-                Bản điều khoản này có hiệu lực kể từ ngày được đăng tải công khai trên hệ thống website của Thu Vân và có thể được cập nhật, bổ sung theo thời gian thực để phù hợp với sự thay đổi của pháp luật cũng như nhu cầu thực tiễn của thị trường. Tuy nhiên, mọi thay đổi đều sẽ được thông báo rõ ràng nhằm bảo đảm quyền lợi tốt nhất cho người thuê.
-            </p>
-            <div class="bg-indigo-50 dark:bg-slate-800/50 p-6 rounded-2xl border-[0.5px] border-indigo-100 dark:border-slate-700 mt-8">
-                <p class="mb-0 text-slate-700 dark:text-slate-300 font-medium">
-                    Nếu quý khách có bất kỳ thắc mắc nào liên quan đến các chính sách, quy định hay cần giải đáp về vấn đề bảo mật thông tin cá nhân, xin vui lòng truy cập trang <a href="lienhe.html" class="text-indigo-600 dark:text-indigo-400 hover:underline font-bold transition">Liên hệ hỗ trợ</a> hoặc gọi trực tiếp đến tổng đài Hotline 24/7: <strong class="font-bold text-indigo-600 dark:text-indigo-400">0913.901.121</strong>. Đội ngũ chăm sóc khách hàng của Thu Vân luôn túc trực để phục vụ bạn một cách chu đáo nhất!
+            <div class="bg-white dark:bg-darkCard p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-[0.5px] border-slate-200/80 dark:border-slate-700">
+                <h3 class="text-xl font-bold text-rose-600 dark:text-rose-400 mb-4"><i class="fa-solid fa-heart-pulse mr-2"></i> Yêu Cầu Về Thể Chất & Tinh Thần</h3>
+                <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4 text-justify">
+                    Tại thời điểm nhận bàn giao xe máy, khách hàng phải trong trạng thái tỉnh táo, thể lực đảm bảo an toàn để điều khiển phương tiện tham gia giao thông.
+                </p>
+                <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed text-justify">
+                    Thu Vân có <strong>quyền từ chối đơn phương</strong> cung cấp dịch vụ (dù đã đặt trước) nếu phát hiện khách hàng có dấu hiệu sử dụng rượu, bia, chất kích thích, ma túy, hoặc có các hành vi thiếu kiểm soát, không tuân thủ các nguyên tắc an toàn cơ bản. Sự an toàn tính mạng của Quý khách là yếu tố được chúng tôi đặt lên hàng đầu.
                 </p>
             </div>
         </div>
-    </article>
-
-</div>
+    </div>
 </section>
 
-<!-- Footer: Exact copy from provided code -->
+<!-- Section 4: Giấy Tờ & Thủ Tục -->
+<section class="py-24 bg-white dark:bg-slate-900 border-t-[0.5px] border-slate-100 dark:border-slate-800 reveal-up">
+    <div class="container mx-auto px-4 max-w-5xl">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">3. Quy Định Về Giấy Tờ & Thủ Tục Nhận Xe</h2>
+            <div class="w-20 h-1.5 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-6 rounded-full"></div>
+            <p class="text-slate-500 dark:text-slate-400 mt-5 text-lg">Tham khảo chi tiết hơn tại trang <a href="thutuc.html" class="text-indigo-600 dark:text-indigo-400 font-bold hover:underline">thủ tục thuê xe</a>.</p>
+        </div>
+        
+        <div class="space-y-6 text-slate-600 dark:text-slate-300 leading-relaxed text-justify">
+            <p>
+                Quá trình xác minh danh tính là bước bắt buộc để phòng ngừa rủi ro mất cắp tài sản và đảm bảo tính minh bạch. Khách hàng cần chuẩn bị sẵn sàng các tài liệu sau khi nhân viên Thu Vân tiến hành giao xe:
+            </p>
+            <ul class="list-disc pl-6 space-y-3">
+                <li><strong>Căn Cước Công Dân (CCCD) gắn chip:</strong> Quý khách cần xuất trình bản gốc để nhân viên đối chiếu. Trong nhiều trường hợp áp dụng chính sách thuê xe máy không cọc, Thu Vân sẽ giữ lại bản gốc CCCD trong suốt thời gian thuê và hoàn trả ngay khi kết thúc hợp đồng.</li>
+                <li><strong>Hộ Chiếu (Passport) / Thẻ tạm trú:</strong> Áp dụng đối với khách du lịch quốc tế hoặc Việt kiều.</li>
+                <li><strong>Giấy Phép Lái Xe:</strong> Chụp ảnh lưu trữ hoặc xuất trình bản gốc để chứng minh năng lực điều khiển phương tiện.</li>
+                <li><strong>Vé máy bay khứ hồi / Thông tin đặt phòng:</strong> Trong trường hợp Quý khách không muốn để lại giấy tờ tùy thân, việc cung cấp bằng chứng lưu trú tại Hà Nội (Booking khách sạn) hoặc vé máy bay khứ hồi có thể được chấp nhận thay thế kèm theo một khoản tiền cọc (thỏa thuận trực tiếp từ 1.000.000đ đến 3.000.000đ tùy loại xe).</li>
+            </ul>
+            <p class="mt-4 p-5 bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 rounded-r-xl italic text-sm">
+                *Lưu ý: Mọi giấy tờ tùy thân của khách hàng sẽ được hệ thống Thu Vân bảo quản niêm phong tuyệt đối, cam kết không sử dụng vào bất kỳ mục đích nào khác ngoại trừ việc xác minh hợp đồng thuê mướn.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Section 5: Trách Nhiệm Của Khách Hàng -->
+<section class="py-24 bg-slate-50 dark:bg-darkBg border-t-[0.5px] border-slate-200 dark:border-slate-800 reveal-up">
+    <div class="container mx-auto px-4 max-w-5xl">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">4. Quyền & Trách Nhiệm Của Khách Hàng</h2>
+            <div class="w-20 h-1.5 bg-gradient-to-r from-violet-600 to-fuchsia-600 mx-auto mt-6 rounded-full"></div>
+            <p class="text-slate-500 dark:text-slate-400 mt-5 text-lg">Đọc thêm <a href="huongdan.html" class="text-indigo-600 dark:text-indigo-400 font-bold hover:underline">hướng dẫn sử dụng</a> để lái xe an toàn.</p>
+        </div>
+        
+        <div class="bg-white dark:bg-darkCard p-8 lg:p-10 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-[0.5px] border-slate-200/80 dark:border-slate-700">
+            <div class="space-y-5 text-slate-600 dark:text-slate-300 text-justify leading-relaxed text-sm md:text-base">
+                <p>
+                    Khi nhận bàn giao phương tiện, khách hàng có quyền yêu cầu chạy thử, kiểm tra kỹ lưỡng các bộ phận như phanh, còi, xi nhan, đèn chiếu sáng, lốp xe và tình trạng vỏ ngoài. Nếu phát hiện điểm bất thường, Quý khách cần báo ngay cho nhân viên giao xe để ghi chú vào biên bản.
+                </p>
+                <p>
+                    <strong>Trách nhiệm trong quá trình sử dụng:</strong>
+                </p>
+                <ul class="list-decimal pl-6 space-y-3 font-medium">
+                    <li>Sử dụng phương tiện đúng mục đích là đi lại cá nhân. Tuyệt đối không dùng xe để chuyên chở hàng hóa quá tải trọng, không tham gia đua xe trái phép, không cầm cố, thế chấp hoặc cho bên thứ ba thuê lại dưới mọi hình thức.</li>
+                    <li>Nghiêm túc tuân thủ Luật Giao thông đường bộ Việt Nam. Khách hàng phải tự chịu hoàn toàn trách nhiệm trước pháp luật cũng như chi phí nộp phạt đối với mọi hành vi vi phạm giao thông (vượt đèn đỏ, lấn làn, quá tốc độ, đỗ xe sai quy định) xảy ra trong thời gian ký hợp đồng thuê xe.</li>
+                    <li>Nếu xe bị cơ quan chức năng (Cảnh sát giao thông) tạm giữ do lỗi vi phạm của người thuê, người thuê có trách nhiệm thanh toán toàn bộ chi phí xử lý vi phạm, chi phí lưu bãi, đồng thời bồi thường 100% tiền thuê xe tương ứng với số ngày xe bị tạm giữ cho hệ thống Thu Vân.</li>
+                    <li>Có trách nhiệm bảo quản tài sản: Luôn rút chìa khóa, khóa cổ xe và gửi xe tại các bãi giữ xe có thẻ/vé bảo vệ khi không sử dụng.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 6: Trách Nhiệm Hệ Thống Thu Vân -->
+<section class="py-24 bg-white dark:bg-slate-900 border-t-[0.5px] border-slate-100 dark:border-slate-800 reveal-up">
+    <div class="container mx-auto px-4 max-w-5xl">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">5. Quyền & Trách Nhiệm Của Hệ Thống Thu Vân</h2>
+            <div class="w-20 h-1.5 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto mt-6 rounded-full"></div>
+            <p class="text-slate-500 dark:text-slate-400 mt-5 text-lg">Chúng tôi cam kết cung cấp các <a href="loaixe.html" class="text-indigo-600 dark:text-indigo-400 font-bold hover:underline">loại xe máy</a> chất lượng cao nhất.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="flex items-start gap-4 p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border-[0.5px] border-slate-200 dark:border-slate-700">
+                <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 text-xl"><i class="fa-solid fa-check-double"></i></div>
+                <div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Đảm Bảo Chất Lượng</h4>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 text-justify">Giao đúng loại xe, đời xe mà khách hàng đã đặt. Phương tiện được giao trong tình trạng sạch sẽ, hoạt động trơn tru, đầy đủ giấy tờ hợp lệ (bản sao công chứng có mộc đỏ) để lưu thông an toàn trên đường.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4 p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border-[0.5px] border-slate-200 dark:border-slate-700">
+                <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center flex-shrink-0 text-xl"><i class="fa-solid fa-helmet-safety"></i></div>
+                <div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Trang Bị Kèm Theo</h4>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 text-justify">Cung cấp miễn phí tối thiểu 02 mũ bảo hiểm đạt chuẩn chất lượng, áo mưa tiện lợi. Nếu khách hàng có nhu cầu, chúng tôi hỗ trợ thêm dây chằng đồ mồi miễn phí.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4 p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border-[0.5px] border-slate-200 dark:border-slate-700">
+                <div class="w-12 h-12 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center flex-shrink-0 text-xl"><i class="fa-solid fa-phone-volume"></i></div>
+                <div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Hỗ Trợ Khẩn Cấp</h4>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 text-justify">Duy trì tổng đài hotline 24/7 sẵn sàng giải quyết mọi vấn đề phát sinh. Cam kết cử nhân viên kỹ thuật ứng cứu hoặc đổi xe tận nơi một cách nhanh chóng nhất trong bán kính nội thành.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4 p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border-[0.5px] border-slate-200 dark:border-slate-700">
+                <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center flex-shrink-0 text-xl"><i class="fa-solid fa-user-shield"></i></div>
+                <div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Bảo Mật Thông Tin</h4>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 text-justify">Mọi thông tin cá nhân, hình ảnh giấy tờ tùy thân của khách hàng được cam kết bảo mật tuyệt đối, không chia sẻ cho bên thứ ba, trừ khi có yêu cầu từ cơ quan pháp luật có thẩm quyền.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 7: Chính Sách Giá & Thanh Toán -->
+<section class="py-24 bg-slate-50 dark:bg-darkBg border-t-[0.5px] border-slate-200 dark:border-slate-800 reveal-up">
+    <div class="container mx-auto px-4 max-w-5xl">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">6. Quy Định Về Giá, Thanh Toán & Gia Hạn</h2>
+            <div class="w-20 h-1.5 bg-gradient-to-r from-green-500 to-emerald-600 mx-auto mt-6 rounded-full"></div>
+            <p class="text-slate-500 dark:text-slate-400 mt-5 text-lg">Xem chi tiết <a href="banggia.html" class="text-indigo-600 dark:text-indigo-400 font-bold hover:underline">bảng giá thuê xe</a> được cập nhật liên tục.</p>
+        </div>
+        
+        <div class="prose prose-lg dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 leading-relaxed text-justify">
+            <p>
+                <strong>Cách tính thời gian thuê:</strong> 1 ngày thuê xe tại Thu Vân được tính theo hệ <strong>24 giờ</strong> trọn vẹn. Ví dụ: Bạn nhận xe lúc 8h00 sáng ngày 01, thì đến 8h00 sáng ngày 02 mới tính là 1 ngày. Việc trả xe quá giờ quy định sẽ bị tính phụ phí theo block giờ (thường là 20.000đ - 30.000đ/giờ tùy loại xe). Nếu quá 6 giờ, hệ thống sẽ tự động làm tròn thành 1 ngày thuê mới.
+            </p>
+            <p>
+                <strong>Phương thức thanh toán:</strong> Khách hàng vui lòng thanh toán 100% số tiền thuê xe ngay tại thời điểm nhận xe và ký hợp đồng. Chúng tôi chấp nhận thanh toán linh hoạt qua Tiền mặt (VND), Chuyển khoản ngân hàng nội địa, hoặc các ví điện tử phổ biến như Momo, ZaloPay.
+            </p>
+            <p>
+                <strong>Gia hạn thời gian thuê:</strong> Nếu có kế hoạch thay đổi lịch trình và muốn tiếp tục sử dụng xe, khách hàng <strong>bắt buộc phải thông báo</strong> cho tổng đài Thu Vân trước ít nhất 12 giờ so với thời điểm trả xe dự kiến. Việc gia hạn chỉ được chấp thuận khi có sự đồng ý của Thu Vân, nhằm tránh việc xe đã bị khách hàng khác đặt trước.
+            </p>
+            <p>
+                <strong>Hủy đặt xe:</strong> Việc hủy xe trước 24h hoàn toàn miễn phí. Trong các ngày Lễ/Tết có yêu cầu đặt cọc trước để giữ xe, nếu khách hàng đơn phương hủy đặt xe trong vòng 12h trước giờ nhận, số tiền cọc giữ chỗ sẽ không được hoàn lại.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Section 8: Xử Lý Sự Cố -->
+<section class="py-24 bg-white dark:bg-slate-900 border-t-[0.5px] border-slate-100 dark:border-slate-800 reveal-up">
+    <div class="container mx-auto px-4 max-w-5xl">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">7. Quy Định Xử Lý Sự Cố, Tai Nạn Giữa Đường</h2>
+            <div class="w-20 h-1.5 bg-gradient-to-r from-red-500 to-rose-600 mx-auto mt-6 rounded-full"></div>
+            <p class="text-slate-500 dark:text-slate-400 mt-5 text-lg">Hỗ trợ nhanh chóng khu vực <a href="tayho.html" class="text-indigo-600 dark:text-indigo-400 font-bold hover:underline">Tây Hồ</a> và nội thành.</p>
+        </div>
+        
+        <div class="space-y-6 text-slate-600 dark:text-slate-300 text-justify leading-relaxed">
+            <div class="p-6 border-l-4 border-indigo-500 bg-indigo-50/50 dark:bg-indigo-900/10 rounded-r-xl">
+                <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-2">Hỏng hóc do khấu hao kỹ thuật (Thu Vân chịu trách nhiệm)</h4>
+                <p class="text-sm">Nếu xe đang đi gặp sự cố liên quan đến lỗi máy móc bên trong (đứt dây curoa, chết máy không rõ nguyên nhân, hỏng bộ điện...), Quý khách tuyệt đối không tự ý mang xe vào tiệm sửa chữa ven đường. Hãy gọi ngay cho Thu Vân. Chúng tôi sẽ chi trả 100% chi phí sửa chữa hoặc mang xe khác đến đổi trực tiếp tận nơi cho Quý khách.</p>
+            </div>
+            <div class="p-6 border-l-4 border-rose-500 bg-rose-50/50 dark:bg-rose-900/10 rounded-r-xl">
+                <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-2">Hỏng hóc do quá trình sử dụng (Khách hàng chịu trách nhiệm)</h4>
+                <p class="text-sm">Các sự cố phát sinh do yếu tố ngoại cảnh hoặc do thói quen điều khiển như: <strong>Thủng lốp, nổ lốp, cán đinh, quên tắt chìa khóa dẫn đến cạn kiệt ắc quy, hoặc cố tình đi vào đường ngập nước gây thủy kích hỏng động cơ.</strong> Trong trường hợp này, khách hàng sẽ phải chịu chi phí vá/thay lốp hoặc sửa chữa động cơ ngập nước. Chúng tôi vẫn sẽ hỗ trợ tư vấn tiệm sửa xe uy tín gần nhất.</p>
+            </div>
+            <div class="p-6 border-l-4 border-amber-500 bg-amber-50/50 dark:bg-amber-900/10 rounded-r-xl">
+                <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-2">Trường hợp va chạm, tai nạn giao thông</h4>
+                <p class="text-sm">Cần giữ nguyên hiện trường và liên hệ ngay cho Thu Vân cũng như cơ quan chức năng. Khách hàng chịu trách nhiệm bồi thường dân sự với bên thứ ba (nếu có lỗi). Đối với xe máy thuê, khách hàng có trách nhiệm thanh toán chi phí phục hồi xe về nguyên trạng ban đầu theo báo giá của Head/Đại lý chính hãng, cộng thêm chi phí số ngày xe phải nằm lưu bãi không thể khai thác.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 9: Đền Bù Thiệt Hại & Mất Mát -->
+<section class="py-24 bg-slate-50 dark:bg-darkBg border-t-[0.5px] border-slate-200 dark:border-slate-800 reveal-up">
+    <div class="container mx-auto px-4 max-w-5xl">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">8. Chính Sách Đền Bù Mất Mát Tài Sản</h2>
+            <div class="w-20 h-1.5 bg-gradient-to-r from-gray-500 to-slate-600 mx-auto mt-6 rounded-full"></div>
+        </div>
+        
+        <div class="overflow-hidden rounded-2xl border-[0.5px] border-slate-200 dark:border-slate-700 bg-white dark:bg-darkCard shadow-sm">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-indigo-50 dark:bg-indigo-900/20 text-indigo-800 dark:text-indigo-300">
+                        <th class="p-4 font-bold border-b border-slate-200 dark:border-slate-700">Loại Tổn Thất / Sự Cố</th>
+                        <th class="p-4 font-bold border-b border-slate-200 dark:border-slate-700">Mức Độ Đền Bù Ước Tính</th>
+                    </tr>
+                </thead>
+                <tbody class="text-sm text-slate-600 dark:text-slate-300">
+                    <tr class="border-b border-slate-100 dark:border-slate-700/50 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition">
+                        <td class="p-4">Mất mũ bảo hiểm / Áo mưa</td>
+                        <td class="p-4 font-medium text-rose-500">100.000đ - 150.000đ / chiếc</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 dark:border-slate-700/50 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition">
+                        <td class="p-4">Làm rơi / Mất chìa khóa xe</td>
+                        <td class="p-4 font-medium text-rose-500">150.000đ (khóa cơ) - 800.000đ (Smartkey)</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 dark:border-slate-700/50 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition">
+                        <td class="p-4">Xước xát, nứt vỡ vỏ nhựa xe (nhẹ)</td>
+                        <td class="p-4 font-medium text-amber-500">Thỏa thuận dựa trên báo giá hãng (Hàn, sơn lại)</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 dark:border-slate-700/50 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition">
+                        <td class="p-4">Thay thế phụ tùng do đâm đụng mạnh</td>
+                        <td class="p-4 font-medium text-amber-500">100% giá trị phụ tùng hãng + Tiền công thay</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition">
+                        <td class="p-4 font-bold text-slate-900 dark:text-white">Mất cắp toàn bộ xe</td>
+                        <td class="p-4 font-bold text-rose-600 dark:text-rose-400">Đền bù 100% giá trị xe hiện tại theo thị trường</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="mt-6 text-sm text-slate-500 text-center italic">Trong trường hợp mất xe, Thu Vân sẽ hỗ trợ phối hợp với cơ quan Công an để trình báo và trích xuất camera. Tuy nhiên khách hàng vẫn phải chịu trách nhiệm đền bù tài sản theo hợp đồng trước khi cơ quan chức năng tìm ra thủ phạm.</p>
+    </div>
+</section>
+
+<!-- Section 10: Chấm Dứt Hợp Đồng -->
+<section class="py-24 bg-white dark:bg-slate-900 border-t-[0.5px] border-slate-100 dark:border-slate-800 reveal-up mb-10">
+    <div class="container mx-auto px-4 max-w-5xl">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">9. Chấm Dứt Hợp Đồng & Giải Quyết Tranh Chấp</h2>
+            <div class="w-20 h-1.5 bg-gradient-to-r from-indigo-600 to-violet-600 mx-auto mt-6 rounded-full"></div>
+            <p class="text-slate-500 dark:text-slate-400 mt-5 text-lg">Mọi vướng mắc xin vui lòng <a href="lienhe.html" class="text-indigo-600 dark:text-indigo-400 font-bold hover:underline">liên hệ trực tiếp</a> để được hỗ trợ.</p>
+        </div>
+        
+        <div class="prose prose-lg dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 leading-relaxed text-justify">
+            <p>
+                Hợp đồng thuê xe (thỏa thuận này) sẽ tự động chấm dứt khi Quý khách hoàn tất việc bàn giao lại xe máy cho nhân viên Thu Vân trong tình trạng nguyên vẹn, thanh toán đầy đủ các khoản phí phát sinh (nếu có) và nhận lại đầy đủ giấy tờ tùy thân.
+            </p>
+            <p>
+                Thu Vân có quyền <strong>đơn phương chấm dứt hợp đồng, thu hồi xe ngay lập tức</strong> mà không cần hoàn trả tiền thuê trong các trường hợp: Khách hàng sử dụng xe để vận chuyển hàng cấm, vi phạm pháp luật hình sự; Cố tình bỏ trốn, không thể liên lạc được quá 24 giờ sau khi hết hạn thuê; Phát hiện xe bị mang đi cầm đồ hoặc tháo dỡ phụ tùng.
+            </p>
+            <p>
+                Trường hợp xảy ra sự kiện bất khả kháng (Thiên tai, bão lũ, hỏa hoạn, dịch bệnh, hoặc quyết định từ cơ quan Nhà nước) dẫn đến không thể thực hiện hợp đồng, hai bên sẽ miễn trừ trách nhiệm pháp lý và cùng thương lượng giải quyết hậu quả trên tinh thần chia sẻ rủi ro.
+            </p>
+            <p>
+                Mọi tranh chấp phát sinh trong quá trình thực hiện bản Điều khoản sử dụng thuê xe máy Tây Hồ, Hà Nội này trước hết sẽ được ưu tiên giải quyết thông qua thương lượng, hòa giải tự nguyện giữa hai bên. Nếu hòa giải không thành, tranh chấp sẽ được đưa ra Tòa án nhân dân có thẩm quyền tại Thành phố Hà Nội để giải quyết theo quy định của pháp luật Việt Nam. Quyết định của Tòa án là quyết định cuối cùng.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer (Giữ nguyên 100%) -->
 <footer class="bg-gray-900 text-gray-300 pt-16 pb-8 border-t border-gray-800">
 <div class="container mx-auto px-4 max-w-7xl">
  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-8 mb-12">
@@ -562,7 +715,7 @@ html.dark ::-webkit-scrollbar-track { background: #1e293b; }
                  <li><a href="huongdan.html" class="text-gray-400 hover:text-indigo-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Hướng Dẫn</a></li>
                  <li><a href="kinhnghiem.html" class="text-gray-400 hover:text-indigo-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Kinh Nghiệm</a></li>
                  <li><a href="Faq.html" class="text-gray-400 hover:text-indigo-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Câu Hỏi (FAQ)</a></li>
-                 <li><a href="dieukhoan.html" class="text-gray-400 hover:text-indigo-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Điều Khoản</a></li>
+                 <li><a href="dieukhoan.html" class="text-indigo-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Điều Khoản</a></li>
                  <li><a href="baomat.html" class="text-gray-400 hover:text-indigo-400 transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Bảo Mật</a></li>
              </ul>
        
@@ -620,6 +773,7 @@ html.dark ::-webkit-scrollbar-track { background: #1e293b; }
 </div>
 </footer>
 
+<!-- QuickCall Ultra -->
 <div id="quickcall-ultra" class="fixed bottom-6 left-6 z-[100] flex flex-col-reverse items-start gap-3 group">
 <button id="quickcall-toggle" class="relative w-16 h-16 bg-gradient-to-tr from-indigo-600 to-violet-500 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-105 transition-all duration-300 z-50 overflow-hidden ultra-pulse-glow border-[0.5px] border-white/20 dark:border-slate-800">
 <div class="absolute inset-0 bg-white/20 animate-pulse"></div>
@@ -865,24 +1019,6 @@ document.addEventListener('DOMContentLoaded', () => {
  updateStoreStatus();
  setInterval(updateStoreStatus, 60000);
 
- /* --- 7. FAQ Accordion Logic --- */
- const faqBtns = document.querySelectorAll('.faq-btn');
- faqBtns.forEach(btn => {
-     btn.addEventListener('click', () => {
-         const content = btn.nextElementSibling;
-         const icon = btn.querySelector('i');
-       
-         // Toggle active states
-         content.classList.toggle('hidden');
-       
-         if (content.classList.contains('hidden')) {
-             icon.style.transform = 'rotate(0deg)';
-         } else {
-             icon.style.transform = 'rotate(180deg)';
-         }
-     });
- });
-
  /* --- 8. Intersection Observer for Scroll Motion --- */
  const observerOptions = {
      root: null,
@@ -894,7 +1030,6 @@ document.addEventListener('DOMContentLoaded', () => {
      entries.forEach(entry => {
          if (entry.isIntersecting) {
              entry.target.classList.add('active');
-             // Dừng observe sau khi đã hiện để tối ưu hiệu năng
              observer.unobserve(entry.target);
          }
      });
