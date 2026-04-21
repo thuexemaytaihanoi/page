@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://thuexemaytaihanoi.github.io/sitemap.xml
+
+# Crawl delay (không bắt buộc, có thể bỏ nếu muốn index nhanh)
+Crawl-delay: 0
+
+# Chặn các file hệ thống không cần SEO (tuỳ chọn)
+Disallow: /404.html
+Disallow: /error.html
+
+# Không chặn thư mục page vì đây là nội dung chính
